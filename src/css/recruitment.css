@@ -1,0 +1,149 @@
+.recruitment-section {
+  position: relative;
+  background-image: url('../assets/gallery-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.recruitment-card {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-radius: 30px;
+  padding: 40px 36px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.recruitment-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: start;
+  position: relative;
+  max-width: 58%;
+  margin-right: auto;
+}
+
+.recruitment-text {
+  color: black;
+  z-index: 2;
+}
+
+.recruitment-text h2 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.recruitment-text p {
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: black;
+  font-family: "Poppins";
+}
+
+.recruitment-bold {
+  font-size: 17px;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 12px;
+  font-family: "Poppins";
+}
+
+.recruitment-contact {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: 20px;
+  max-width: 100%;
+  overflow: hidden;
+  font-family: "Poppins";
+}
+
+.recruitment-contact img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.recruitment-contact span {
+  color: black;
+  font-size: 16px;
+  word-break: break-all;
+}
+
+.recruitment-visual {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 54%;
+  pointer-events: none;
+}
+
+.recruitment-svgs {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.recruitment-svgs img {
+  position: absolute;
+  width: 42%;
+}
+
+.recruitment-svgs img:first-child {
+  bottom: 0;
+  left: 300px;
+  max-width: 180px;
+}
+
+.recruitment-svgs img:last-child {
+  top: -20px;
+  right: 100px;
+  max-width: 250px;
+}
+
+@media (max-width: 1024px) {
+  .recruitment-card {
+    padding: 34px 28px;
+  }
+
+  .recruitment-content {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  .recruitment-text h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .recruitment-card {
+    padding: 26px 20px;
+  }
+
+  .recruitment-text h2 {
+    font-size: 28px;
+  }
+
+  .recruitment-text p,
+  .recruitment-bold,
+  .recruitment-contact span {
+    font-size: 15px;
+  }
+
+  .recruitment-svgs img {
+    width: 100%;
+    min-width: auto;
+  }
+}
