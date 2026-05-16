@@ -1,5 +1,5 @@
 .hero {
-  padding: 100px 0 60px;
+  padding: 100px 0 100px;
   font-family: "Poppins", sans-serif;
   background-image: url('../assets/hero-section-bg-pattern.svg');
   background-size: cover;
@@ -38,8 +38,8 @@
   width: 80%;
   max-width: 100%;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .hero-text {
@@ -49,7 +49,7 @@
 }
 
 .hero-header {
-  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  font-size: clamp(2.8rem, 3.5vw, 4.8rem);
   font-weight: 400;
   color: #1a202c;
   margin-bottom: 20px;
@@ -58,7 +58,7 @@
 }
 
 .hero-description {
-  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
   color: #252525;
   line-height: 1.75;
   margin-bottom: 30px;
@@ -66,24 +66,60 @@
 
 .hero-button {
   align-self: center;
-  padding: 12px 30px;
+  padding: 16px 30px;
   background-color: #FF62F4;
-  color: white;
+  color: black;
   border: none;
   border-radius: 6px;
   font-size: clamp(0.95rem, 1vw, 1rem);
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-size: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .hero-button:hover {
   background-color: #1a252f;
+  color: white;
+}
+
+/* Hero Divider */
+.hero-divider {
+  width: 100%;
+  overflow: hidden;
+  background: #f8f8f8;
+}
+
+.hero-divider-content {
+  display: flex;
+  animation: scrollDivider 20s linear infinite;
+  width: fit-content;
+}
+
+.hero-divider-content img {
+  display: block;
+  width: auto;
+  height: 65px;
+  flex-shrink: 0;
+}
+
+@keyframes scrollDivider {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 @media (max-width: 1400px) {
   .hero-content {
     gap: 80px;
+  }
+
+  .hero {
+    padding: 100px 0 30px;
   }
 }
 
@@ -92,9 +128,13 @@
     padding-top: 80px;
   }
 
+  .hero {
+    padding: 100px 0 0px;
+  }
+
   .hero-content {
     /* grid-template-columns: 1fr 1fr 1fr; */
-      /* gap: 100px; */
+    /* gap: 100px; */
   }
 }
 
@@ -115,6 +155,10 @@
   .hero-text {
     margin: 0 auto;
   }
+
+  .hero-divider-content img {
+    height: 50px;
+}
 }
 
 @media (max-width: 1020px) {
@@ -135,7 +179,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 50px 0 40px;
+    padding: 50px 0 60px;
     min-height: auto;
   }
 
@@ -161,7 +205,7 @@
   }
 
   .hero-button {
-    width: 100%;
+    /* width: 100%; */
     text-align: center;
   }
 }
@@ -192,3 +236,8 @@
   }
 }
 
+@media (max-width: 540px) {
+  .hero-divider-content img {
+    height: 60px;
+  }
+}

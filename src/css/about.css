@@ -1,34 +1,57 @@
-.section {
-  padding: 400px 120px 80px 120px;
+﻿#about.section {
+  padding: 80px 40px;
+}
+
+.about-us-header {
+  max-width: 1120px;
+  width: min(100%, 1120px);
+  margin: 0 auto 36px;
 }
 
 .section h2 {
-  font-size: 36px;
+  font-size: clamp(2.2rem, 2vw, 3.5rem);
   font-weight: 700;
   color: #1a202c;
   text-align: left;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
   font-family: "Poppins", sans-serif;
 }
 
 .about-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
+  grid-template-columns: minmax(280px, 460px) minmax(320px, 1fr);
+  gap: 70px;
+  align-items: start;
+  width: min(100%, 1120px);
+  margin: 0 auto;
+}
+
+.about-image {
+  display: flex;
+  justify-content: center;
+  align-self: start;
 }
 
 .about-image img {
-  width: 400px;
+  width: 100%;
+  max-width: 520px;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
+.about-text {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 .about-text p {
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  font-size: clamp(1rem, 1.2vw, 1.2vw);
   color: #4a5568;
-  line-height: 1.6;
+  line-height: clamp(1.6, 2vw, 1.85);
   margin-bottom: 20px;
 }
 
@@ -37,13 +60,49 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  #about.section {
+    padding: 70px 0;
+  }
+
   .about-content {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 32px;
+  }
+
+  .section h2 {
+    font-size: 32px;
+  }
+
+  .about-us-header {
+    max-width: 520px;
+  }
+
+  h2.about-us-header {
+    text-align: center;
+  }
+
+  .about-text {
+    padding: 0px 100px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  #about.section {
+    padding: 60px 0;
+  }
+
+}
+
+@media (max-width: 540px) {
+  #about.section {
+    padding: 50px 0;
   }
 
   .section h2 {
     font-size: 28px;
   }
+
+
 }
