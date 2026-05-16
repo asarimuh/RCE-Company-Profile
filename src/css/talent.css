@@ -234,3 +234,42 @@
     font-size: 0.93rem;
   }
 }
+
+/* Fix: stack talent columns and prevent horizontal overflow on small devices */
+@media (max-width: 650px) {
+  .talent-active {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    align-items: stretch;
+  }
+
+  .current-talent-image-container {
+    max-width: 100%;
+    min-height: 240px;
+  }
+
+  .talent-right {
+    width: 100%;
+    justify-items: start;
+  }
+
+  .talent-carousel-container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 12px 0 6px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .next-talent {
+    flex: 0 0 auto;
+    min-width: 140px;
+    max-width: 180px;
+  }
+
+  /* Ensure page doesn't get an unexpected horizontal scrollbar */
+  html, body {
+    overflow-x: hidden;
+  }
+}
