@@ -31,8 +31,67 @@ const activeImage = document.querySelector('.current-talent-image-container img'
 const activeName = document.querySelector('.active-talent-name');
 const activeRole = document.querySelector('.active-talent-role');
 const activeDescription = document.querySelector('.active-talent-description');
+const talentActiveSection = document.querySelector('.talent-active');
+const talentCarousel = document.querySelector('.talent-carousel-container');
+const talentRight = document.querySelector('.talent-right');
+const talentCardContainer = document.querySelector('.talent-card-container');
 const thumbnailItems = Array.from(document.querySelectorAll('.next-talent'));
+const revealTargets = Array.from(document.querySelectorAll('.hero-image-left, .hero-image-right, .hero-text, .about-image, .about-text, .service-card'));
 let activeIndex = 0;
+
+function updateTalentLayout() {
+  if (!talentCarousel || !talentRight || !talentCardContainer) return;
+
+  const shouldSeparate = window.innerWidth < 1120;
+  const isSeparated = talentCarousel.parentElement !== talentRight;
+
+  if (shouldSeparate && !isSeparated) {
+    talentCardContainer.appendChild(talentCarousel);
+  } else if (!shouldSeparate && isSeparated) {
+    talentRight.appendChild(talentCarousel);
+  }
+}
+
+const revealObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+
+    const target = entry.target;
+    target.classList.add('visible');
+    observer.unobserve(target);
+  });
+}, {
+  threshold: 0.18,
+  rootMargin: '0px 0px -100px 0px',
+});
+
+revealTargets.forEach((target) => {
+  revealObserver.observe(target);
+});
+
+function animateActiveTalent() {
+  if (!talentActiveSection) return;
+  talentActiveSection.classList.remove('animate');
+  void talentActiveSection.offsetWidth;
+  talentActiveSection.classList.add('animate');
+}
+
+const thumbnailObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+
+    const index = thumbnailItems.indexOf(entry.target);
+    entry.target.style.animationDelay = `${index * 80}ms`;
+    entry.target.classList.add('visible');
+    observer.unobserve(entry.target);
+  });
+}, {
+  threshold: 0.2,
+});
+
+thumbnailItems.forEach((thumbnail) => {
+  thumbnailObserver.observe(thumbnail);
+});
 
 function getNextIndices(currentIndex) {
   const indices = [];
@@ -70,6 +129,8 @@ function renderTalents(index) {
   if (thumbnailItems[0]) {
     thumbnailItems[0].classList.add('selected');
   }
+
+  animateActiveTalent();
 }
 
 function handleThumbnailClick(event) {
@@ -85,6 +146,8 @@ thumbnailItems.forEach((thumbnail) => {
 });
 
 renderTalents(activeIndex);
+updateTalentLayout();
+window.addEventListener('resize', updateTalentLayout);
 
 setInterval(() => {
   const nextIndex = (activeIndex + 1) % talents.length;
