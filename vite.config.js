@@ -15,9 +15,9 @@ export default defineConfig({
         eCommerce: resolve(__dirname, 'src/pages/services/e-commerce.html'),
 
         // Blogs
-        teknikVokal: resolve(__dirname, 'src/pages/blog/teknik-vokal.html'),
-        koreografiPemula: resolve(__dirname, 'src/pages/blog/koreografi-pemula.html'),
-        liveStreamingMenarik: resolve(__dirname, 'src/pages/blog/tips-live-streaming.html'),
+        teknikVokal: resolve(__dirname, 'src/pages/blogs/teknik-vokal.html'),
+        koreografiPemula: resolve(__dirname, 'src/pages/blosg/koreografi-pemula.html'),
+        liveStreamingMenarik: resolve(__dirname, 'src/pages/blogs/tips-live-streaming.html'),
       },
     },
   },
