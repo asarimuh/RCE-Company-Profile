@@ -1,5 +1,3 @@
-import '../css/main.css';
-
 const talents = [
   {
     name: 'Bingga',
