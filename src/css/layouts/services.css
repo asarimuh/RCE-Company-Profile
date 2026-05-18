@@ -108,6 +108,10 @@
   display: inline-block;
 }
 
+a.service-detail-button {
+  margin-top: auto;
+}
+
 .service-button:hover {
   background-color: #1a252f;
   color: white;

@@ -1,0 +1,122 @@
+#footer {
+  background-image: url('/assets/footer-bg.png') !important;
+  color: black !important;
+}
+
+/* ================= Wrapper & Container ================= */
+.page-wrapper {
+  background-color: #ffffff; 
+  padding: 35px 0 80px; 
+  font-family: "Poppins", sans-serif;
+  color: #0f172a;
+}
+
+.content-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ================= Header Section ================= */
+.page-header {
+  text-align: left; 
+  max-width: 1300px;
+  margin: 0 auto 60px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-bottom: 20px; 
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.back-link:hover {
+  color: #000000;
+  transform: translateX(-4px);
+}
+
+.page-header h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2rem);
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.page-header p {
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  color: #475569;
+  max-width: 750px;
+  line-height: 1.7;
+}
+
+/* ================= Features Grid & Cards ================= */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 24px;
+  max-width: 1300px;
+  margin: 0 auto 60px;
+}
+
+.feature-card {
+  background: #f8fafc;
+  padding: 40px 28px; 
+  border-radius: 16px; 
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.4s ease;
+}
+
+.feature-card .icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: inline-block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feature-card h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.65;
+}
+
+/* ================= Hover Effects ================= */
+.feature-card:hover {
+  transform: translateY(-8px); 
+  background: #ffffff; 
+  border-color: #cbd5e1; 
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06); 
+}
+
+.feature-card:hover .icon {
+  transform: scale(1.15);
+}
+
+/* ================= Responsive Fixes ================= */
+@media (max-width: 768px) {
+  .page-wrapper {
+    padding-top: 100px; 
+  }
+  
+  .page-header {
+    margin-bottom: 40px;
+  }
+  
+  .feature-card {
+    padding: 32px 24px;
+  }
+}
