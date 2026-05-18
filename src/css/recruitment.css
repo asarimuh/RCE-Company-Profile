@@ -19,6 +19,18 @@
   z-index: 1;
 }
 
+/* Reveal animation for recruitment card */
+.recruitment-card {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.recruitment-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .recruitment-content {
   display: grid;
   grid-template-columns: 1fr;

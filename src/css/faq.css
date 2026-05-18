@@ -33,6 +33,18 @@ h2.faq-heading {
   gap: 18px;
 }
 
+/* Reveal animation for FAQ cards */
+.faq-card {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.faq-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .faq-card {
   background: white;
   border-radius: solid black 8px;

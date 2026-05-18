@@ -14,7 +14,7 @@
 }
 
 .footer-section .container {
-  max-width: 1120px;
+  max-width: 1280px;
   margin: 50px auto 0px auto;
   padding: 0 20px;
 }
@@ -24,6 +24,18 @@
   align-items: flex-start;
   gap: 32px;
   flex-wrap: wrap;
+}
+
+/* Reveal animation for footer columns */
+.footer-column {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.footer-column.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .footer-about {

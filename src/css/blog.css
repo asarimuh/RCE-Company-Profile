@@ -33,6 +33,19 @@ h2.blog-heading {
   gap: clamp(20px, 2vw, 28px);
 }
 
+/* Reveal animation for blog cards */
+.blog-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.blog-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: slideUpFade 0.45s ease forwards;
+}
+
 .blog-card {
   background: #2B2731;
   color: #ffffff;
