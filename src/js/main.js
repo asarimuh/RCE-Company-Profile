@@ -11,19 +11,19 @@ const talents = [
     name: 'Aiko',
     role: 'Host/Dancer',
     description: 'Performa panggung yang karismatik bertemu dengan keahlian hosting yang natural. Aiko menguasai berbagai genre dance dan memiliki kemampuan storytelling yang mampu memikat audiens dari segala kalangan.',
-    image: 'public/assets/talent-aiko.png'
+    image: './assets/talent-aiko.png'
   },
   {
     name: 'Lala',
     role: 'Host/Dancer',
     description: 'Dikenal dengan gerakannya yang lincah dan kepribadian yang ceria, Lala adalah pilihan tepat untuk memeriahkan suasana. Ia ahli dalam menciptakan vibe positif dan menjaga keterlibatan penonton secara konsisten.',
-    image: 'public/assets/talent-lala.png'
+    image: './assets/talent-lala.png'
   },
   {
     name: 'Diandra',
     role: 'Host/Dancer',
     description: 'Seorang multitalenta yang memadukan keanggunan tari dengan gaya komunikasi yang elegan. Diandra sangat mahir dalam membawakan acara dengan transisi yang halus dan profesionalisme yang tinggi.',
-    image: 'public/assets/talent-diandra.png'
+    image: './assets/talent-diandra.png'
   }
 ];
 
