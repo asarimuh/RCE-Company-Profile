@@ -10,9 +10,9 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'src/index.html'),
         blog: resolve(__dirname, 'src/blog/index.html'),
-        digitalEntertainment: resolve(__dirname, 'src/digital-entertainment.html'),
-        corporateSolutions: resolve(__dirname, 'src/corporate-solutions.html'),
-        eCommerce: resolve(__dirname, 'src/e-commerce.html'),
+        digitalEntertainment: resolve(__dirname, 'src/pages/services/digital-entertainment.html'),
+        corporateSolutions: resolve(__dirname, 'src/pages/services/corporate-solutions.html'),
+        eCommerce: resolve(__dirname, 'src/pages/services/e-commerce.html'),
 
         // Add more pages here as you create them
       },
