@@ -14,7 +14,10 @@ export default defineConfig({
         corporateSolutions: resolve(__dirname, 'src/pages/services/corporate-solutions.html'),
         eCommerce: resolve(__dirname, 'src/pages/services/e-commerce.html'),
 
-        // Add more pages here as you create them
+        // Blogs
+        teknikVokal: resolve(__dirname, 'src/pages/blog/teknik-vokal.html'),
+        koreografiPemula: resolve(__dirname, 'src/pages/blog/koreografi-pemula.html'),
+        liveStreamingMenarik: resolve(__dirname, 'src/pages/blog/tips-live-streaming.html'),
       },
     },
   },

@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koreografi Dasar untuk Pemula - Rising Creators Entertainment</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/components/navbar.css">
+  <link rel="stylesheet" href="/css/components/footer.css">
+  <link rel="stylesheet" href="/css/blogs/blog-detail.css">
+
+  <style>
+    /* ===== READING PROGRESS BAR ===== */
+    #reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #0f172a, #475569);
+      z-index: 9999;
+      transition: width 0.1s linear;
+    }
+
+    /* ===== ARTICLE TAGS ===== */
+    .post-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .post-tag {
+      display: inline-block;
+      background-color: #f1f5f9;
+      color: #475569;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* ===== KEY TAKEAWAYS ===== */
+    .key-takeaways {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin: 40px 0;
+    }
+
+    .key-takeaways-title {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #64748b;
+      margin-bottom: 14px;
+    }
+
+    .key-takeaways ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .key-takeaways ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 1rem;
+      color: #1e293b;
+      line-height: 1.6;
+      margin-bottom: 10px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .key-takeaways ul li:last-child { margin-bottom: 0; }
+
+    .key-takeaways ul li::before {
+      content: "✓";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      background: #0f172a;
+      color: white;
+      border-radius: 50%;
+      font-size: 0.65rem;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    /* ===== TIP BOX ===== */
+    .tip-box {
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin: 32px 0;
+    }
+
+    .tip-box-yellow {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+    }
+
+    .tip-box-blue {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+    }
+
+    .tip-box-green {
+      background: #f0fdf4;
+      border-left: 4px solid #22c55e;
+    }
+
+    .tip-box-label {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+    }
+
+    .tip-box-yellow .tip-box-label { color: #d97706; }
+    .tip-box-blue .tip-box-label   { color: #2563eb; }
+    .tip-box-green .tip-box-label  { color: #16a34a; }
+
+    .tip-box p {
+      margin: 0 !important;
+      font-size: 0.98rem;
+      line-height: 1.65;
+    }
+
+    .tip-box-yellow p { color: #78350f; }
+    .tip-box-blue p   { color: #1e3a5f; }
+    .tip-box-green p  { color: #14532d; }
+
+    /* ===== STEP NUMBER ON H2 ===== */
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      background: #0f172a;
+      color: white;
+      border-radius: 10px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    /* ===== MOVE CARD GRID ===== */
+    .move-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 28px 0;
+    }
+
+    .move-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .move-card-icon {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .move-card-title {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+
+    .move-card-desc {
+      font-size: 0.88rem;
+      color: #64748b;
+      line-height: 1.55;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+    }
+
+    /* ===== TIMELINE / PROGRESSION ===== */
+    .progression-list {
+      list-style: none;
+      padding: 0;
+      margin: 28px 0;
+      position: relative;
+    }
+
+    .progression-list::before {
+      content: "";
+      position: absolute;
+      left: 16px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: #e2e8f0;
+    }
+
+    .progression-list li {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .progression-list li:last-child { margin-bottom: 0; }
+
+    .prog-dot {
+      width: 34px;
+      height: 34px;
+      min-width: 34px;
+      border-radius: 50%;
+      background: #0f172a;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 0.85rem;
+      z-index: 1;
+    }
+
+    .prog-body { padding-top: 4px; }
+
+    .prog-title {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .prog-desc {
+      font-size: 0.9rem;
+      color: #64748b;
+      line-height: 1.55;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+    }
+
+    /* ===== DIVIDER ===== */
+    .post-divider {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+      margin: 48px 0;
+    }
+
+    /* ===== AUTHOR CARD ===== */
+    .author-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-top: 48px;
+    }
+
+    .author-avatar {
+      width: 64px;
+      height: 64px;
+      min-width: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0f172a, #475569);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 1.4rem;
+    }
+
+    .author-info-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94a3b8;
+      font-family: "Poppins", sans-serif;
+      margin-bottom: 2px;
+    }
+
+    .author-name {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .author-bio {
+      font-size: 0.88rem;
+      color: #64748b;
+      line-height: 1.5;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+    }
+
+    /* ===== RELATED POSTS ===== */
+    .related-section {
+      margin-top: 64px;
+      padding-top: 48px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .related-title {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 24px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .related-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: block;
+    }
+
+    .related-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+
+    .related-card-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+      overflow: hidden;
+    }
+
+    .related-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .related-card-body { padding: 16px 18px 20px; }
+
+    .related-card-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #64748b;
+      font-family: "Poppins", sans-serif;
+      margin-bottom: 6px;
+    }
+
+    .related-card-title {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.35;
+    }
+
+    /* ===== SHARE ===== */
+    .share-section {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .share-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #64748b;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: "Poppins", sans-serif;
+      text-decoration: none;
+      border: 1px solid #e2e8f0;
+      color: #334155;
+      background: white;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .share-btn:hover {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .related-grid,
+      .move-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .author-card {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .key-takeaways { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="reading-progress"></div>
+
+  <!-- ================= NAVBAR ================= -->
+  <header id="header">
+    <nav class="navbar">
+      <div class="nav-left">
+        <div class="nav-logo"><img src="/assets/rce-brand-logo.svg" alt="brand logo"></div>
+        <div class="nav-text"><h1>Rising Creators Entertainment</h1></div>
+      </div>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="/index.html#talents">Talents</a></li>
+          <li><a href="https://www.tiktok.com/@rce_87" target="_blank">Live</a></li>
+          <li><a href="/index.html#about">About Us</a></li>
+          <li><a href="/index.html#gallery">Gallery</a></li>
+          <li><a href="/index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ================= ARTICLE ================= -->
+  <main class="blog-wrapper">
+    <article class="blog-container">
+
+      <a href="/index.html#blog" class="blog-back-link">&larr; Kembali ke Blog</a>
+
+      <header class="post-header">
+        <div class="post-tags">
+          <span class="post-tag">Koreografi</span>
+          <span class="post-tag">Pemula</span>
+          <span class="post-tag">Stage Performance</span>
+        </div>
+        <div class="post-meta">Apr 22, 2026 &bull; 5 min read &bull; Oleh Tim Edukasi RCE</div>
+        <h1 class="post-title">Koreografi Dasar untuk Pemula: Dari Gerakan Pertama Hingga Pentas</h1>
+      </header>
+
+      <div class="post-featured-image">
+        <img src="/assets/blog-2.png" alt="Koreografi Dasar untuk Pemula">
+      </div>
+
+      <div class="key-takeaways">
+        <p class="key-takeaways-title">📌 Yang Akan Kamu Pelajari</p>
+        <ul>
+          <li>Gerakan dasar yang menjadi fondasi semua genre koreografi</li>
+          <li>Cara mengombinasikan langkah sederhana menjadi rangkaian yang menarik</li>
+          <li>Teknik menghitung ketukan musik dan menyinkronkan gerakan</li>
+          <li>Tips berlatih mandiri di rumah tanpa perlu studio</li>
+          <li>Cara membangun kepercayaan diri saat tampil di atas panggung</li>
+        </ul>
+      </div>
+
+      <div class="post-content">
+
+        <p>Banyak orang merasa koreografi adalah sesuatu yang hanya bisa dilakukan oleh mereka yang sejak kecil mengikuti kelas tari. Padahal, koreografi — pada intinya — adalah kemampuan menggerakkan tubuh dengan teratur mengikuti musik. Dan seperti keterampilan lainnya, ini bisa dipelajari oleh siapa saja yang mau berlatih dengan metode yang benar.</p>
+
+        <p>Di dunia hiburan digital, kemampuan bergerak dengan menarik di atas panggung atau di depan kamera adalah nilai tambah yang sangat signifikan. Kreator yang bisa bernyanyi sekaligus bergerak dengan percaya diri jauh lebih mudah meninggalkan kesan pada penonton. Panduan ini akan membawamu dari nol — bahkan jika kamu merasa diri kamu "tidak berbakat menari" sekalipun.</p>
+
+        <h2><span class="step-number">1</span> Kenali Tubuhmu Terlebih Dahulu</h2>
+
+        <p>Sebelum belajar gerakan apapun, penting untuk membangun <em>body awareness</em> — kesadaran tentang bagaimana tubuhmu bergerak, di mana titik keseimbanganmu, dan bagian mana yang terasa kaku. Banyak pemula yang langsung meniru gerakan kompleks tanpa fondasi ini, sehingga gerakannya terlihat dipaksakan dan tidak natural.</p>
+
+        <p>Mulailah dengan berdiri di depan cermin selama 5 menit setiap hari. Gerakkan kepala, bahu, pinggul, dan kakimu satu per satu secara perlahan. Rasakan titik keseimbangan tubuhmu saat berdiri di satu kaki. Latihan sederhana ini membangun koneksi antara pikiran dan otot yang menjadi fondasi semua gerakan tari.</p>
+
+        <div class="tip-box tip-box-blue">
+          <p class="tip-box-label">ℹ️ Perlu Diketahui</p>
+          <p>Kekakuan tubuh bukan hambatan permanen — melainkan sinyal bahwa area tersebut butuh lebih banyak perhatian. Fleksibilitas dan kelancaran gerakan adalah hasil dari peregangan rutin, bukan bakat bawaan lahir.</p>
+        </div>
+
+        <h2><span class="step-number">2</span> Empat Gerakan Dasar yang Wajib Dikuasai</h2>
+
+        <p>Hampir semua koreografi — dari K-pop hingga hip-hop, dari jazz hingga contemporary — dibangun di atas kombinasi gerakan-gerakan dasar yang sama. Kuasai keempat gerakan ini dan kamu sudah memiliki kosakata gerak yang cukup untuk memulai:</p>
+
+        <div class="move-grid">
+          <div class="move-card">
+            <div class="move-card-icon">🦵</div>
+            <p class="move-card-title">Step Touch</p>
+            <p class="move-card-desc">Melangkah ke samping lalu menyatukan kaki. Gerakan paling mendasar untuk mengisi ruang dan mengikuti ketukan.</p>
+          </div>
+          <div class="move-card">
+            <div class="move-card-icon">💃</div>
+            <p class="move-card-title">Body Roll</p>
+            <p class="move-card-desc">Gelombang gerakan dari kepala turun ke bahu, dada, perut, hingga pinggul. Menciptakan kesan fluid dan ekspresif.</p>
+          </div>
+          <div class="move-card">
+            <div class="move-card-icon">✊</div>
+            <p class="move-card-title">Punch & Hit</p>
+            <p class="move-card-desc">Gerakan tangan yang tegas pada ketukan downbeat. Memberikan energi dan aksentuasi pada bagian kuat lagu.</p>
+          </div>
+          <div class="move-card">
+            <div class="move-card-icon">🌀</div>
+            <p class="move-card-title">Hip Sway</p>
+            <p class="move-card-desc">Ayunan pinggul mengikuti ritme. Fondasi gerakan hampir semua genre latin, R&B, dan pop modern.</p>
+          </div>
+        </div>
+
+        <p>Latih masing-masing gerakan ini secara terpisah selama 10 menit sebelum mulai menggabungkannya. Lebih baik menguasai satu gerakan dengan sempurna daripada mencoba semua sekaligus tapi tidak ada yang benar.</p>
+
+        <h2><span class="step-number">3</span> Memahami Ketukan Musik (Musicality)</h2>
+
+        <p>Koreografi yang baik tidak hanya soal gerakan yang benar — tapi gerakan yang <em>tepat pada waktunya</em>. Kemampuan ini disebut <strong>musicality</strong>: kepekaan terhadap ritme, ketukan, dan dinamika musik.</p>
+
+        <p>Mulailah dengan mendengarkan lagu yang akan kamu koreografi tanpa bergerak sama sekali. Fokus pada satu hal: ketukan downbeat (biasanya ketukan 1 dan 3 dalam birama 4/4). Tepuk tangan mengikuti ketukan tersebut. Setelah terbiasa, mulai tambahkan upbeat (ketukan 2 dan 4). Latihan sederhana ini melatih telingamu untuk "mendengar" gerakan sebelum tubuhmu melakukannya.</p>
+
+        <div class="tip-box tip-box-yellow">
+          <p class="tip-box-label">💡 Tips Musicality</p>
+          <p>Coba hitung dengan lantang: "5, 6, 7, 8" sebelum mulai bergerak. Konvensi ini digunakan secara universal oleh penari dan koreografer di seluruh dunia untuk menyinkronkan gerakan secara berkelompok. Biasakan dirimu dengan hitungan 8 ketukan sebagai satu frasa gerak.</p>
+        </div>
+
+        <h2><span class="step-number">4</span> Membangun Kombinasi Pertamamu</h2>
+
+        <p>Setelah menguasai gerakan dasar dan memahami ketukan, saatnya mulai merangkai. Prinsipnya sederhana: <strong>satu frasa musik = satu kombinasi gerakan</strong>. Untuk lagu dengan tempo sedang, satu frasa biasanya terdiri dari 8 ketukan.</p>
+
+        <p>Berikut contoh kombinasi 8 ketukan sederhana yang bisa langsung kamu coba:</p>
+
+        <div class="key-takeaways" style="margin-top: 0;">
+          <p class="key-takeaways-title">🎵 Kombinasi Latihan 8 Ketukan</p>
+          <ul>
+            <li><strong>Ketukan 1–2:</strong> Step touch ke kanan (kaki kanan melangkah, kiri mengikuti)</li>
+            <li><strong>Ketukan 3–4:</strong> Step touch ke kiri (kaki kiri melangkah, kanan mengikuti)</li>
+            <li><strong>Ketukan 5–6:</strong> Body roll turun dari bahu ke pinggul</li>
+            <li><strong>Ketukan 7–8:</strong> Punch tangan kanan ke depan, kembali ke posisi awal</li>
+          </ul>
+        </div>
+
+        <p>Latih kombinasi ini hingga kamu bisa melakukannya tanpa memikirkan urutannya — tubuhmu harus bisa menjalankannya secara otomatis. Baru setelah itu tambahkan kombinasi berikutnya.</p>
+
+        <blockquote>
+          "Koreografi bukan tentang seberapa kompleks gerakanmu, tapi seberapa yakin dan tulus kamu melakukannya. Penonton merasakan energi, bukan teknik."
+        </blockquote>
+
+        <h2><span class="step-number">5</span> Latihan Mandiri yang Efektif di Rumah</h2>
+
+        <p>Tidak punya studio? Tidak masalah. Ruang sekitar 2×2 meter sudah cukup untuk berlatih koreografi dasar. Yang paling penting adalah konsistensi, bukan fasilitas.</p>
+
+        <p>Gunakan pendekatan progresif berikut untuk membangun kemampuan koreografi secara bertahap:</p>
+
+        <ul class="progression-list">
+          <li>
+            <div class="prog-dot">W1</div>
+            <div class="prog-body">
+              <p class="prog-title">Minggu 1 — Body Awareness & Gerakan Dasar</p>
+              <p class="prog-desc">Fokus pada body awareness di depan cermin. Kuasai keempat gerakan dasar satu per satu. Latihan 20 menit setiap hari tanpa musik dulu.</p>
+            </div>
+          </li>
+          <li>
+            <div class="prog-dot">W2</div>
+            <div class="prog-body">
+              <p class="prog-title">Minggu 2 — Musicality & Ketukan</p>
+              <p class="prog-desc">Mulai berlatih dengan musik. Latih tepuk tangan mengikuti downbeat dan upbeat. Coba gerakan dasar dengan diiringi musik tempo lambat.</p>
+            </div>
+          </li>
+          <li>
+            <div class="prog-dot">W3</div>
+            <div class="prog-body">
+              <p class="prog-title">Minggu 3 — Kombinasi Pertama</p>
+              <p class="prog-desc">Rangkai kombinasi 8 ketukan pertamamu. Rekam dirimu dari depan dan samping untuk melihat area yang perlu diperbaiki. Ulangi hingga hafal dan lancar.</p>
+            </div>
+          </li>
+          <li>
+            <div class="prog-dot">W4</div>
+            <div class="prog-body">
+              <p class="prog-title">Minggu 4 — Rangkaian Penuh & Ekspresi</p>
+              <p class="prog-desc">Gabungkan 2–3 kombinasi menjadi satu rangkaian. Tambahkan ekspresi wajah dan kontak mata dengan kamera/penonton. Latih sampai bisa tampil tanpa berhenti.</p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="tip-box tip-box-green">
+          <p class="tip-box-label">✅ Tips Merekam Diri Sendiri</p>
+          <p>Selalu rekam sesi latihanmu dan tonton kembali. Ini adalah cara tercepat untuk melihat apa yang terlihat baik dan apa yang perlu diperbaiki. Banyak pemula yang terkejut karena gerakan yang terasa bagus ternyata terlihat berbeda di kamera — dan sebaliknya.</p>
+        </div>
+
+        <hr class="post-divider">
+
+        <h2>Dari Latihan ke Panggung: Membangun Kepercayaan Diri</h2>
+
+        <p>Hambatan terbesar bagi pemula biasanya bukan kemampuan teknis — melainkan rasa percaya diri. Banyak yang sudah menguasai gerakan saat latihan sendiri, tapi mendadak kaku begitu ada orang yang menonton.</p>
+
+        <p>Rahasia mengatasinya hanya satu: <strong>paparan bertahap</strong>. Mulailah tampil di depan satu orang yang kamu percaya. Lalu dua orang. Lalu rekam video dan unggah ke media sosial. Setiap kali kamu tampil meski tidak sempurna, ambang batas kecemasan panggungmu turun sedikit. Lakukan ini berulang kali, dan kepercayaan diri itu akan tumbuh dengan sendirinya.</p>
+
+        <p>Di Rising Creators Entertainment, kami selalu mendorong talent kami untuk tampil lebih awal — meski belum sempurna — daripada terus menunggu kondisi "siap" yang tidak pernah datang. Panggung adalah guru terbaik, dan penonton yang antusias adalah motivasi yang tidak bisa digantikan oleh latihan solo di kamar.</p>
+
+      </div><!-- end .post-content -->
+
+      <!-- Share -->
+      <div class="share-section">
+        <span class="share-label">Bagikan artikel:</span>
+        <a class="share-btn" href="#" onclick="shareArticle('twitter'); return false;">𝕏 Twitter</a>
+        <a class="share-btn" href="#" onclick="shareArticle('whatsapp'); return false;">💬 WhatsApp</a>
+        <button class="share-btn" onclick="copyLink()">🔗 Salin Link</button>
+      </div>
+
+      <!-- Author Card -->
+      <div class="author-card">
+        <div class="author-avatar">TE</div>
+        <div class="author-info">
+          <p class="author-info-label">Ditulis oleh</p>
+          <p class="author-name">Tim Edukasi RCE</p>
+          <p class="author-bio">Tim Edukasi Rising Creators Entertainment terdiri dari para profesional industri hiburan digital yang berpengalaman membimbing kreator konten dalam pengembangan skill vokal, stage presence, koreografi, dan manajemen karier di era live streaming.</p>
+        </div>
+      </div>
+
+      <!-- Related Posts -->
+      <div class="related-section">
+        <p class="related-title">Artikel Terkait</p>
+        <div class="related-grid">
+          <a href="/pages/blogs/teknik-vokal.html" class="related-card">
+            <div class="related-card-img">
+              <img src="/assets/blog-1.png" alt="Teknik Vokal" onerror="this.style.display='none'">
+            </div>
+            <div class="related-card-body">
+              <p class="related-card-tag">Vokal</p>
+              <p class="related-card-title">Cara Meningkatkan Teknik Vokal untuk Penampilan Live</p>
+            </div>
+          </a>
+          <a href="#" class="related-card">
+            <div class="related-card-img">
+              <img src="/assets/blog-3.png" alt="Stage Presence" onerror="this.style.display='none'">
+            </div>
+            <div class="related-card-body">
+              <p class="related-card-tag">Stage Presence</p>
+              <p class="related-card-title">Cara Membangun Kepercayaan Diri di Depan Kamera untuk Kreator Baru</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    // Reading Progress Bar
+    const progressBar = document.getElementById('reading-progress');
+    window.addEventListener('scroll', () => {
+      const article = document.querySelector('.blog-container');
+      const articleTop = article.offsetTop;
+      const articleHeight = article.offsetHeight;
+      const windowHeight = window.innerHeight;
+      const scrolled = window.scrollY;
+      const progress = Math.min(
+        Math.max((scrolled - articleTop + windowHeight * 0.3) / (articleHeight - windowHeight * 0.5), 0), 1
+      );
+      progressBar.style.width = (progress * 100) + '%';
+    });
+
+    function shareArticle(platform) {
+      const url = encodeURIComponent(window.location.href);
+      const title = encodeURIComponent(document.title);
+      if (platform === 'twitter') {
+        window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`, '_blank');
+      } else if (platform === 'whatsapp') {
+        window.open(`https://wa.me/?text=${title}%20${url}`, '_blank');
+      }
+    }
+
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        const btn = event.target;
+        btn.textContent = '✅ Tersalin!';
+        setTimeout(() => { btn.textContent = '🔗 Salin Link'; }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+#footer {
+  background-image: url('/assets/footer-bg.png') !important;
+  color: black !important;
+}
+
+/* ================= Wrapper & Container ================= */
+.blog-wrapper {
+  background-color: #ffffff;
+  padding: 30px 0 100px;
+  font-family: "Poppins", sans-serif;
+  color: #1e293b;
+}
+
+.blog-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ================= Navigasi Atas ================= */
+.blog-back-link {
+  display: inline-flex;
+  align-items: center;
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.blog-back-link:hover {
+  color: #000000;
+  transform: translateX(-4px);
+}
+
+/* ================= Header Post ================= */
+.post-header {
+  margin-bottom: 32px;
+}
+
+.post-meta {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 12px;
+}
+
+.post-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.25;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+/* ================= Featured Image ================= */
+.post-featured-image {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.post-featured-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* ================= Isi Konten Utama (Readability) ================= */
+.post-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #334155;
+}
+
+.post-content p {
+  margin-bottom: 24px;
+}
+
+/* h2 support with optional step-number span inside */
+.post-content h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 44px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Styling Elemen Kutipan (Quote) */
+.post-content blockquote {
+  border-left: 4px solid #0f172a;
+  padding-left: 20px;
+  margin: 32px 0;
+  font-style: italic;
+  color: #475569;
+  font-size: 1.2rem;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 768px) {
+  .blog-wrapper {
+    padding-top: 30px;
+  }
+  .post-header {
+    margin-bottom: 24px;
+  }
+}

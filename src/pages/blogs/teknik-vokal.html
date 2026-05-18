@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cara Meningkatkan Teknik Vokal - Rising Creators Entertainment</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/components/navbar.css">
+  <link rel="stylesheet" href="/css/components/footer.css">
+  <link rel="stylesheet" href="/css/blogs/blog-detail.css"> 
+
+  <style>
+    /* ===== READING PROGRESS BAR ===== */
+    #reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #0f172a, #475569);
+      z-index: 9999;
+      transition: width 0.1s linear;
+    }
+
+    /* ===== ARTICLE TAGS / BADGE ===== */
+    .post-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .post-tag {
+      display: inline-block;
+      background-color: #f1f5f9;
+      color: #475569;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* ===== KEY TAKEAWAYS BOX ===== */
+    .key-takeaways {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin: 40px 0;
+    }
+
+    .key-takeaways-title {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #64748b;
+      margin-bottom: 14px;
+    }
+
+    .key-takeaways ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .key-takeaways ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 1rem;
+      color: #1e293b;
+      line-height: 1.6;
+      margin-bottom: 10px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .key-takeaways ul li:last-child {
+      margin-bottom: 0;
+    }
+
+    .key-takeaways ul li::before {
+      content: "✓";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      background: #0f172a;
+      color: white;
+      border-radius: 50%;
+      font-size: 0.65rem;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    /* ===== HIGHLIGHT / TIP BOX ===== */
+    .tip-box {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin: 32px 0;
+    }
+
+    .tip-box-label {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #d97706;
+      margin-bottom: 6px;
+    }
+
+    .tip-box p {
+      margin: 0 !important;
+      font-size: 0.98rem;
+      color: #78350f;
+    }
+
+    /* ===== STEP NUMBERING (h2 dengan angka) ===== */
+    .post-content .step-heading {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      background: #0f172a;
+      color: white;
+      border-radius: 10px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    /* ===== DIVIDER ===== */
+    .post-divider {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+      margin: 48px 0;
+    }
+
+    /* ===== AUTHOR CARD ===== */
+    .author-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-top: 48px;
+    }
+
+    .author-avatar {
+      width: 64px;
+      height: 64px;
+      min-width: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0f172a, #475569);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 1.4rem;
+    }
+
+    .author-info-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94a3b8;
+      font-family: "Poppins", sans-serif;
+      margin-bottom: 2px;
+    }
+
+    .author-name {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .author-bio {
+      font-size: 0.88rem;
+      color: #64748b;
+      line-height: 1.5;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+    }
+
+    /* ===== RELATED POSTS ===== */
+    .related-section {
+      margin-top: 64px;
+      padding-top: 48px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .related-title {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 24px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .related-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: block;
+    }
+
+    .related-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+
+    .related-card-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+      overflow: hidden;
+    }
+
+    .related-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .related-card-body {
+      padding: 16px 18px 20px;
+    }
+
+    .related-card-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #64748b;
+      font-family: "Poppins", sans-serif;
+      margin-bottom: 6px;
+    }
+
+    .related-card-title {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.35;
+    }
+
+    /* ===== SHARE SECTION ===== */
+    .share-section {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .share-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #64748b;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: "Poppins", sans-serif;
+      text-decoration: none;
+      border: 1px solid #e2e8f0;
+      color: #334155;
+      background: white;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .share-btn:hover {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .author-card {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .key-takeaways {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress"></div>
+
+  <!-- ================= NAVBAR ================= -->
+  <header id="header">
+    <nav class="navbar">
+      <div class="nav-left">
+        <div class="nav-logo"><img src="/assets/rce-brand-logo.svg" alt="brand logo"></div>
+        <div class="nav-text"><h1>Rising Creators Entertainment</h1></div>
+      </div>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="/index.html#talents">Talents</a></li>
+          <li><a href="https://www.tiktok.com/@rce_87" target="_blank">Live</a></li>
+          <li><a href="/index.html#about">About Us</a></li>
+          <li><a href="/index.html#gallery">Gallery</a></li>
+          <li><a href="/index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ================= MASTER ARTICLE CONTENT ================= -->
+  <main class="blog-wrapper">
+    <article class="blog-container">
+
+      <!-- Back Link -->
+      <a href="/index.html#blog" class="blog-back-link">&larr; Kembali ke Blog</a>
+
+      <!-- Header -->
+      <header class="post-header">
+        <div class="post-tags">
+          <span class="post-tag">Tips & Trik</span>
+          <span class="post-tag">Vokal</span>
+          <span class="post-tag">Live Performance</span>
+        </div>
+        <div class="post-meta">May 16, 2026 &bull; 7 min read &bull; Oleh Tim Edukasi RCE</div>
+        <h1 class="post-title">Cara Meningkatkan Teknik Vokal untuk Penampilan Live</h1>
+      </header>
+
+      <!-- Featured Image -->
+      <div class="post-featured-image">
+        <img src="/assets/blog-1.png" alt="Latihan Teknik Vokal">
+      </div>
+
+      <!-- Key Takeaways -->
+      <div class="key-takeaways">
+        <p class="key-takeaways-title">📌 Yang Akan Kamu Pelajari</p>
+        <ul>
+          <li>Teknik pernapasan diafragma untuk kontrol suara yang lebih kuat</li>
+          <li>Rutinitas pemanasan vokal yang efektif sebelum siaran langsung</li>
+          <li>Cara melatih jangkauan nada secara aman dan bertahap</li>
+          <li>Tips menjaga kesehatan pita suara untuk konsistensi jangka panjang</li>
+          <li>Latihan artikulasi dan proyeksi suara di depan mikrofon</li>
+        </ul>
+      </div>
+
+      <!-- Isi Artikel -->
+      <div class="post-content">
+
+        <p>Menyanyi di panggung hiburan digital atau saat <em>live streaming</em> membutuhkan ketahanan vokal yang luar biasa. Berbeda dengan rekaman studio, saat melakukan pertunjukan langsung kamu dituntut untuk tetap stabil meski sambil berinteraksi dengan penonton, merespons komentar secara real-time, atau bahkan bergerak aktif di hadapan kamera.</p>
+
+        <p>Banyak kreator konten yang baru terjun ke dunia live performance menyepelekan pentingnya persiapan vokal. Akibatnya, suara terdengar serak di tengah sesi, nada meleset saat mencapai bagian krusial lagu, atau bahkan mengalami kelelahan pita suara yang memaksa mereka berhenti lebih awal. Panduan ini hadir untuk membantu kamu menghindari kesalahan-kesalahan tersebut.</p>
+
+        <h2><span class="step-number">1</span> Latihan Pernapasan Diafragma</h2>
+
+        <p>Pondasi utama dari suara yang kokoh adalah kontrol napas. Banyak pemula menyanyi menggunakan pernapasan dada, yang membuat pundak naik dan hanya sedikit udara yang tersimpan. Cobalah beralih ke pernapasan diafragma: rilekskan bahu, letakkan satu tangan di perut, lalu tarik napas perlahan dan rasakan perut mengembang ke luar — bukan dada yang naik.</p>
+
+        <p>Latih ini setiap pagi selama 5 menit. Tarik napas 4 hitungan, tahan 4 hitungan, lalu hembuskan perlahan 8 hitungan sambil mengeluarkan bunyi "sss" yang stabil. Konsistensi ini akan mengubah cara kamu bernyanyi dalam waktu 2–3 minggu.</p>
+
+        <div class="tip-box">
+          <p class="tip-box-label">💡 Tips Cepat</p>
+          <p>Coba berbaring di lantai dan letakkan buku tipis di atas perut. Saat menarik napas, buku harus terangkat. Jika buku tidak bergerak, kamu masih bernapas dengan dada. Latihan ini sangat efektif untuk membangun kesadaran otot diafragma.</p>
+        </div>
+
+        <h2><span class="step-number">2</span> Pemanasan Wajib Sebelum Siaran</h2>
+
+        <p>Jangan pernah langsung menyanyi dengan nada tinggi tanpa pemanasan. Pita suara adalah otot — seperti atlet yang tidak langsung sprint tanpa peregangan, pita suara yang dipaksakan tanpa persiapan sangat rentan cedera.</p>
+
+        <p>Gunakan rutinitas pemanasan berikut selama 10–15 menit sebelum go-live:</p>
+
+        <ul style="list-style: disc; padding-left: 24px; margin-bottom: 24px; line-height: 2;">
+          <li><strong>Humming (2 menit)</strong> — Dengungan lembut dengan mulut tertutup ("mmmm") dari nada rendah ke sedang. Ini memanaskan pita suara tanpa tekanan berlebih.</li>
+          <li><strong>Lip trills (2 menit)</strong> — Getarkan bibir sambil mengeluarkan suara seperti "brrr". Sangat efektif melatih kontrol napas sekaligus meregangkan otot wajah.</li>
+          <li><strong>Sirene vokal (3 menit)</strong> — Naik dari nada paling rendahmu ke paling tinggi secara halus, seperti suara sirene. Lakukan dengan "oooo" atau "iiiii".</li>
+          <li><strong>Tangga nada pendek (5 menit)</strong> — Nyanyikan "do-re-mi-fa-sol-fa-mi-re-do" naik setengah nada setiap kali. Mulai dari nada nyaman, jangan langsung ke nada tinggi.</li>
+        </ul>
+
+        <blockquote>
+          "Suara yang memikat bukan hanya soal bakat, melainkan hasil dari disiplin merawat dan melatih otot vokal setiap hari."
+        </blockquote>
+
+        <h2><span class="step-number">3</span> Menjaga Jangkauan Vokal Secara Bertahap</h2>
+
+        <p>Jangan memaksa menyanyikan nada yang terlalu tinggi jika belum menguasai nada rendah dan sedang dengan stabil. Latihlah tangga nada secara perlahan — naik setengah ketukan setiap harinya — agar jangkauan vokal meningkat secara alami tanpa risiko cedera pita suara.</p>
+
+        <p>Satu pendekatan yang terbukti efektif adalah metode <strong>"comfort zone expansion"</strong>: setiap hari, nyanyikan sebuah lagu yang sepenuhnya nyaman di dalam jangkauanmu. Kemudian pada akhir sesi latihan, coba satu nada di atas batas nyamanmu — hanya satu. Lakukan ini konsisten selama 30 hari dan kamu akan terkejut melihat hasilnya.</p>
+
+        <h2><span class="step-number">4</span> Artikulasi dan Proyeksi di Depan Mikrofon</h2>
+
+        <p>Bernyanyi keras ≠ bernyanyi dengan proyeksi yang baik. Saat live streaming, mikrofon menangkap segala nuansa suara — termasuk suara yang tidak jernih, "menelan" kata, atau konsonan yang tak terbentuk sempurna. Ini sangat terasa dan mengganggu pendengar.</p>
+
+        <p>Latih artikulasi dengan mengucapkan <em>tongue twister</em> secara perlahan, lalu bertahap lebih cepat. Contoh dalam Bahasa Indonesia: <em>"Di mana ada gula, di sana ada semut"</em> — ucapkan dengan membuka mulut lebar pada setiap vokal. Untuk proyeksi, bayangkan kamu mengarahkan suara ke dinding paling jauh di ruangan, bukan ke mikrofon yang ada di depanmu.</p>
+
+        <div class="tip-box">
+          <p class="tip-box-label">🎙️ Tips Teknis</p>
+          <p>Jaga jarak konsisten antara mulut dan mikrofon — idealnya 15–20 cm. Terlalu dekat akan menghasilkan bunyi "pop" pada konsonan P dan B (plosif), sedangkan terlalu jauh membuat suara terdengar tipis dan jauh. Gunakan pop filter jika ada.</p>
+        </div>
+
+        <h2><span class="step-number">5</span> Menjaga Kesehatan Pita Suara</h2>
+
+        <p>Teknik sebagus apapun tidak akan berarti jika pita suaramu tidak sehat. Berikut kebiasaan harian yang wajib dijaga oleh setiap kreator vokal:</p>
+
+        <ul style="list-style: disc; padding-left: 24px; margin-bottom: 24px; line-height: 2;">
+          <li><strong>Hidrasi cukup</strong> — Minum air putih minimal 8 gelas per hari. Air hangat lebih baik daripada air dingin saat hari-H live.</li>
+          <li><strong>Hindari susu dan produk susu sebelum tampil</strong> — Produk susu meningkatkan produksi lendir yang dapat mengganggu kejernihan suara.</li>
+          <li><strong>Batasi kafein dan alkohol</strong> — Keduanya mendehidrasi tubuh, termasuk selaput pita suara.</li>
+          <li><strong>Istirahat vokal</strong> — Setelah sesi live yang panjang, berikan waktu diam minimal 30 menit. Berbicara dengan nada berbisik justru lebih berbahaya dari bicara normal.</li>
+          <li><strong>Tidur cukup</strong> — Kurang tidur langsung memengaruhi kualitas suara. 7–8 jam adalah standar minimum bagi kreator yang aktif tampil.</li>
+        </ul>
+
+        <hr class="post-divider">
+
+        <h2>Membangun Rutinitas Latihan yang Realistis</h2>
+
+        <p>Banyak yang bertanya: "Harus latihan berapa jam sehari?" Jawabannya bukan soal durasi, melainkan <strong>konsistensi dan kualitas</strong>. Sesi latihan 20 menit yang terfokus dan terstruktur jauh lebih efektif daripada 2 jam latihan tidak terarah yang justru bisa merusak suara.</p>
+
+        <p>Coba jadwalkan ini sebagai rutinitas harianmu:</p>
+
+        <div class="key-takeaways" style="margin-top: 0;">
+          <p class="key-takeaways-title">🗓️ Rutinitas Latihan 30 Menit</p>
+          <ul>
+            <li><strong>5 menit</strong> — Pernapasan diafragma dan relaksasi otot rahang/leher</li>
+            <li><strong>10 menit</strong> — Pemanasan vokal (humming, lip trill, sirene)</li>
+            <li><strong>10 menit</strong> — Latihan lagu atau tangga nada yang menarget area yang ingin ditingkatkan</li>
+            <li><strong>5 menit</strong> — Pendinginan dengan humming ringan dan napas dalam</li>
+          </ul>
+        </div>
+
+        <p>Ingat: pita suara adalah otot. Ia butuh waktu pulih. Jangan pernah memaksanya berlatih keras setiap hari tanpa hari istirahat.</p>
+
+        <blockquote>
+          "Konsistensi selama sebulan mengalahkan intensitas selama seminggu. Bangun kebiasaan kecil yang bisa kamu pertahankan seumur hidup."
+        </blockquote>
+
+        <p>Di Rising Creators Entertainment, kami percaya bahwa penampilan live yang luar biasa lahir dari persiapan yang matang — bukan dari improvisasi mendadak. Terapkan tips-tips ini secara konsisten, dan rasakan sendiri perbedaannya dalam penampilanmu berikutnya.</p>
+
+      </div><!-- end .post-content -->
+
+      <!-- Share Section -->
+      <div class="share-section">
+        <span class="share-label">Bagikan artikel:</span>
+        <a class="share-btn" href="#" onclick="shareArticle('twitter'); return false;">
+          𝕏 Twitter
+        </a>
+        <a class="share-btn" href="#" onclick="shareArticle('whatsapp'); return false;">
+          💬 WhatsApp
+        </a>
+        <button class="share-btn" onclick="copyLink()">
+          🔗 Salin Link
+        </button>
+      </div>
+
+      <!-- Author Card -->
+      <div class="author-card">
+        <div class="author-avatar">TE</div>
+        <div class="author-info">
+          <p class="author-info-label">Ditulis oleh</p>
+          <p class="author-name">Tim Edukasi RCE</p>
+          <p class="author-bio">Tim Edukasi Rising Creators Entertainment terdiri dari para profesional industri hiburan digital yang berpengalaman membimbing kreator konten dalam pengembangan skill vokal, stage presence, dan manajemen karier di era live streaming.</p>
+        </div>
+      </div>
+
+      <!-- Related Posts -->
+      <div class="related-section">
+        <p class="related-title">Artikel Terkait</p>
+        <div class="related-grid">
+          <a href="#" class="related-card">
+            <div class="related-card-img">
+              <img src="/assets/blog-2.png" alt="Tips Live Streaming" onerror="this.style.display='none'">
+            </div>
+            <div class="related-card-body">
+              <p class="related-card-tag">Live Streaming</p>
+              <p class="related-card-title">5 Kesalahan Umum Saat Live Pertama Kali dan Cara Menghindarinya</p>
+            </div>
+          </a>
+          <a href="#" class="related-card">
+            <div class="related-card-img">
+              <img src="/assets/blog-3.png" alt="Stage Presence" onerror="this.style.display='none'">
+            </div>
+            <div class="related-card-body">
+              <p class="related-card-tag">Stage Presence</p>
+              <p class="related-card-title">Cara Membangun Kepercayaan Diri di Depan Kamera untuk Kreator Baru</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <footer id="footer">
+    <!-- Sesuai dengan footer Anda -->
+  </footer>
+
+  <script>
+    // Reading Progress Bar
+    const progressBar = document.getElementById('reading-progress');
+    window.addEventListener('scroll', () => {
+      const article = document.querySelector('.blog-container');
+      const articleTop = article.offsetTop;
+      const articleHeight = article.offsetHeight;
+      const windowHeight = window.innerHeight;
+      const scrolled = window.scrollY;
+
+      const progress = Math.min(
+        Math.max((scrolled - articleTop + windowHeight * 0.3) / (articleHeight - windowHeight * 0.5), 0),
+        1
+      );
+      progressBar.style.width = (progress * 100) + '%';
+    });
+
+    // Share Functions
+    function shareArticle(platform) {
+      const url = encodeURIComponent(window.location.href);
+      const title = encodeURIComponent(document.title);
+      if (platform === 'twitter') {
+        window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`, '_blank');
+      } else if (platform === 'whatsapp') {
+        window.open(`https://wa.me/?text=${title}%20${url}`, '_blank');
+      }
+    }
+
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        const btn = event.target;
+        btn.textContent = '✅ Tersalin!';
+        setTimeout(() => { btn.textContent = '🔗 Salin Link'; }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>
