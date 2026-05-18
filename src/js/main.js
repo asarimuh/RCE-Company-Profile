@@ -5,7 +5,7 @@ const talents = [
     name: 'Bingga',
     role: 'Singer',
     description: 'Penyanyi dengan karakter vokal yang kuat dan penuh energi. Bingga siap menghidupkan setiap momen siaran dengan deretan lagu top charts dan interaksi yang selalu seru.',
-    image: 'public/assets/talent-bingga.png'
+    image: './assets/talent-bingga.png'
   },
   {
     name: 'Aiko',
