@@ -1,3 +1,5 @@
+
+
 const talents = [
   {
     name: 'Bingga',

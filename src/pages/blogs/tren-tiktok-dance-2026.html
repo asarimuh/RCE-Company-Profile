@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tren TikTok Dance 2026 - Rising Creators Entertainment</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/components/navbar.css">
+  <link rel="stylesheet" href="/css/components/footer.css">
+  <link rel="stylesheet" href="/css/blogs/blog-detail.css">
+
+  <style>
+    /* ===== READING PROGRESS BAR ===== */
+    #reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #0f172a, #475569);
+      z-index: 9999;
+      transition: width 0.1s linear;
+    }
+
+    /* ===== ARTICLE TAGS ===== */
+    .post-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .post-tag {
+      display: inline-block;
+      background-color: #f1f5f9;
+      color: #475569;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* ===== KEY TAKEAWAYS ===== */
+    .key-takeaways {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin: 40px 0;
+    }
+
+    .key-takeaways-title {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #64748b;
+      margin-bottom: 14px;
+    }
+
+    .key-takeaways ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .key-takeaways ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 1rem;
+      color: #1e293b;
+      line-height: 1.6;
+      margin-bottom: 10px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .key-takeaways ul li:last-child { margin-bottom: 0; }
+
+    .key-takeaways ul li::before {
+      content: "✓";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      background: #0f172a;
+      color: white;
+      border-radius: 50%;
+      font-size: 0.65rem;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    /* ===== TIP BOX ===== */
+    .tip-box {
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin: 32px 0;
+    }
+
+    .tip-box-yellow {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+    }
+
+    .tip-box-blue {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+    }
+
+    .tip-box-green {
+      background: #f0fdf4;
+      border-left: 4px solid #22c55e;
+    }
+
+    .tip-box-label {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+    }
+
+    .tip-box-yellow .tip-box-label { color: #d97706; }
+    .tip-box-blue .tip-box-label   { color: #2563eb; }
+    .tip-box-green .tip-box-label  { color: #16a34a; }
+
+    .tip-box p {
+      margin: 0 !important;
+      font-size: 0.98rem;
+      line-height: 1.65;
+    }
+
+    .tip-box-yellow p { color: #78350f; }
+    .tip-box-blue p   { color: #1e3a5f; }
+    .tip-box-green p  { color: #14532d; }
+
+    /* ===== STEP NUMBER ON H2 ===== */
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      background: #0f172a;
+      color: white;
+      border-radius: 10px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    /* ===== GRID CARDS ===== */
+    .move-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 28px 0;
+    }
+
+    .move-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .move-card-icon {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .move-card-title {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+
+    .move-card-desc {
+      font-size: 0.88rem;
+      color: #64748b;
+      line-height: 1.55;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+    }
+
+    /* ===== TIMELINE / PROGRESSION ===== */
+    .progression-list {
+      list-style: none;
+      padding: 0;
+      margin: 28px 0;
+      position: relative;
+    }
+
+    .progression-list::before {
+      content: "";
+      position: absolute;
+      left: 16px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: #e2e8f0;
+    }
+
+    .progression-list li {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .progression-list li:last-child { margin-bottom: 0; }
+
+    .prog-dot {
+      width: 34px;
+      height: 34px;
+      min-width: 34px;
+      border-radius: 50%;
+      background: #0f172a;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 0.85rem;
+      z-index: 1;
+    }
+
+    .prog-body { padding-top: 4px; }
+
+    .prog-title {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .prog-desc {
+      font-size: 0.9rem;
+      color: #64748b;
+      line-height: 1.55;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+    }
+
+    /* ===== DIVIDER ===== */
+    .post-divider {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+      margin: 48px 0;
+    }
+
+    /* ===== AUTHOR CARD ===== */
+    .author-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-top: 48px;
+    }
+
+    .author-avatar {
+      width: 64px;
+      height: 64px;
+      min-width: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0f172a, #475569);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 1.4rem;
+    }
+
+    .author-info-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94a3b8;
+      font-family: "Poppins", sans-serif;
+      margin-bottom: 2px;
+    }
+
+    .author-name {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .author-bio {
+      font-size: 0.88rem;
+      color: #64748b;
+      line-height: 1.5;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+    }
+
+    .related-section {
+      margin-top: 50px;
+      padding-top: 40px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .related-title {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 24px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .related-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: block;
+    }
+
+    .related-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+
+    .related-card-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+      overflow: hidden;
+    }
+
+    .related-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .related-card-body { padding: 16px 18px 20px; }
+
+    .related-card-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #64748b;
+      font-family: "Poppins", sans-serif;
+      margin-bottom: 6px;
+    }
+
+    .related-card-title {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.35;
+    }
+
+    /* ===== SHARE ===== */
+    .share-section {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .share-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #64748b;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: "Poppins", sans-serif;
+      text-decoration: none;
+      border: 1px solid #e2e8f0;
+      color: #334155;
+      background: white;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .share-btn:hover {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .related-grid,
+      .move-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .author-card {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .key-takeaways { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="reading-progress"></div>
+
+  <header id="header">
+    <nav class="navbar">
+      <div class="nav-left">
+        <div class="nav-logo"><img src="/assets/rce-brand-logo.svg" alt="brand logo"></div>
+        <div class="nav-text"><h1>Rising Creators Entertainment</h1></div>
+      </div>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="/index.html#talents">Talents</a></li>
+          <li><a href="https://www.tiktok.com/@rce_87" target="_blank">Live</a></li>
+          <li><a href="/index.html#about">About Us</a></li>
+          <li><a href="/index.html#gallery">Gallery</a></li>
+          <li><a href="/index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="blog-wrapper">
+    <article class="blog-container">
+
+      <a href="/pages/blogs.html" class="blog-back-link">&larr; Kembali ke Daftar Blog</a>
+
+      <header class="post-header">
+        <div class="post-tags">
+          <span class="post-tag">TikTok Trend</span>
+          <span class="post-tag">Dance Koreo</span>
+          <span class="post-tag">Engagement</span>
+        </div>
+        <div class="post-meta">Mei 19, 2026 &bull; 5 min read &bull; Oleh Tim Edukasi RCE</div>
+        <h1 class="post-title">Tren TikTok Dance 2026: Kompilasi Gerakan Viral untuk Dongkrak Interaksi</h1>
+      </header>
+
+      <div class="post-featured-image">
+        <img src="/assets/blog-tren-tiktok-dance.jpg" alt="Tren TikTok Dance 2026">
+      </div>
+
+      <div class="key-takeaways">
+        <p class="key-takeaways-title">📌 Yang Akan Kamu Pelajari</p>
+        <ul>
+          <li>Evolusi arah tren koreografi TikTok yang diminati audiens tahun 2026</li>
+          <li>4 jenis gerakan viral utama yang wajib dikuasai oleh setiap talent</li>
+          <li>Cara menyisipkan elemen interaksi penonton di tengah-tengah menari</li>
+          <li>Strategi memodifikasi koreografi rumit menjadi versi ramah pemula</li>
+          <li>Tips memilih musik pendukung yang ramah algoritma FYP terbaru</li>
+        </ul>
+      </div>
+
+      <div class="post-content">
+
+        <p>Dunia hiburan video pendek bergerak sangat dinamis, tidak terkecuali platform raksasa TikTok. Memasuki tahun 2026, tren menari (*dance challenge*) tidak lagi sekadar meniru gerakan badan dari awal hingga akhir lagu. Algoritma tahun ini jauh lebih memprioritaskan video yang memicu interaksi tinggi, retensi penonton di 3 detik pertama, serta kedekatan emosional (*relatability*).</p>
+
+        <p>Bagi para kreator dan talent di industri siaran digital, menguasai gerakan yang sedang populer adalah jalan pintas terbaik untuk memancing audiens baru masuk ke akun Anda. Kompilasi gerakan viral ini wajib dikuasai oleh setiap talent untuk meningkatkan interaksi penonton secara signifikan selama masa promosi maupun saat siaran berlangsung.</p>
+
+        <h2><span class="step-number">1</span> 4 Kiblat Gerakan Viral TikTok 2026</h2>
+
+        <p>Berdasarkan analisis data internal kuartal pertama tahun ini, penonton cenderung bosan dengan gerakan kaki yang terlalu kompleks dan berpindah tempat. Sebaliknya, tren bergeser ke arah gerakan yang lebih intim, ekspresif, dan bisa dilakukan di ruang terbatas di depan meja studio. Berikut adalah empat tipe gerakan yang wajib Anda pelajari:</p>
+
+        <div class="move-grid">
+          <div class="move-card">
+            <div class="move-card-icon">🙌</div>
+            <p class="move-card-title">Micro-Expression Hand Dance</p>
+            <p class="move-card-desc">Koreografi super cepat yang berfokus penuh pada jari dan telapak tangan, dikombinasikan dengan transisi ekspresi wajah yang dramatis.</p>
+          </div>
+          <div class="move-card">
+            <div class="move-card-icon">🔄</div>
+            <p class="move-card-title">Seamless Transition Step</p>
+            <p class="move-card-desc">Gerakan putaran badan atau ayunan tangan khusus yang dirancang sengaja untuk memudahkan proses pemotongan video (*looping transition*).</p>
+          </div>
+          <div class="move-card">
+            <div class="move-card-icon">🪩</div>
+            <p class="move-card-title">Retro Y2K Grooves</p>
+            <p class="move-card-desc">Kembalinya gerakan disko klasik akhir 90-an dengan sentuhan modern. Sangat populer karena memicu rasa nostalgia bagi penonton dewasa.</p>
+          </div>
+          <div class="move-card">
+            <div class="move-card-icon">👀</div>
+            <p class="move-card-title">Interactive POV Pointing</p>
+            <p class="move-card-desc">Gerakan menunjuk atau mendekati arah kamera seolah-olah Anda sedang mengajak penonton di seberang layar berdansa bersama.</p>
+          </div>
+        </div>
+
+        <p>Keempat jenis gerakan di atas memiliki kesamaan prinsip: semuanya terlihat sangat bagus dalam format vertikal 9:16 dan berfokus pada area tubuh bagian atas (*medium close-up*).</p>
+
+        <div class="tip-box tip-box-yellow">
+          <p class="tip-box-label">💡 Trik Algoritma</p>
+          <p>Selalu taruh gerakan paling mengejutkan atau paling estetik di detik ke-1 sampai ke-3. Tiga detik pertama ini menentukan apakah audiens akan menekan tombol gulir (*scroll*) atau memilih menetap menonton hingga selesai.</p>
+        </div>
+
+        <h2><span class="step-number">2</span> Cara Mengubah Dance Menjadi Alat Interaksi</h2>
+
+        <p>Kesalahan fatal banyak kreator adalah mereka menari layaknya robot yang sedang ujian; terlalu fokus menghafal ketukan sampai lupa menyapa penonton. Di era modern, *dance* hanyalah sebuah pengantar (*hook*), tujuan akhirnya tetaplah interaksi di kolom komentar.</p>
+
+        <p>Cobalah untuk sengaja membuat satu gerakan yang sedikit salah atau terlewat di bagian akhir video secara natural. Berikan takarir (*caption*) seperti: *"Coba tebak di detik ke berapa aku lupa gerakannya? 😭"*. Cara sederhana ini terbukti ampuh memicu ratusan penonton untuk mengetik komentar, yang mana akan otomatis menaikkan skor video Anda di mata algoritma platform.</p>
+
+        <blockquote>
+          "Penonton tidak mencari penari latar profesional yang sempurna tanpa cela. Mereka mencari manusia nyata yang bersenang-senang mengekspresikan diri lewat musik."
+        </blockquote>
+
+        <h2><span class="step-number">3</span> Metode Cepat Menguasai Tren Dance Baru</h2>
+
+        <p>Kecepatan adalah segalanya di internet. Jika Anda baru membuat video tren tersebut satu bulan setelah viral, Anda sudah kehilangan momentum emasnya. Gunakan alur kerja sistematis di bawah ini untuk menguasai tren *dance* kurang dari 24 jam:</p>
+
+        <ul class="progression-list">
+          <li>
+            <div class="prog-dot">A</div>
+            <div class="prog-body">
+              <p class="prog-title">Audio Hunting & Bookmark</p>
+              <p class="prog-desc">Setiap pagi, luangkan waktu 15 menit untuk memantau tab *Trending Sounds*. Simpan audio yang dipakai berulang kali oleh kreator luar negeri.</p>
+            </div>
+          </li>
+          <li>
+            <div class="prog-dot">B</div>
+            <div class="prog-body">
+              <p class="prog-title">Breakdown via Slow-Mo</p>
+              <p class="prog-desc">Tonton video acuan menggunakan fitur perlambat kecepatan (0.5x). Bedah gerakan tangan dan langkah kaki secara terpisah sebelum digabung.</p>
+            </div>
+          </li>
+          <li>
+            <div class="prog-dot">C</div>
+            <div class="prog-body">
+              <p class="prog-title">Personalization/Localization</p>
+              <p class="prog-desc">Tambahkan gaya unik Anda sendiri. Jika Anda tipe kreator humoris, tambahkan ekspresi konyol di sela-sela koreografi serius tersebut.</p>
+            </div>
+          </li>
+          <li>
+            <div class="prog-dot">D</div>
+            <div class="prog-body">
+              <p class="prog-title">Batch Production</p>
+              <p class="prog-desc">Jangan hanya merekam satu versi. Rekam 3 sampai 4 kali dengan variasi sudut kamera (*angle*) berbeda agar memiliki cadangan konten.</p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="tip-box tip-box-green">
+          <p class="tip-box-label">✅ Rekomendasi Pakaian (*Wardrobe*)</p>
+          <p>Gunakan pakaian yang kontras dengan warna latar belakang (*background*) Anda saat merekam video dance. Pakaian yang longgar (*oversized*) sering kali memberikan efek gerakan ayunan tubuh yang terlihat lebih estetik di kamera.</p>
+        </div>
+
+        <hr class="post-divider">
+
+        <h2>Konsistensi di Bawah Naungan Manajemen Agensi</h2>
+
+        <p>Mengikuti tren setiap hari memang melelahkan jika dilakukan sendirian tanpa dukungan sistem yang matang. Seringkali kreator kehabisan ide atau merasa jenuh di tengah jalan akibat kelelahan fisik.</p>
+
+        <p>Di Rising Creators Entertainment, kami memiliki tim riset khusus yang bertugas memantau pergeseran tren global setiap harinya. Para talent kami tidak perlu pusing memikirkan lagu apa yang sedang naik daun; mereka difasilitasi dengan panduan materi siap pakai, studio latihan yang nyaman, serta koreografer profesional yang siap mendampingi proses produksi konten dari awal hingga sukses di FYP.</p>
+
+      </div><div class="share-section">
+        <span class="share-label">Bagikan artikel:</span>
+        <a class="share-btn" href="#" onclick="shareArticle('twitter'); return false;">𝕏 Twitter</a>
+        <a class="share-btn" href="#" onclick="shareArticle('whatsapp'); return false;">💬 WhatsApp</a>
+        <button class="share-btn" onclick="copyLink()">🔗 Salin Link</button>
+      </div>
+
+      <div class="author-card">
+        <div class="author-avatar">TE</div>
+        <div class="author-info">
+          <p class="author-info-label">Ditulis oleh</p>
+          <p class="author-name">Tim Edukasi RCE</p>
+          <p class="author-bio">Tim Edukasi Rising Creators Entertainment terdiri dari para profesional industri hiburan digital yang berpengalaman membimbing kreator konten dalam pengembangan skill vokal, stage presence, koreografi, dan manajemen karier di era live streaming.</p>
+        </div>
+      </div>
+
+      <div class="related-section">
+        <p class="related-title">Artikel Terkait</p>
+        <div class="related-grid">
+          <a href="/pages/blogs/koreografi-dasar.html" class="related-card">
+            <div class="related-card-img">
+              <img src="/assets/blog-2.png" alt="Koreografi Dasar" onerror="this.style.display='none'">
+            </div>
+            <div class="related-card-body">
+              <p class="related-card-tag">Koreografi</p>
+              <p class="related-card-title">Koreografi Dasar untuk Pemula: Dari Gerakan Pertama Hingga Pentas</p>
+            </div>
+          </a>
+          <a href="/pages/blogs/tips-live-streaming.html" class="related-card">
+            <div class="related-card-img">
+              <img src="/assets/blog-3.png" alt="Stage Presence" onerror="this.style.display='none'">
+            </div>
+            <div class="related-card-body">
+              <p class="related-card-tag">Stage Presence</p>
+              <p class="related-card-title">Tips Live Streaming yang Menarik Audiens agar Tidak Bosan</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <a href="/pages/blogs.html" class="bottom-blog-back-link">&larr; Kembali ke Daftar Blog</a>
+
+    </article>
+  </main>
+
+  <footer id="footer" class="footer-section">
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-column footer-about">
+          <div class="footer-logo">
+            <img src="/assets/rce-brand-logo.svg" alt="Rising Creators Entertainment logo">
+            <h3 class="footer-logo-title">Rising Creators Entertainment</h3>
+          </div>
+          <p class="footer-description">Elevating digital entertainment to the next level.</p>
+          <div class="footer-social">
+            <a href="https://www.tiktok.com/@rce_87" target="_blank"><img src="/assets/tiktok-logo.svg"
+                alt="Tiktok"></a>
+            <a href="#" aria-label="Facebook"><img src="/assets/instagram-logo.svg" alt="Facebook"></a>
+            <a href="#" aria-label="YouTube"><img src="/assets/facebook-logo.svg" alt="YouTube"></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About us</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#blog">Blog Articles</a></li>
+            <li><a href="#recruitment">Join Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Support</h4>
+          <ul class="footer-links">
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#terms">Terms &amp; Conditions</a></li>
+            <li><a href="#contact">Contact Support</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="footer-copy">&copy; 2026 Rising Creators Entertainment. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/js/main.js"></script>
+
+  <script>
+    // Reading Progress Bar
+    const progressBar = document.getElementById('reading-progress');
+    window.addEventListener('scroll', () => {
+      const article = document.querySelector('.blog-container');
+      const articleTop = article.offsetTop;
+      const articleHeight = article.offsetHeight;
+      const windowHeight = window.innerHeight;
+      const scrolled = window.scrollY;
+      const progress = Math.min(
+        Math.max((scrolled - articleTop + windowHeight * 0.3) / (articleHeight - windowHeight * 0.5), 0), 1
+      );
+      progressBar.style.width = (progress * 100) + '%';
+    });
+
+    function shareArticle(platform) {
+      const url = encodeURIComponent(window.location.href);
+      const title = encodeURIComponent(document.title);
+      if (platform === 'twitter') {
+        window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`, '_blank');
+      } else if (platform === 'whatsapp') {
+        window.open(`https://wa.me/?text=${title}%20${url}`, '_blank');
+      }
+    }
+
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        const btn = event.target;
+        btn.textContent = '✅ Tersalin!';
+        setTimeout(() => { btn.textContent = '🔗 Salin Link'; }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>
