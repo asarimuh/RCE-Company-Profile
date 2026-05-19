@@ -46,20 +46,24 @@ h2.blog-heading {
 }
 
 .blog-card {
-  background: #2B2731;
-  color: #ffffff;
+  background: white;
   border-radius: 20px;
+  border: 1px solid #f1f5f9;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   min-height: 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
+
 
 .blog-card-link {
   text-decoration: none; 
   color: inherit;        
-  display: block;        
+  display: flex;        
+  flex-direction: column; 
+  flex: 1;              
 }
 
 .blog-card:hover {
@@ -84,7 +88,7 @@ h2.blog-heading {
   padding: clamp(18px, 1.2vw, 26px);
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto;
+  flex: 1;        
 }
 
 .blog-title {
@@ -97,16 +101,16 @@ h2.blog-heading {
 .blog-excerpt {
   font-size: clamp(0.88rem, 0.96vw, 0.98rem);
   line-height: 1.75;
-  color: #f8fafc;
-  margin: 0 0 18px 0;
+  color: #000000;
+  margin: 0 0 18px 0;    
   font-family: "Poppins";
 }
 
 .blog-meta {
   font-family: "Poppins";
-  margin-top: auto;
+  margin-top: auto;     
   font-size: clamp(0.78rem, 0.85vw, 0.9rem);
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(43, 43, 43, 0.72);
 }
 
 .blog-more {
