@@ -25,7 +25,6 @@ const talents = [
   }
 ];
 
-
 const activeImage = document.querySelector('.current-talent-image-container img');
 const activeName = document.querySelector('.active-talent-name');
 const activeRole = document.querySelector('.active-talent-role');
@@ -36,8 +35,8 @@ const talentRight = document.querySelector('.talent-right');
 const talentCardContainer = document.querySelector('.talent-card-container');
 const thumbnailItems = Array.from(document.querySelectorAll('.next-talent'));
 const revealTargets = Array.from(document.querySelectorAll(
-  '.hero-image-left, .hero-image-right, .hero-text, .about-image, .about-text, .service-card, ' +
-  '.gallery-item, .blog-card, .recruitment-card, .faq-card, .talent-active'
+  '.hero-image-left, .hero-image-right, .hero-text, ' +
+  '.blog-card, .recruitment-card, .faq-card, .talent-active'
 ));
 let activeIndex = 0;
 

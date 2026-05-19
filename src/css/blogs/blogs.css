@@ -65,6 +65,8 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid #f1f5f9;
+  display: flex;       
+  flex-direction: column;
 }
 
 .blog-card:hover {
@@ -75,7 +77,9 @@
 .blog-card-link {
   text-decoration: none;
   color: inherit;
-  display: block;
+  display: flex;           
+  flex-direction: column; 
+  flex: 1;              
 }
 
 .blog-image img {
@@ -85,7 +89,10 @@
 }
 
 .blog-card-body {
-  padding: 24px;
+  padding: clamp(18px, 1vw, 26px);
+  display: flex;
+  flex-direction: column;
+  flex: 1;        
 }
 
 .blog-title {
@@ -106,6 +113,7 @@
   font-size: 0.85rem;
   color: #94a3b8;
   font-weight: 500;
+  margin-top: auto;
 }
 
 @media (max-width: 768px) {

@@ -31,18 +31,6 @@ h2.gallery-heading {
   gap: 20px;
 }
 
-/* Reveal animation for gallery items */
-.gallery-item {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease;
-}
-
-.gallery-item.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .gallery-item {
   overflow: hidden;
   border-radius: 24px;
