@@ -37,7 +37,7 @@ const talentCardContainer = document.querySelector('.talent-card-container');
 const thumbnailItems = Array.from(document.querySelectorAll('.next-talent'));
 const revealTargets = Array.from(document.querySelectorAll(
   '.hero-image-left, .hero-image-right, .hero-text, .about-image, .about-text, .service-card, ' +
-  '.gallery-item, .blog-card, .collaboration-card, .recruitment-card, .footer-column, .faq-card, .talent-active'
+  '.gallery-item, .blog-card, .recruitment-card, .faq-card, .talent-active'
 ));
 let activeIndex = 0;
 

@@ -1,9 +1,3 @@
-#footer {
-  background-image: url('/assets/footer-bg.png') !important;
-  color: black !important;
-}
-
-/* Wrapper & Kontainer */
 .page-wrapper {
   background-color: #ffffff; 
   padding: 30px 0 80px; 
