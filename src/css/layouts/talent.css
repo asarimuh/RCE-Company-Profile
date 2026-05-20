@@ -10,7 +10,7 @@
 }
 
 .talents-section h2 {
-  font-size: clamp(2.3rem, 2.8vw, 3rem);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: 700;
   color: #1f2937;
   text-align: left;

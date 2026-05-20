@@ -5,7 +5,7 @@
   align-items: center;
   padding: 1rem 7rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-width: 2000px;
+  /* max-width: 2000px; */
   border: 1px solid;
 }
 
@@ -27,8 +27,11 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
-}
+  /* Shift transition to properties that can actually animate */
+  max-height: none; 
+  opacity: 1;
+  transition: max-height 0.3s ease-in-out, opacity 0.2s ease-in-out;
+} 
 
 .nav-links li {
   margin-left: 2rem;
@@ -82,7 +85,6 @@
 
 @media (max-width: 1000px) {
   .navbar {
-    flex-direction: row; 
     flex-wrap: wrap; 
     justify-content: space-between;
     align-items: center;
@@ -103,29 +105,72 @@
     order: 3; 
   }
 
+  /* 1. Transparent container wrapper for the individual link blocks */
   .nav-right .nav-links {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: flex-start; 
     width: 100%;
-    margin-top: 1rem;
-    padding: 1rem;
-    background: white;
-    border-radius: 12px;
+    background: transparent; /* Removed the solid white background box */
+    box-shadow: none;        /* Removed the heavy wrapper shadow */
+    border-radius: 0;
+    
+    /* Animation Properties */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;             /* Cleaned out padding so elements sit perfectly */
+    margin-top: 0;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.2s ease-in-out, 
+                margin 0.3s ease-in-out;
   }
 
-  .nav-links.active {
-    display: flex; 
+  /* 2. State: Open */
+  .nav-right .nav-links.active {
+    max-height: 450px;      /* Increased slightly to accommodate separated rows */
+    opacity: 1;
+    margin-top: 1.25rem;
   }
 
+  /* 3. Redesigned separate row items */
   .nav-links li {
     margin-left: 0;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;   /* Gap between the individual blocks */
     width: 100%;
   }
 
   .nav-links li:last-child {
     margin-bottom: 0;
+  }
+
+  /* 4. Turn the anchors into distinct, tactile cards */
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 0.60rem 1rem;
+    background: #f8fafc;     /* Clean, subtle off-white/gray background card */
+    color: #0f172a;          /* Sleek off-black text color */
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: 10px;
+    border: 1px solid rgba(15, 23, 42, 0.05); /* Very light border for depth */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+    box-sizing: border-box;
+    transition: background 0.2s ease, transform 0.1s ease, color 0.2s ease;
+  }
+
+  /* Remove default underline and add subtle tap micro-interactions */
+  .nav-links a:hover {
+    text-decoration: none;
+    background: #f1f5f9;     /* Slightly darker gray shift on hover */
+    color: var(--secondary-color, #000); 
+  }
+
+  /* This gives a nice "pressed down" physical feedback effect when tapped on mobile */
+  .nav-links a:active {
+    transform: scale(0.98);
+    background: #e2e8f0;
   }
 }
 
@@ -141,14 +186,46 @@
   .nav-text h1 {
     font-size: 1rem; 
   }
+
+  .nav-logo {
+    display: none;
+  }
 }
 
 @media (max-width: 400px) {
+  .nav-toggle {
+    padding: 0;
+  }
+
+  .nav-logo {
+    display: none;
+  }
+
   .nav-text h1 {
     font-size: 0.9rem; 
   }
 
   .nav-links a {
     font-size: 0.9rem; 
+  }
+
+  
+}
+
+@media (max-width: 325px) {
+  .nav-toggle {
+    display: block;
+  }
+  .nav-text h1 {
+    font-size: 0.8rem; 
+  }
+
+  .nav-links a {
+    font-size: 0.8rem; 
+  }
+
+  .nav-toggle-bar {
+    width: 20px;
+    height: 2px;
   }
 }

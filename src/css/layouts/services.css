@@ -26,6 +26,15 @@
   margin-top: 40px;
 }
 
+.services-header {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  color: #1a1818;
+  text-align: left;
+  margin-bottom: 40px;
+  font-family: 'Poppins', sans-serif;
+}
+
 .service-card {
   background-color: #2B2731;
   padding: 30px;

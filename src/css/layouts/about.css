@@ -1,107 +1,115 @@
-﻿#about.section {
-  padding: 80px 40px;
+﻿/* =========================================
+   ABOUT US SECTION 
+========================================= */
+
+#about.section {
+  padding: 80px 5%; /* Fluid horizontal padding prevents touching edges */
+  font-family: "Poppins", sans-serif;
 }
 
 .about-us-header {
   max-width: 1120px;
-  width: min(100%, 1120px);
   margin: 0 auto 36px;
-}
-
-.section h2 {
-  font-size: clamp(2.2rem, 2vw, 3.5rem);
+  /* Reduced from clamp(2rem, 4vw, 3.5rem) */
+  font-size: clamp(1.5rem, 3vw, 2.25rem); 
   font-weight: 700;
-  color: #1a202c;
+  color: #0f172a;
   text-align: left;
-  margin-bottom: 36px;
-  font-family: "Poppins", sans-serif;
 }
 
 .about-content {
   display: grid;
-  grid-template-columns: minmax(280px, 460px) minmax(320px, 1fr);
-  gap: 70px;
-  align-items: start;
-  width: min(100%, 1120px);
+  /* Simpler grid: Image takes 0.8 parts, Text takes 1.2 parts */
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 60px;
+  align-items: center; /* Vertically centers the text with the image */
+  max-width: 1120px;
   margin: 0 auto;
 }
 
+/* --- About Image --- */
 .about-image {
   display: flex;
   justify-content: center;
-  align-self: start;
 }
 
 .about-image img {
   width: 100%;
-  max-width: 520px;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Soft, modern shadow */
+  object-fit: cover;
 }
 
+/* --- About Text --- */
 .about-text {
-  max-width: 1200px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .about-text p {
-  font-family: "Poppins", sans-serif;
-  font-size: clamp(1rem, 1.2vw, 1.2vw);
-  color: #4a5568;
-  line-height: clamp(1.6, 2vw, 1.85);
-  margin-bottom: 20px;
+  font-size: 1.1rem; /* Standard readable size */
+  color: #475569;
+  line-height: 1.8;
+  margin: 0 0 1.5rem 0;
 }
 
 .about-text p:last-child {
   margin-bottom: 0;
 }
 
+
+/* =========================================
+   RESPONSIVE LAYOUTS
+========================================= */
+
+/* Tablet Layout (Portrait and Landscape) */
 @media (max-width: 1024px) {
-  #about.section {
-    padding: 70px 0;
-  }
-
   .about-content {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .section h2 {
-    font-size: 32px;
+    grid-template-columns: 1fr; /* Stack image and text into a single column */
+    gap: 40px;
   }
 
   .about-us-header {
-    max-width: 520px;
+    text-align: center; /* Center header for stacked layout */
   }
 
-  h2.about-us-header {
-    text-align: center;
+  .about-image {
+    max-width: 600px;
+    margin: 0 auto; /* Keeps image centered without getting too massive */
   }
 
   .about-text {
-    padding: 0px 100px;
+    /* Removed the dangerous 100px padding, replaced with safe % based max-width */
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center; /* Center paragraph text on tablet */
   }
 }
 
-@media (max-width: 768px) {
-
+/* Mobile Devices (Phones) */
+@media (max-width: 600px) {
   #about.section {
-    padding: 60px 0;
+    padding: 60px 1.25rem;
   }
 
-}
-
-@media (max-width: 540px) {
-  #about.section {
-    padding: 50px 0;
+  .about-us-header {
+    /* font-size: 2.25rem; */
+    /* text-align: left;  */
+    margin-bottom: 24px;
   }
 
-  .section h2 {
-    font-size: 28px;
+  .about-content {
+    gap: 24px;
   }
 
+  .about-text {
+    text-align: left; /* Re-align left; centered blocks of text are hard to read on phones */
+  }
 
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.6; /* Slightly tighter line-height for mobile */
+  }
 }
