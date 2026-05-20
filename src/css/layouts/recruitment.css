@@ -4,7 +4,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 80px 0;
+  padding: clamp(40px, 6vw, 80px) 0;
   overflow: hidden;
 }
 
@@ -14,13 +14,9 @@
   width: min(100%, 1280px);
   margin: 0 auto;
   border-radius: 32px;
-  padding: 48px 42px;
+  padding: clamp(24px, 4vw, 48px); 
   overflow: hidden;
   z-index: 1;
-}
-
-/* Reveal animation for recruitment card */
-.recruitment-card {
   opacity: 0;
   transform: translateY(22px);
   transition: opacity 0.45s ease, transform 0.45s ease;
@@ -44,54 +40,55 @@
 .recruitment-text {
   color: #111827;
   z-index: 2;
+  min-width: 0; 
 }
 
 .recruitment-text h2 {
-  font-size: clamp(2.4rem, 3vw, 2rem);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
   font-weight: 800;
   margin-bottom: 22px;
-  line-height: 1.05;
+  line-height: 1.1;
   font-family: "Poppins", sans-serif;
 }
 
 .recruitment-text p {
-  font-size: 1.05rem;
-  line-height: 1.85;
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  line-height: 1.8;
   margin-bottom: 20px;
   color: #000000;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   max-width: 620px;
 }
 
 .recruitment-bold {
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
   font-weight: 700;
   color: #111827;
   margin-bottom: 14px;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
 }
 
 .recruitment-contact {
   display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 18px 22px;
-  border-radius: 22px;
+  align-items: flex-start; 
+  gap: 12px;
   max-width: 100%;
-  overflow: hidden;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
 }
 
 .recruitment-contact img {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
+  flex-shrink: 0; 
+  margin-top: 2px; 
 }
 
 .recruitment-contact span {
   color: #111827;
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
   word-break: break-word;
+  overflow-wrap: anywhere; 
 }
 
 .recruitment-visual {
@@ -128,121 +125,27 @@
 }
 
 @media (max-width: 1200px) {
-  .recruitment-card {
-    padding: 40px 32px;
-  }
-
   .recruitment-content {
-    max-width: 100%;
+    max-width: 100%; 
   }
 
   .recruitment-svgs {
-    display: none;
+    display: none; 
   }
 }
 
 @media (max-width: 1024px) {
-  .recruitment-svgs {
-    display: none;
-  }
-
-  .recruitment-card {
-    padding: 36px 28px;
-  }
-
   .recruitment-content {
-    max-width: 100%;
     margin-right: 0;
-  }
-
-  .recruitment-text h2 {
-    font-size: 2.5rem;
-  }
-
-  .recruitment-contact {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .recruitment-svgs img:first-child {
-    left: 180px;
-    max-width: 160px;
-  }
-
-  .recruitment-svgs img:last-child {
-    right: 56px;
-    max-width: 200px;
-  }
-}
-
-@media (max-width: 900px) {
-  .recruitment-card {
-    padding: 30px 24px;
-  }
-
-  .recruitment-text h2 {
-    font-size: 2.2rem;
-  }
-
-  .recruitment-text p,
-  .recruitment-bold,
-  .recruitment-contact span {
-    font-size: 0.95rem;
-  }
-
-  .recruitment-contact {
-    padding: 16px 18px;
-  }
-
-  .recruitment-svgs img {
-    width: auto;
   }
 }
 
 @media (max-width: 768px) {
   .recruitment-card {
-    padding: 28px 18px;
-  }
-
-  .recruitment-text h2 {
-    font-size: 2rem;
-  }
-
-  .recruitment-text p,
-  .recruitment-bold,
-  .recruitment-contact span {
-    font-size: 0.92rem;
-  }
-
-  .recruitment-contact {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .recruitment-svgs {
-    display: none;
+    border-radius: 24px;
   }
 }
 
 @media (max-width: 540px) {
-  .recruitment-card {
-    padding: 24px 16px;
-    border-radius: 24px;
-  }
 
-  .recruitment-text h2 {
-    font-size: 1.8rem;
-  }
-
-  .recruitment-text p,
-  .recruitment-bold,
-  .recruitment-contact span {
-    font-size: 0.9rem;
-  }
-
-  .recruitment-contact {
-    width: 100%;
-    padding: 14px 16px;
-  }
 }
