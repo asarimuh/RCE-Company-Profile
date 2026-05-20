@@ -2,6 +2,7 @@
   background-color: #f8fafc;
   padding: 80px 0;
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
 .collaboration-section .container {
@@ -16,7 +17,7 @@
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 12px;
-  padding: 40px;
+  padding: clamp(16px, 5vw, 40px);
   box-shadow: 0 26px 60px rgba(0, 0, 0, 0.15);
 }
 
@@ -34,10 +35,12 @@
 
 .collaboration-text {
   color: black;
+  min-width: 0; 
+  width: 100%;
 }
 
 .collaboration-text h2 {
-  font-size: clamp(1.8rem, 2.5vw, 1.8rem);
+  font-size: clamp(1.40rem, 3vw, 2.25rem);
   font-weight: 800;
   margin-bottom: 18px;
   line-height: 1.1;
@@ -64,6 +67,18 @@
   line-height: 1.65;
 }
 
+.contact-item img {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0; 
+  margin-top: 2px;
+}
+
+.contact-item span {
+  word-break: break-word;
+  overflow-wrap: anywhere; 
+}
+
 .contact-icon {
   display: inline-flex;
   align-items: center;
@@ -75,11 +90,10 @@
   flex-shrink: 0;
 }
 
-/* --- PEMBARUAN: Styling untuk Interaktif Google Maps --- */
 .collaboration-map {
-  position: relative; /* Wajib ditambahkan sebagai jangkar */
+  position: relative;
   width: 100%;
-  min-height: 420px; 
+  height: clamp(260px, 40vh, 420px);
   border-radius: 10px; 
   overflow: hidden; 
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
@@ -87,7 +101,7 @@
 }
 
 .collaboration-map iframe {
-  position: absolute; /* Memaksa iframe menempel ke semua sisi kontainer */
+  position: absolute; 
   top: 0;
   left: 0;
   width: 100%;
@@ -99,16 +113,11 @@
 /* --- RESPONSIVE BREAKPOINTS --- */
 @media (max-width: 1024px) {
   .collaboration-card {
-    padding: 36px 30px;
     border-radius: 18px;
   }
 
   .collaboration-content {
-    grid-template-columns: 1fr; /* Mengubah tata letak menjadi atas-bawah */
-  }
-
-  .collaboration-text h2 {
-    font-size: 2.2rem;
+    grid-template-columns: 1fr; 
   }
 
   .collaboration-map {
@@ -118,17 +127,7 @@
 
 @media (max-width: 768px) {
   .collaboration-card {
-    padding: 28px 22px;
     border-radius: 16px;
-  }
-
-  .collaboration-text h2 {
-    font-size: 1.95rem;
-  }
-
-  .collaboration-text p {
-    font-size: 0.95rem;
-    margin-bottom: 20px;
   }
 
   .contact-item {
@@ -147,16 +146,6 @@
     border-radius: 14px;
   }
 
-  .collaboration-text h2 {
-    font-size: 1.75rem;
-    margin-bottom: 14px;
-  }
-
-  .collaboration-text p {
-    font-size: 0.92rem;
-    margin-bottom: 16px;
-  }
-
   .collaboration-contacts {
     gap: 12px;
   }
@@ -167,6 +156,6 @@
   }
 
   .collaboration-map {
-    min-height: 280px; /* Peta sedikit lebih pendek di layar HP agar tidak memenuhi satu layar penuh */
+    min-height: 280px; 
   }
 }

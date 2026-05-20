@@ -53,34 +53,26 @@ h2.gallery-header {
 
 @media (max-width: 1024px) {
   .gallery-wrapper {
-    /* Shrinks the entire gallery block so it doesn't feel overwhelmingly wide on tablets */
     max-width: 800px; 
   }
 
   .gallery-grid {
     grid-template-columns: 1fr 1fr;
-    /* Drop the minmax(200px, auto) to let aspect-ratio control the heights */
     grid-template-rows: auto; 
   }
 
   .gallery-item {
-    /* Locks the 4 bottom images into compact, predictable rectangles */
     aspect-ratio: 4 / 3; 
   }
 
   .gallery-item-1 {
     grid-column: 1 / span 2;
     grid-row: 1;
-    /* This is the magic fix for the first image: forces it into a wide, cinematic banner instead of a giant towering box */
     aspect-ratio: 21 / 9; 
   }
 }
 
 @media (max-width: 768px) {
-  h2.gallery-header {
-    font-size: 28px;
-  }
-
   .gallery-wrapper {
     max-width: 100%;
     margin-right: -15px; 
