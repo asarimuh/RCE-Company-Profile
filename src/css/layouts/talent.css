@@ -10,7 +10,7 @@
 }
 
 .talents-section h2 {
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-size: clamp(1.25rem, 3vw, 2rem);
   font-weight: 700;
   color: #1f2937;
   text-align: left;
@@ -99,7 +99,7 @@
 }
 
 .active-talent-name {
-  font-size: clamp(2.4rem, 3.5vw, 2.5rem);
+  font-size: clamp(1.25rem, 3vw, 2.5rem);
   font-weight: 600;
   color: #111827;
   margin: 0;
@@ -111,14 +111,14 @@
   padding: 10px 18px;
   background: rgba(142, 106, 255, 0.1);
   color: #5b21b6;
-  font-size: 0.95rem;
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
   font-weight: 700;
   border-radius: 999px;
   width: fit-content;
 }
 
 .active-talent-description {
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
   line-height: 1.85;
   color: #475569;
   max-width: 620px;
@@ -203,14 +203,6 @@
   .current-talent-image-container {
     max-width: 100%;
   }
-
-  .active-talent-name {
-    font-size: 2.2rem;
-  }
-
-  .active-talent-description {
-    font-size: 0.95rem;
-  }
 }
 
 @media (max-width: 640px) {
@@ -225,21 +217,13 @@
   .talent-card-container {
     gap: 24px;
   }
-
-  .active-talent-name {
-    font-size: 2rem;
-  }
-
-  .active-talent-description {
-    font-size: 0.93rem;
-  }
 }
 
-/* Fix: stack talent columns and prevent horizontal overflow on small devices */
 @media (max-width: 650px) {
+
   .talent-active {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 30px;
     align-items: stretch;
   }
 
@@ -268,8 +252,31 @@
     max-width: 180px;
   }
 
-  /* Ensure page doesn't get an unexpected horizontal scrollbar */
   html, body {
     overflow-x: hidden;
+  }
+
+  h3.active-talent-name {
+    text-align: center;
+  }
+
+  .active-talent-role {
+    margin: 0 auto;
+  }
+
+  .active-talent-description {
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+}
+
+@media (max-width: 360px) {
+  .active-talent-name {
+    font-size: clamp(1.7rem, 2.5vw, 2rem);
+  }
+
+  .active-talent-description {
+    font-size: 0.9rem;
   }
 }
