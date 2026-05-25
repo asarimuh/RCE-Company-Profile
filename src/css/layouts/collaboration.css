@@ -30,12 +30,13 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-  align-items: center; /* Menjaga teks dan map tetap sejajar di tengah */
+  align-items: center;
+  /* Menjaga teks dan map tetap sejajar di tengah */
 }
 
 .collaboration-text {
   color: black;
-  min-width: 0; 
+  min-width: 0;
   width: 100%;
 }
 
@@ -67,22 +68,25 @@
   line-height: 1.65;
 }
 
-.contact-label
-  {
-    font-weight: 600;
-    color: #1a202c;
-  }
+.contact-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1a202c;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 
 .contact-item img {
   width: 20px;
   height: 20px;
-  flex-shrink: 0; 
+  flex-shrink: 0;
   margin-top: 2px;
 }
 
 .contact-item span {
   word-break: break-word;
-  overflow-wrap: anywhere; 
+  overflow-wrap: anywhere;
 }
 
 .contact-icon {
@@ -100,20 +104,20 @@
   position: relative;
   width: 100%;
   height: clamp(260px, 40vh, 420px);
-  border-radius: 10px; 
-  overflow: hidden; 
+  border-radius: 10px;
+  overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
-  background-color: #e2e8f0; 
+  background-color: #e2e8f0;
 }
 
 .collaboration-map iframe {
-  position: absolute; 
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   border: none;
-  display: block; 
+  display: block;
 }
 
 /* --- RESPONSIVE BREAKPOINTS --- */
@@ -123,11 +127,12 @@
   }
 
   .collaboration-content {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
   }
 
   .collaboration-map {
-    min-height: 380px; /* Penyesuaian tinggi peta untuk tablet */
+    min-height: 380px;
+    /* Penyesuaian tinggi peta untuk tablet */
   }
 }
 
@@ -140,9 +145,9 @@
     font-size: 0.9rem;
     gap: 12px;
   }
-  
+
   .collaboration-map {
-    min-height: 320px; 
+    min-height: 320px;
   }
 }
 
@@ -162,6 +167,6 @@
   }
 
   .collaboration-map {
-    min-height: 280px; 
+    min-height: 280px;
   }
 }
