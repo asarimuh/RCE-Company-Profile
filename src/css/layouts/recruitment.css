@@ -1,9 +1,6 @@
 .recruitment-section {
   position: relative;
-  background-image: url('../assets/pink-bg-pattern.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: #1a1a1a;
   padding: clamp(40px, 6vw, 80px) 0;
   overflow: hidden;
 }
@@ -38,7 +35,7 @@
 }
 
 .recruitment-text {
-  color: #111827;
+  color: #ffffff;
   z-index: 2;
   min-width: 0; 
 }
@@ -55,7 +52,7 @@
   font-size: clamp(0.9rem, 2vw, 1.05rem);
   line-height: 1.8;
   margin-bottom: 20px;
-  color: #000000;
+  color: #d3d3d3;
   font-family: "Poppins", sans-serif;
   max-width: 620px;
 }
@@ -63,7 +60,6 @@
 .recruitment-bold {
   font-size: clamp(0.9rem, 2vw, 1rem);
   font-weight: 700;
-  color: #111827;
   margin-bottom: 14px;
   font-family: "Poppins", sans-serif;
 }
@@ -76,6 +72,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+.recruitment-text span {
+  color: #d46fa0;
+}
+
 .recruitment-contact img {
   width: 24px;
   height: 24px;
@@ -85,7 +85,7 @@
 }
 
 .recruitment-contact span {
-  color: #111827;
+  color: #ffffff;
   font-size: clamp(0.875rem, 2vw, 1rem);
   word-break: break-word;
   overflow-wrap: anywhere; 
@@ -122,6 +122,10 @@
   top: -20px;
   right: 100px;
   max-width: 250px;
+}
+
+p.recruitment-bold { 
+  color: #d46fa0;
 }
 
 @media (max-width: 1200px) {
