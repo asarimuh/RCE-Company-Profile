@@ -1,0 +1,246 @@
+/* ================================================
+   SKELETON LOADING - Subpages Only
+   ================================================ */
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Skeleton variants */
+.skeleton-text {
+  height: 16px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.skeleton-heading {
+  height: 32px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  width: 70%;
+}
+
+.skeleton-subheading {
+  height: 24px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  width: 85%;
+}
+
+.skeleton-paragraph {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.skeleton-paragraph .skeleton-text:last-child {
+  width: 80%;
+  margin-bottom: 0;
+}
+
+.skeleton-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.skeleton-card {
+  padding: 24px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #f0f0f0;
+}
+
+.skeleton-card .skeleton-heading {
+  height: 28px;
+  margin-bottom: 12px;
+  width: 60%;
+}
+
+.skeleton-card .skeleton-text {
+  height: 14px;
+  margin-bottom: 8px;
+}
+
+.skeleton-card .skeleton-text:last-child {
+  width: 70%;
+  margin-bottom: 0;
+}
+
+/* Feature grid skeletons */
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 30px 0;
+}
+
+.skeleton-grid-item {
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+}
+
+.skeleton-grid-item .skeleton-heading {
+  height: 24px;
+  margin-bottom: 12px;
+  width: 80%;
+}
+
+.skeleton-grid-item .skeleton-text {
+  height: 14px;
+  margin-bottom: 8px;
+}
+
+.skeleton-grid-item .skeleton-text:nth-child(4) {
+  width: 70%;
+  margin-bottom: 0;
+}
+
+/* Blog header skeleton */
+.skeleton-blog-header {
+  margin-bottom: 40px;
+}
+
+.skeleton-blog-header .skeleton-text:first-child {
+  height: 14px;
+  width: 100px;
+  margin-bottom: 16px;
+}
+
+.skeleton-blog-header .skeleton-heading {
+  height: 40px;
+  margin-bottom: 16px;
+  width: 95%;
+}
+
+.skeleton-blog-header .skeleton-text {
+  height: 16px;
+  margin-bottom: 8px;
+}
+
+.skeleton-blog-header .skeleton-text:last-child {
+  width: 85%;
+  margin-bottom: 0;
+}
+
+/* Article content skeleton */
+.skeleton-article {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.skeleton-article .skeleton-image {
+  aspect-ratio: 4 / 3;
+  margin-bottom: 32px;
+}
+
+.skeleton-article .skeleton-text {
+  height: 18px;
+  margin-bottom: 10px;
+}
+
+.skeleton-article .skeleton-text:nth-child(4n) {
+  width: 85%;
+}
+
+/* Tags skeleton */
+.skeleton-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.skeleton-tag {
+  width: 80px;
+  height: 24px;
+  border-radius: 20px;
+}
+
+/* Key takeaways skeleton */
+.skeleton-takeaways {
+  background: #f8fafc;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 30px 0;
+}
+
+.skeleton-takeaways .skeleton-heading {
+  height: 18px;
+  width: 40%;
+  margin-bottom: 16px;
+}
+
+.skeleton-takeaways-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skeleton-takeaways-item {
+  display: flex;
+  gap: 12px;
+}
+
+.skeleton-takeaways-item .skeleton-text {
+  flex: 1;
+  height: 16px;
+  margin-bottom: 0;
+}
+
+/* Page wrapper state management */
+.page-wrapper.loading {
+  opacity: 1;
+}
+
+.page-wrapper.loaded {
+  opacity: 1;
+}
+
+/* Hide skeleton when page is loaded */
+.skeleton-content {
+  display: block;
+}
+
+.page-wrapper.loaded .skeleton-content {
+  display: none;
+}
+
+.page-wrapper.loaded .actual-content {
+  display: block;
+}
+
+.page-wrapper:not(.loaded) .actual-content {
+  display: none;
+}
+
+/* Smooth transition when switching from skeleton to actual content */
+.actual-content {
+  animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

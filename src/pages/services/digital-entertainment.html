@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/components/navbar.css">
   <link rel="stylesheet" href="/css/components/footer.css">
+  <link rel="stylesheet" href="/css/skeleton-loading.css">
   <link rel="stylesheet" href="/css/pages/digital-entertainment.css">
 </head>
 <body>
@@ -64,7 +65,48 @@
   </header>
   
   <main class="page-wrapper">
-    <div class="content-container">
+    <!-- Skeleton Loading -->
+    <div class="skeleton-content">
+      <div class="content-container">
+        <div class="page-header">
+          <div class="skeleton skeleton-text" style="width: 80px; height: 14px; margin-bottom: 20px;"></div>
+          <div class="skeleton skeleton-heading" style="width: 60%;"></div>
+          <div class="skeleton skeleton-text"></div>
+          <div class="skeleton skeleton-text" style="width: 90%;"></div>
+        </div>
+        
+        <div class="skeleton-grid">
+          <div class="skeleton-grid-item">
+            <div class="skeleton skeleton-heading"></div>
+            <div class="skeleton skeleton-text"></div>
+            <div class="skeleton skeleton-text"></div>
+            <div class="skeleton skeleton-text" style="width: 70%;"></div>
+          </div>
+          <div class="skeleton-grid-item">
+            <div class="skeleton skeleton-heading"></div>
+            <div class="skeleton skeleton-text"></div>
+            <div class="skeleton skeleton-text"></div>
+            <div class="skeleton skeleton-text" style="width: 70%;"></div>
+          </div>
+          <div class="skeleton-grid-item">
+            <div class="skeleton skeleton-heading"></div>
+            <div class="skeleton skeleton-text"></div>
+            <div class="skeleton skeleton-text"></div>
+            <div class="skeleton skeleton-text" style="width: 70%;"></div>
+          </div>
+          <div class="skeleton-grid-item">
+            <div class="skeleton skeleton-heading"></div>
+            <div class="skeleton skeleton-text"></div>
+            <div class="skeleton skeleton-text"></div>
+            <div class="skeleton skeleton-text" style="width: 70%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Actual Content -->
+    <div class="actual-content">
+      <div class="content-container">
       
       <!-- Header -->
       <div class="page-header">
@@ -145,6 +187,16 @@
   </footer>
 
   <script type="module" src="/js/main.js"></script>
+
+  <!-- Skeleton Loader Initialization -->
+  <script type="module">
+    import { initSkeletonLoader } from '/js/skeleton-loader.js';
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initSkeletonLoader);
+    } else {
+      initSkeletonLoader();
+    }
+  </script>
 </body>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-W056BT8ZDC"></script>

@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="/css/components/navbar.css">
   <link rel="stylesheet" href="/css/components/footer.css">
   <link rel="stylesheet" href="/css/blogs/blog-detail.css">
+  <link rel="stylesheet" href="/css/skeleton-loading.css">
 
   <style>
     /* ===== READING PROGRESS BAR ===== */
@@ -493,7 +494,32 @@
 
   <!-- ================= ARTICLE ================= -->
   <main class="blog-wrapper">
-    <article class="blog-container">
+    <!-- Skeleton Loading -->
+    <div class="skeleton-content">
+      <div class="skeleton-blog-header">
+        <div class="skeleton skeleton-text" style="width: 100px; height: 14px;"></div>
+        <div class="skeleton skeleton-heading" style="height: 40px; margin-bottom: 16px;"></div>
+        <div class="skeleton skeleton-text"></div>
+      </div>
+      <div class="skeleton skeleton-image" style="aspect-ratio: 4/3;"></div>
+      <div class="skeleton-takeaways">
+        <div class="skeleton skeleton-heading" style="width: 50%; height: 18px;"></div>
+        <div class="skeleton-takeaways-list">
+          <div class="skeleton-takeaways-item"><div class="skeleton skeleton-text"></div></div>
+          <div class="skeleton-takeaways-item"><div class="skeleton skeleton-text"></div></div>
+          <div class="skeleton-takeaways-item"><div class="skeleton skeleton-text"></div></div>
+        </div>
+      </div>
+      <div class="skeleton-article">
+        <div class="skeleton skeleton-text"></div>
+        <div class="skeleton skeleton-text"></div>
+        <div class="skeleton skeleton-text" style="width: 85%;"></div>
+      </div>
+    </div>
+
+    <!-- Actual Content -->
+    <div class="actual-content">
+      <article class="blog-container">
 
       <a href="/pages/blogs.html" class="blog-back-link">&larr; Kembali ke Daftar Blog</a>
 
@@ -702,6 +728,7 @@
       <a href="/pages/blogs.html" class="bottom-blog-back-link">&larr; Kembali ke Daftar Blog</a>
 
     </article>
+      </div><!-- End of actual-content -->
   </main>
 
   <footer id="footer" class="footer-section">
@@ -747,6 +774,16 @@
   </footer>
 
   <script type="module" src="/js/main.js"></script>
+
+  <!-- Skeleton Loader Initialization -->
+  <script type="module">
+    import { initSkeletonLoader } from '/js/skeleton-loader.js';
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initSkeletonLoader);
+    } else {
+      initSkeletonLoader();
+    }
+  </script>
 
   <script>
     // Reading Progress Bar
