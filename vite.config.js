@@ -23,6 +23,7 @@ export default defineConfig({
         setupLightning: resolve(__dirname, 'src/pages/blogs/setup-lightning-murah.html'),
         trenTiktokDance2026: resolve(__dirname, 'src/pages/blogs/tren-tiktok-dance-2026.html'),
         talentIncubation: resolve(__dirname, 'src/pages/blogs/talent-incubation.html'),
+        brandingDigital: resolve(__dirname, 'src/pages/blogs/branding-digital.html'),
       },
     },
   },
