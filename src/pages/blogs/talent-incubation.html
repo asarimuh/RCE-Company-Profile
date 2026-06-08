@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apa yang Terjadi Setelah Kamu Bergabung sebagai Talent RCE? - Rising Creators Entertainment</title>
+
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1476771547091064');
+    fbq('track', 'PageView');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/components/navbar.css">
+  <link rel="stylesheet" href="/css/components/footer.css">
+  <link rel="stylesheet" href="/css/blogs/blog-detail.css">
+
+  <style>
+    /* ===== READING PROGRESS ===== */
+    #reading-progress {
+      position: fixed;
+      top: 0; left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #0f172a, #475569);
+      z-index: 9999;
+      transition: width 0.1s linear;
+    }
+
+    /* ===== TAGS ===== */
+    .post-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .post-tag {
+      display: inline-block;
+      background-color: #f1f5f9;
+      color: #475569;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* ===== KEY TAKEAWAYS ===== */
+    .key-takeaways {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin: 40px 0;
+    }
+
+    .key-takeaways-title {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #64748b;
+      margin-bottom: 14px;
+    }
+
+    .key-takeaways ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .key-takeaways ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 1rem;
+      color: #1e293b;
+      line-height: 1.6;
+      margin-bottom: 10px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .key-takeaways ul li:last-child { margin-bottom: 0; }
+
+    .key-takeaways ul li::before {
+      content: "✓";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      background: #0f172a;
+      color: white;
+      border-radius: 50%;
+      font-size: 0.65rem;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    /* ===== TIP BOXES ===== */
+    .tip-box {
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin: 32px 0;
+    }
+
+    .tip-box-yellow { background: #fffbeb; border-left: 4px solid #f59e0b; }
+    .tip-box-blue   { background: #eff6ff; border-left: 4px solid #3b82f6; }
+    .tip-box-green  { background: #f0fdf4; border-left: 4px solid #22c55e; }
+    .tip-box-purple { background: #faf5ff; border-left: 4px solid #a855f7; }
+
+    .tip-box-label {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+    }
+
+    .tip-box-yellow .tip-box-label { color: #d97706; }
+    .tip-box-blue   .tip-box-label { color: #2563eb; }
+    .tip-box-green  .tip-box-label { color: #16a34a; }
+    .tip-box-purple .tip-box-label { color: #9333ea; }
+
+    .tip-box p {
+      margin: 0 !important;
+      font-size: 0.98rem;
+      line-height: 1.65;
+    }
+
+    .tip-box-yellow p { color: #78350f; }
+    .tip-box-blue   p { color: #1e3a5f; }
+    .tip-box-green  p { color: #14532d; }
+    .tip-box-purple p { color: #581c87; }
+
+    /* ===== STEP NUMBER ON H2 ===== */
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      background: #0f172a;
+      color: white;
+      border-radius: 10px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    /* ===== THREE PILLAR CARDS ===== */
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 32px 0;
+    }
+
+    .pillar-card {
+      background: #0f172a;
+      color: white;
+      border-radius: 16px;
+      padding: 24px 20px;
+    }
+
+    .pillar-icon {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+
+    .pillar-title {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.95rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .pillar-items {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .pillar-items li {
+      font-size: 0.82rem;
+      color: #94a3b8;
+      font-family: "Poppins", sans-serif;
+      line-height: 1.5;
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .pillar-items li:last-child { border-bottom: none; }
+
+    .pillar-items li::before {
+      content: "→";
+      font-size: 0.7rem;
+      color: #475569;
+      flex-shrink: 0;
+    }
+
+    /* ===== JOURNEY TIMELINE ===== */
+    .journey-timeline {
+      list-style: none;
+      padding: 0;
+      margin: 32px 0;
+      position: relative;
+    }
+
+    .journey-timeline::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 10px;
+      bottom: 10px;
+      width: 2px;
+      background: linear-gradient(to bottom, #0f172a, #e2e8f0);
+    }
+
+    .journey-timeline li {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 28px;
+      position: relative;
+    }
+
+    .journey-timeline li:last-child { margin-bottom: 0; }
+
+    .journey-badge {
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+      border-radius: 12px;
+      background: #0f172a;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 0.8rem;
+      z-index: 1;
+      letter-spacing: 0.02em;
+    }
+
+    .journey-body { padding-top: 4px; }
+
+    .journey-phase {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #94a3b8;
+      font-family: "Poppins", sans-serif;
+      margin-bottom: 3px;
+    }
+
+    .journey-title {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      color: #0f172a;
+      margin-bottom: 5px;
+    }
+
+    .journey-desc {
+      font-size: 0.9rem;
+      color: #64748b;
+      line-height: 1.6;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+    }
+
+    /* ===== WHAT YOU GET GRID ===== */
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 28px 0;
+    }
+
+    .benefit-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .benefit-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .benefit-title {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .benefit-desc {
+      font-size: 0.84rem;
+      color: #64748b;
+      line-height: 1.55;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+    }
+
+    /* ===== DIVIDER ===== */
+    .post-divider {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+      margin: 48px 0;
+    }
+
+    /* ===== AUTHOR CARD ===== */
+    .author-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-top: 48px;
+    }
+
+    .author-avatar {
+      width: 64px;
+      height: 64px;
+      min-width: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0f172a, #475569);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 1.4rem;
+    }
+
+    .author-info-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94a3b8;
+      font-family: "Poppins", sans-serif;
+      margin-bottom: 2px;
+    }
+
+    .author-name {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .author-bio {
+      font-size: 0.88rem;
+      color: #64748b;
+      line-height: 1.5;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+    }
+
+    /* ===== CTA BANNER ===== */
+    .cta-banner {
+      background: #0f172a;
+      border-radius: 20px;
+      padding: 36px 32px;
+      margin: 48px 0;
+      text-align: center;
+    }
+
+    .cta-banner-title {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .cta-banner-sub {
+      font-size: 0.95rem;
+      color: #94a3b8;
+      font-family: "Poppins", sans-serif;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .cta-banner-btn {
+      display: inline-block;
+      background: #FF62F4;
+      color: #0f172a;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 12px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .cta-banner-btn:hover {
+      opacity: 0.88;
+      transform: translateY(-2px);
+    }
+
+    /* ===== RELATED POSTS ===== */
+    .related-section {
+      margin-top: 64px;
+      padding-top: 48px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .related-title {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 24px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .related-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: block;
+    }
+
+    .related-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+
+    .related-card-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+      overflow: hidden;
+    }
+
+    .related-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .related-card-body { padding: 16px 18px 20px; }
+
+    .related-card-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #64748b;
+      font-family: "Poppins", sans-serif;
+      margin-bottom: 6px;
+    }
+
+    .related-card-title {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.35;
+    }
+
+    /* ===== SHARE ===== */
+    .share-section {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .share-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #64748b;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: "Poppins", sans-serif;
+      text-decoration: none;
+      border: 1px solid #e2e8f0;
+      color: #334155;
+      background: white;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .share-btn:hover {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 640px) {
+      .pillar-grid { grid-template-columns: 1fr; }
+      .benefit-grid { grid-template-columns: 1fr; }
+      .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; text-align: center; }
+      .key-takeaways { padding: 20px; }
+      .cta-banner { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="reading-progress"></div>
+
+  <!-- ================= NAVBAR ================= -->
+  <header id="header">
+    <nav class="navbar">
+      <div class="nav-left">
+        <div class="nav-logo"><img src="/assets/rce-brand-logo.svg" alt="brand logo"></div>
+        <div class="nav-text"><h1>Rising Creators Entertainment</h1></div>
+      </div>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="/index.html#talents">Talents</a></li>
+          <li><a href="/index.html#live">Live</a></li>
+          <li><a href="/index.html#about">About Us</a></li>
+          <li><a href="/index.html#gallery">Gallery</a></li>
+          <li><a href="/index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="blog-wrapper">
+    <article class="blog-container">
+
+      <a href="/index.html#blog" class="blog-back-link">&larr; Kembali ke Blog</a>
+
+      <header class="post-header">
+        <div class="post-tags">
+          <span class="post-tag">Talent Incubation</span>
+          <span class="post-tag">Karier</span>
+          <span class="post-tag">Creator Development</span>
+        </div>
+        <div class="post-meta">Jun 1, 2026 &bull; 8 min read &bull; Oleh Tim RCE</div>
+        <h1 class="post-title">Apa yang Terjadi Setelah Kamu Bergabung sebagai Talent RCE?</h1>
+      </header>
+
+      <div class="post-featured-image">
+        <img src="/assets/blog-talent-incubation.png" alt="Talent Incubation Rising Creators Entertainment">
+      </div>
+
+      <div class="key-takeaways">
+        <p class="key-takeaways-title">📌 Yang Akan Kamu Baca</p>
+        <ul>
+          <li>Tiga pilar utama program pengembangan talent RCE</li>
+          <li>Perjalanan lengkap dari hari pertama hingga pentas perdana</li>
+          <li>Apa saja yang kamu pelajari selama masa inkubasi</li>
+          <li>Dukungan nyata yang diterima talent RCE — bukan sekadar janji</li>
+          <li>Siapa yang cocok bergabung dan bagaimana cara memulainya</li>
+        </ul>
+      </div>
+
+      <div class="post-content">
+
+        <p>Banyak orang bertanya: <em>"Kalau aku join RCE, terus ngapain aja?"</em> Pertanyaan yang wajar, karena di luar sana banyak agensi yang menerima talent tapi hanya melemparkan mereka langsung ke panggung tanpa bekal apapun. Di Rising Creators Entertainment, jawabannya berbeda.</p>
+
+        <p>RCE bukan sekadar agensi live host atau talent agency konvensional. Kami adalah ekosistem bisnis digital yang membangun talenta secara menyeluruh — dari kemampuan teknis di atas panggung, personal branding yang kuat, hingga pemahaman tentang industri hiburan digital dan commerce. Ketika kamu bergabung sebagai talent RCE, kamu masuk ke dalam sebuah <strong>program inkubasi talent</strong> yang terstruktur dan dirancang untuk membawamu dari titik nol menuju karier yang sesungguhnya.</p>
+
+        <h2><span class="step-number">1</span> Tiga Pilar Program Talent Incubation RCE</h2>
+
+        <p>Seluruh program pengembangan talent di RCE dibangun di atas tiga pilar utama yang saling melengkapi. Ketiganya bukan jalur yang terpisah, melainkan satu ekosistem terintegrasi yang bekerja bersamaan untuk membentuk seorang kreator yang lengkap dan siap bersaing.</p>
+
+        <div class="pillar-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon">🎭</div>
+            <p class="pillar-title">Creator Development</p>
+            <ul class="pillar-items">
+              <li>Pengembangan identitas kreatif</li>
+              <li>Personal branding & image</li>
+              <li>Konten strategi & storytelling</li>
+              <li>Kolaborasi antar talent</li>
+            </ul>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">🎙️</div>
+            <p class="pillar-title">Live Host Management</p>
+            <ul class="pillar-items">
+              <li>Manajemen jadwal siaran</li>
+              <li>Optimasi performa live</li>
+              <li>Analisis audiens & engagement</li>
+              <li>Monetisasi & gift strategy</li>
+            </ul>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">🏋️</div>
+            <p class="pillar-title">Training & Coaching</p>
+            <ul class="pillar-items">
+              <li>Vokal & teknik bernyanyi</li>
+              <li>Koreografi & stage movement</li>
+              <li>Public speaking & hosting</li>
+              <li>Mental performance & mindset</li>
+            </ul>
+          </div>
+        </div>
+
+        <p>Ketiga pilar ini dirancang bukan untuk membuat semua talent terlihat sama, melainkan untuk memastikan setiap talent memiliki <strong>fondasi yang kokoh</strong> di bidangnya masing-masing — sekaligus memahami cara bekerja dalam ekosistem digital yang lebih luas.</p>
+
+        <h2><span class="step-number">2</span> Perjalananmu dari Hari Pertama</h2>
+
+        <p>Berikut adalah gambaran nyata tentang apa yang akan kamu jalani setelah resmi bergabung sebagai talent RCE. Setiap fase dirancang untuk membangun kepercayaan diri dan kapabilitasmu secara bertahap — tidak ada yang langsung dilempar ke panggung tanpa persiapan.</p>
+
+        <ul class="journey-timeline">
+          <li>
+            <div class="journey-badge">W1–2</div>
+            <div class="journey-body">
+              <p class="journey-phase">Fase 1 — Onboarding</p>
+              <p class="journey-title">Orientasi & Asesmen Awal</p>
+              <p class="journey-desc">Kamu diperkenalkan dengan tim, ekosistem kerja RCE, dan nilai-nilai perusahaan. Tim kami melakukan asesmen awal untuk memahami kekuatan, area pengembangan, dan tujuan kariermu. Di sini kami merancang roadmap personal yang disesuaikan dengan profilmu.</p>
+            </div>
+          </li>
+          <li>
+            <div class="journey-badge">W3–6</div>
+            <div class="journey-body">
+              <p class="journey-phase">Fase 2 — Foundation Training</p>
+              <p class="journey-title">Pelatihan Dasar Intensif</p>
+              <p class="journey-desc">Sesi pelatihan terjadwal mencakup teknik vokal, dasar koreografi, public speaking, dan cara membawakan diri di depan kamera. Setiap sesi dipimpin oleh coach berpengalaman, dan progresmu dipantau setiap minggunya.</p>
+            </div>
+          </li>
+          <li>
+            <div class="journey-badge">M2–3</div>
+            <div class="journey-body">
+              <p class="journey-phase">Fase 3 — Brand Building</p>
+              <p class="journey-title">Membangun Identitas Kreatif</p>
+              <p class="journey-desc">Bersama tim creator development, kamu mulai membangun persona digital yang autentik — mulai dari gaya komunikasi, visual identity, hingga angle konten yang paling sesuai denganmu. Ini bukan tentang menjadi orang lain, tapi tentang menemukan versi terbaik dari dirimu sendiri.</p>
+            </div>
+          </li>
+          <li>
+            <div class="journey-badge">M3–4</div>
+            <div class="journey-body">
+              <p class="journey-phase">Fase 4 — Live Debut</p>
+              <p class="journey-title">Pentas Perdana yang Terencana</p>
+              <p class="journey-desc">Sesi live pertamamu tidak dilakukan sendirian. Tim RCE mendampingi dari persiapan teknis, setlist, talking points, hingga evaluasi pasca-live. Penonton pertamamu sudah ada — karena kami membangun audiens bersamamu, bukan menyerahkannya padamu seorang diri.</p>
+            </div>
+          </li>
+          <li>
+            <div class="journey-badge">M4+</div>
+            <div class="journey-body">
+              <p class="journey-phase">Fase 5 — Growth & Scaling</p>
+              <p class="journey-title">Akselerasi Karier Jangka Panjang</p>
+              <p class="journey-desc">Setelah debut, kamu memasuki fase pertumbuhan aktif. Jadwal live dioptimasi, strategi monetisasi dikembangkan, peluang kolaborasi brand dibuka, dan coaching berlanjut secara berkala. Di sinilah karier sesungguhnya dimulai.</p>
+            </div>
+          </li>
+        </ul>
+
+        <blockquote>
+          "Kami tidak mencari talent yang sudah sempurna. Kami mencari orang yang mau berkembang — dan kami akan ada di setiap langkah perjalanannya."
+        </blockquote>
+
+        <h2><span class="step-number">3</span> Apa yang Kamu Dapatkan secara Nyata</h2>
+
+        <p>Banyak agensi menjanjikan "dukungan penuh" tapi tidak pernah menjelaskan artinya secara konkret. Di RCE, dukungan itu berwujud nyata dan terstruktur:</p>
+
+        <div class="benefit-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">🎓</div>
+            <div>
+              <p class="benefit-title">Sesi Coaching Terjadwal</p>
+              <p class="benefit-desc">Akses ke coach vokal, koreografer, dan mentor hosting profesional dengan jadwal yang jelas dan terstruktur — bukan sekadar "kalau ada waktu".</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">📊</div>
+            <div>
+              <p class="benefit-title">Analisis Performa Live</p>
+              <p class="benefit-desc">Setiap sesi live dianalisis: retention rate, engagement, peak audience time, dan gift conversion. Data ini digunakan untuk terus meningkatkan strategimu.</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🎨</div>
+            <div>
+              <p class="benefit-title">Dukungan Branding & Konten</p>
+              <p class="benefit-desc">Tim kreatif RCE membantu pengembangan visual identity, template konten, dan strategi sosial media yang konsisten dengan persona unikmu.</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🤝</div>
+            <div>
+              <p class="benefit-title">Jaringan Kolaborasi</p>
+              <p class="benefit-desc">Sebagai bagian dari ekosistem RCE, kamu terhubung dengan talent lain, mitra brand, dan jaringan bisnis yang membuka peluang kolaborasi lintas industri.</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">📱</div>
+            <div>
+              <p class="benefit-title">Manajemen Live & Teknis</p>
+              <p class="benefit-desc">Tim live management RCE menangani setup teknis, koordinasi platform, dan pemantauan sesi siaran — sehingga kamu bisa fokus sepenuhnya pada performa.</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">💰</div>
+            <div>
+              <p class="benefit-title">Strategi Monetisasi</p>
+              <p class="benefit-desc">Dari gift TikTok Live hingga brand deal dan integrasi e-commerce, kami membantu kamu memahami dan memaksimalkan setiap sumber pendapatan yang tersedia.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tip-box tip-box-purple">
+          <p class="tip-box-label">✨ Yang Membedakan RCE</p>
+          <p>Karena RCE beroperasi di tiga ekosistem sekaligus — entertainment, corporate consulting, dan e-commerce — talentamu tidak hanya tumbuh sebagai performer. Kamu berpotensi menjadi bagian dari kolaborasi yang jauh lebih besar: menjadi brand ambassador untuk klien korporat kami, wajah dari kampanye e-commerce, atau bahkan co-host untuk acara bisnis skala nasional.</p>
+        </div>
+
+        <h2><span class="step-number">4</span> Siapa yang Cocok Bergabung?</h2>
+
+        <p>RCE tidak mensyaratkan kamu sudah punya puluhan ribu followers, sudah bisa menyanyi sempurna, atau sudah pernah manggung. Yang kami cari adalah kombinasi dari tiga hal:</p>
+
+        <div class="key-takeaways" style="margin-top: 0;">
+          <p class="key-takeaways-title">🔍 Kriteria Talent RCE</p>
+          <ul>
+            <li><strong>Antusias dan mau belajar</strong> — Bakat bawaan bagus, tapi growth mindset jauh lebih penting. Kami investasi pada orang yang mau berkembang.</li>
+            <li><strong>Konsisten dan dapat diandalkan</strong> — Live streaming adalah soal jadwal dan kepercayaan audiens. Konsistensi adalah kualitas nomor satu yang kami nilai.</li>
+            <li><strong>Punya kepribadian yang autentik</strong> — Kamu tidak perlu menjadi siapa pun selain dirimu sendiri. Tapi kamu harus mau menampilkan dirimu itu dengan penuh dan percaya diri.</li>
+            <li><strong>Tertarik dengan industri digital</strong> — Pemahaman dasar tentang media sosial, live streaming, atau e-commerce adalah nilai tambah yang besar.</li>
+          </ul>
+        </div>
+
+        <div class="tip-box tip-box-green">
+          <p class="tip-box-label">✅ Tidak Harus Sempurna dari Awal</p>
+          <p>Beberapa talent terbaik kami tidak pernah tampil di depan publik sebelumnya. Yang membuat mereka berhasil bukan bakat awal yang luar biasa — melainkan kemauan untuk berlatih, menerima feedback, dan terus menampilkan diri meski belum sempurna. Kesempurnaan adalah tujuan, bukan prasyarat.</p>
+        </div>
+
+        <hr class="post-divider">
+
+        <h2>RCE Bukan Hanya Agensi — Ini Ekosistem</h2>
+
+        <p>Yang membedakan program inkubasi RCE dari agensi talent konvensional adalah konteks di mana pengembanganmu terjadi. Kamu tidak hanya dilatih untuk tampil live — kamu dipersiapkan untuk menjadi bagian dari ekosistem bisnis digital yang lebih besar.</p>
+
+        <p>Artinya, seorang talent RCE yang berkembang bisa bergerak secara lateral: mulai dari live entertainer, lalu menjadi brand ambassador klien korporat kami, lalu menjadi wajah kampanye livestream commerce. Batas antara entertainer, marketer, dan entrepreneur menjadi sangat tipis — dan kami mempersiapkan kamu untuk beroperasi di semua ruang itu.</p>
+
+        <p>Ini bukan janji yang muluk. Ini adalah arah yang sedang kami bangun, dan kamu bisa menjadi bagian dari fondasinya sejak hari ini.</p>
+
+      </div>
+
+      <!-- CTA Banner -->
+      <div class="cta-banner">
+        <p class="cta-banner-title">Siap Memulai Perjalananmu?</p>
+        <p class="cta-banner-sub">Kirimkan profilmu kepada kami dan tim RCE akan menghubungimu untuk membahas langkah selanjutnya. Tidak ada persyaratan yang rumit — cukup tunjukkan siapa dirimu.</p>
+        <a href="mailto:risingcreators.marketing@gmail.com" class="cta-banner-btn">Kirim Profilmu Sekarang →</a>
+      </div>
+
+      <!-- Share -->
+      <div class="share-section">
+        <span class="share-label">Bagikan artikel:</span>
+        <a class="share-btn" href="#" onclick="shareArticle('twitter'); return false;">𝕏 Twitter</a>
+        <a class="share-btn" href="#" onclick="shareArticle('whatsapp'); return false;">💬 WhatsApp</a>
+        <button class="share-btn" onclick="copyLink()">🔗 Salin Link</button>
+      </div>
+
+      <!-- Author Card -->
+      <div class="author-card">
+        <div class="author-avatar">RC</div>
+        <div class="author-info">
+          <p class="author-info-label">Ditulis oleh</p>
+          <p class="author-name">Tim Rising Creators Entertainment</p>
+          <p class="author-bio">Artikel ini ditulis oleh tim internal RCE untuk memberikan gambaran jujur dan lengkap tentang program pengembangan talent kami kepada siapapun yang ingin bergabung dan bertumbuh bersama ekosistem kami.</p>
+        </div>
+      </div>
+
+      <!-- Related Posts -->
+      <div class="related-section">
+        <p class="related-title">Artikel Terkait</p>
+        <div class="related-grid">
+          <a href="/pages/blogs/teknik-vokal.html" class="related-card">
+            <div class="related-card-img">
+              <img src="/assets/blog-1.png" alt="Teknik Vokal" onerror="this.style.display='none'">
+            </div>
+            <div class="related-card-body">
+              <p class="related-card-tag">Vokal</p>
+              <p class="related-card-title">Cara Meningkatkan Teknik Vokal untuk Penampilan Live</p>
+            </div>
+          </a>
+          <a href="/pages/blogs/tips-live-streaming.html" class="related-card">
+            <div class="related-card-img">
+              <img src="/assets/blog-3.png" alt="Tips Live Streaming" onerror="this.style.display='none'">
+            </div>
+            <div class="related-card-body">
+              <p class="related-card-tag">Live Streaming</p>
+              <p class="related-card-title">Tips Live Streaming yang Menarik dan Mempertahankan Audiens</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    const progressBar = document.getElementById('reading-progress');
+    window.addEventListener('scroll', () => {
+      const article = document.querySelector('.blog-container');
+      const articleTop = article.offsetTop;
+      const articleHeight = article.offsetHeight;
+      const windowHeight = window.innerHeight;
+      const scrolled = window.scrollY;
+      const progress = Math.min(
+        Math.max((scrolled - articleTop + windowHeight * 0.3) / (articleHeight - windowHeight * 0.5), 0), 1
+      );
+      progressBar.style.width = (progress * 100) + '%';
+    });
+
+    function shareArticle(platform) {
+      const url = encodeURIComponent(window.location.href);
+      const title = encodeURIComponent(document.title);
+      if (platform === 'twitter') {
+        window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`, '_blank');
+      } else if (platform === 'whatsapp') {
+        window.open(`https://wa.me/?text=${title}%20${url}`, '_blank');
+      }
+    }
+
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        const btn = event.target;
+        btn.textContent = '✅ Tersalin!';
+        setTimeout(() => { btn.textContent = '🔗 Salin Link'; }, 2000);
+      });
+    }
+  </script>
+
+</body>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W056BT8ZDC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W056BT8ZDC');
+</script>
+</html>

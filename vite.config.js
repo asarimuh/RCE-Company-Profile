@@ -22,6 +22,7 @@ export default defineConfig({
         menghadapiHateComment: resolve(__dirname, 'src/pages/blogs/menghadapi-hate-comment.html'),
         setupLightning: resolve(__dirname, 'src/pages/blogs/setup-lightning-murah.html'),
         trenTiktokDance2026: resolve(__dirname, 'src/pages/blogs/tren-tiktok-dance-2026.html'),
+        talentIncubation: resolve(__dirname, 'src/pages/blogs/talent-incubation.html'),
       },
     },
   },
