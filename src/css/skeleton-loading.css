@@ -206,11 +206,13 @@
 }
 
 /* Page wrapper state management */
-.page-wrapper.loading {
+.page-wrapper.loading,
+.blog-wrapper.loading {
   opacity: 1;
 }
 
-.page-wrapper.loaded {
+.page-wrapper.loaded,
+.blog-wrapper.loaded {
   opacity: 1;
 }
 
@@ -219,15 +221,18 @@
   display: block;
 }
 
-.page-wrapper.loaded .skeleton-content {
+.page-wrapper.loaded .skeleton-content,
+.blog-wrapper.loaded .skeleton-content {
   display: none;
 }
 
-.page-wrapper.loaded .actual-content {
+.page-wrapper.loaded .actual-content,
+.blog-wrapper.loaded .actual-content {
   display: block;
 }
 
-.page-wrapper:not(.loaded) .actual-content {
+.page-wrapper:not(.loaded) .actual-content,
+.blog-wrapper:not(.loaded) .actual-content {
   display: none;
 }
 

@@ -171,7 +171,7 @@ function waitForDOMReady() {
  */
 function revealContent(pageWrapper) {
   if (!pageWrapper) {
-    pageWrapper = document.querySelector('.page-wrapper');
+    pageWrapper = document.querySelector('.page-wrapper, .blog-wrapper');
   }
 
   if (!pageWrapper) return;

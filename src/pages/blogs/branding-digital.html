@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="/css/components/navbar.css">
   <link rel="stylesheet" href="/css/components/footer.css">
   <link rel="stylesheet" href="/css/blogs/blog-detail.css">
+  <link rel="stylesheet" href="/css/skeleton-loading.css">
 
   <style>
     /* ===== READING PROGRESS ===== */
@@ -661,6 +662,30 @@
 
   <main class="blog-wrapper">
     <article class="blog-container">
+      <!-- Skeleton Loading -->
+      <div class="skeleton-content">
+        <div class="skeleton-blog-header">
+          <div class="skeleton skeleton-text" style="width: 100px; height: 14px;"></div>
+          <div class="skeleton skeleton-heading" style="height: 40px; margin-bottom: 16px;"></div>
+          <div class="skeleton skeleton-text"></div>
+        </div>
+        <div class="skeleton skeleton-image" style="aspect-ratio: 4/3;"></div>
+        <div class="skeleton-takeaways">
+          <div class="skeleton skeleton-heading" style="width: 50%; height: 18px;"></div>
+          <div class="skeleton-takeaways-list">
+            <div class="skeleton-takeaways-item"><div class="skeleton skeleton-text"></div></div>
+            <div class="skeleton-takeaways-item"><div class="skeleton skeleton-text"></div></div>
+            <div class="skeleton-takeaways-item"><div class="skeleton skeleton-text"></div></div>
+          </div>
+        </div>
+        <div class="skeleton-article">
+          <div class="skeleton skeleton-text"></div>
+          <div class="skeleton skeleton-text"></div>
+          <div class="skeleton skeleton-text" style="width: 85%;"></div>
+        </div>
+      </div>
+
+      <div class="actual-content">
 
       <a href="/index.html#blog" class="blog-back-link">&larr; Kembali ke Blog</a>
 
@@ -989,6 +1014,16 @@
       <p class="footer-copy">&copy; 2026 Rising Creators Entertainment. All Rights Reserved.</p>
     </div>
   </footer>
+
+  <!-- Skeleton Loader Initialization -->
+  <script type="module">
+    import { initSkeletonLoader } from '/js/skeleton-loader.js';
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initSkeletonLoader);
+    } else {
+      initSkeletonLoader();
+    }
+  </script>
 
   <script>
     const progressBar = document.getElementById('reading-progress');
