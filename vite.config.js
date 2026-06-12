@@ -27,6 +27,8 @@ export default defineConfig({
         penghasilanLiveHost: resolve(__dirname, 'src/pages/blogs/penghasilan-live-host.html'),
         apaItuMCN: resolve(__dirname, 'src/pages/blogs/apa-itu-mcn-agency.html'),
         CaraMenjadiLiveHost: resolve(__dirname, 'src/pages/blogs/cara-menjadi-live-host-tiktok.html'),
+        BodyLanguageLiveHost: resolve(__dirname, 'src/pages/blogs/body-language-depan-kamera.html'),
+        strategiLiveStreamingPertama: resolve(__dirname, 'src/pages/blogs/strategi-live-streaming-pertama.html'),
       },
     },
   },
