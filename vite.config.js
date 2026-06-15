@@ -29,7 +29,7 @@ export default defineConfig({
         CaraMenjadiLiveHost: resolve(__dirname, 'src/pages/blogs/cara-menjadi-live-host-tiktok.html'),
         BodyLanguageLiveHost: resolve(__dirname, 'src/pages/blogs/body-language-depan-kamera.html'),
         strategiLiveStreamingPertama: resolve(__dirname, 'src/pages/blogs/strategi-live-streaming-pertama.html'),
-        storytellingLiveStreaming: resolve(__dirname, 'src/pages/blogs/storytelling-live-streaming.html'),
+        storytellingLiveStreaming: resolve(__dirname, 'src/pages/blogs/storytelling-untuk-live-host.html'),
         apaYangDilakukanHostProfesionalSaatSepiPenonton: resolve(__dirname, 'src/pages/blogs/apa-yang-dilakukan-host-profesional-saat-sepi-penonton.html'),
         expandingBusinesssToIndonesia: resolve(__dirname, 'src/pages/blogs/expanding-business-to-indonesia.html'),
       },
