@@ -9,7 +9,7 @@
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
         n.callMethod ?
-        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
       };
       if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
       n.queue = []; t = b.createElement(e); t.async = !0;
@@ -28,9 +28,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="icon" href="/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/reset.css">
@@ -45,619 +45,640 @@
   <div id="loading-screen">
     <div class="loading-spinner">
       <div class="spinner-ring"></div>
-      <p class="loading-text">Loading<span class="loading-dot">.</span><span class="loading-dot">.</span><span class="loading-dot">.</span></p>
+      <p class="loading-text">Loading<span class="loading-dot">.</span><span class="loading-dot">.</span><span
+          class="loading-dot">.</span></p>
     </div>
   </div>
 
   <!-- Main App Content -->
   <div id="app">
     <header id="header">
-    <nav class="navbar">
-      <div class="nav-left">
-        <div class="nav-logo">
-          <img src="./assets/rce-brand-logo.svg" alt="brand logo">
-        </div>
-        <div class="nav-text">
-          <h1>Rising Creators Entertainment</h1>
-        </div>
-      </div>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" type="button">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
-      <div class="nav-right">
-        <ul id="primary-navigation" class="nav-links">
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Our Services</a></li>
-          <li><a href="#talents">Talents</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="https://www.tiktok.com/@rce_87" target="_blank">Live</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <section id="hero" class="hero">
-      <div class="container">
-        <div class="hero-content">
-          <div class="hero-col hero-image-left">
-            <img src="./assets/hero-image-1.png" alt="Creative entertainment">
+      <nav class="navbar">
+        <div class="nav-left">
+          <div class="nav-logo">
+            <img src="./assets/rce-brand-logo.svg" alt="brand logo">
           </div>
-
-          <div class="hero-col hero-text">
-            <h2 class="hero-header">Rising Creators Entertainment</h2>
-            <p class="hero-description">
-              Membangun Peluang melalui Entertainment, Solusi Bisnis, dan Digital Commerce
-            </p>
-            <button class="hero-button" onclick="window.open('https://www.tiktok.com/@rce_87', '_blank')">Watch
-              Live</button>
-          </div>
-
-          <div class="hero-col hero-image-right">
-            <img src="./assets/hero-image-2.png" alt="Entertainment showcase">
+          <div class="nav-text">
+            <h1>Rising Creators Entertainment</h1>
           </div>
         </div>
-      </div>
-    </section>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" type="button">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <div class="nav-right">
+          <ul id="primary-navigation" class="nav-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#talents">Talents</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="https://www.tiktok.com/@rce_87" target="_blank">Live</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
-    <div class="hero-divider">
-      <div class="hero-divider-content">
-        <img src="./assets/hero-section-divider.png" alt="Divider">
-        <img src="./assets/hero-section-divider.png" alt="Divider">
-        <img src="./assets/hero-section-divider.png" alt="Divider">
-        <img src="./assets/hero-section-divider.png" alt="Divider">
-      </div>
-    </div>
+    <main>
+      <section id="hero" class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-col hero-image-left">
+              <img src="./assets/hero-image-1.png" alt="Creative entertainment">
+            </div>
 
-    <section id="about" class="section">
-      <div class="container">
-        <h2 class="about-us-header">About Us</h2>
-        <div class="about-content">
-          <div class="about-image">
-            <img src="./assets/about-us.png" alt="About Rising Creators Entertainment">
+            <div class="hero-col hero-text">
+              <h2 class="hero-header">Rising Creators Entertainment</h2>
+              <p class="hero-description">
+                Membangun Peluang melalui Entertainment, Solusi Bisnis, dan Digital Commerce
+              </p>
+              <button class="hero-button" onclick="window.open('https://www.tiktok.com/@rce_87', '_blank')">Watch
+                Live</button>
+            </div>
+
+            <div class="hero-col hero-image-right">
+              <img src="./assets/hero-image-2.png" alt="Entertainment showcase">
+            </div>
           </div>
-          <div class="about-text">
-            <p>
-              Rising Creators Entertainment adalah perusahaan ekosistem bisnis digital yang mengintegrasikan tiga pilar
-              utama: pengembangan talenta melalui entertainment berkualitas, layanan konsultasi bisnis untuk perusahaan
-              yang berkembang, dan operasional e-commerce yang menghubungkan produk dengan pasar yang tepat. Kami tidak
-              hanya menciptakan konten menghibur, tetapi membangun peluang bisnis yang berkelanjutan.
-            </p>
-            <p>
-              Dalam satu platform, kami menghubungkan talenta kreatif dengan brand global, membantu perusahaan
-              internasional berekspansi ke Indonesia dengan dukungan konsultasi bisnis dan legalitas, dan mengelola
-              ekosistem perdagangan digital yang efisien. Setiap layanan dirancang untuk menciptakan nilai tambah yang
-              nyata bagi semua stakeholder.
-            </p>
-          </div>
+        </div>
+      </section>
+
+      <div class="hero-divider">
+        <div class="hero-divider-content">
+          <img src="./assets/hero-section-divider.png" alt="Divider">
+          <img src="./assets/hero-section-divider.png" alt="Divider">
+          <img src="./assets/hero-section-divider.png" alt="Divider">
+          <img src="./assets/hero-section-divider.png" alt="Divider">
         </div>
       </div>
-    </section>
 
-    <section id="services" class="section services-section">
-      <div class="container">
-        <p class="services-eyebrow">What we do</p>
-        <h2 class="services-header">Our Three <span>Pillars</span></h2>
-        <p class="services-subtext">
-          Tiga bidang utama yang mendorong pertumbuhan ekosistem kreator dan bisnis digital kami.
-        </p>
-
-        <!-- Tab navigation -->
-        <div class="services-tabs" role="tablist">
-          <button class="srv-tab active" role="tab" aria-selected="true" data-panel="0">Talent Incubation</button>
-          <button class="srv-tab" role="tab" aria-selected="false" data-panel="1">Corporate Consulting</button>
-          <button class="srv-tab" role="tab" aria-selected="false" data-panel="2">E-Commerce Operations</button>
-        </div>
-
-        <!-- Panel 1 — Talent Incubation -->
-        <div class="srv-panel active" role="tabpanel" data-panel="0">
-          <div class="srv-panel-left">
-            <span class="srv-number" aria-hidden="true">01</span>
-            <div class="srv-icon-box">
-              <!-- star / talent icon -->
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
+      <section id="about" class="section">
+        <div class="container">
+          <h2 class="about-us-header">About Us</h2>
+          <div class="about-content">
+            <div class="about-image">
+              <img src="./assets/about-us.png" alt="About Rising Creators Entertainment">
             </div>
-            <h3 class="srv-panel-title">Talent Incubation</h3>
-            <p class="srv-panel-tagline">Membangun kreator masa depan dari akar.</p>
-            <a class="srv-detail-btn" href="pages/services/digital-entertainment.html">
-              Details
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
-            </a>
-          </div>
-
-          <div class="srv-divider" aria-hidden="true"></div>
-
-          <div class="srv-panel-right">
-            <div class="srv-feature">
-              <div class="srv-feature-head">
-                <span class="srv-dot" aria-hidden="true"></span>
-                <span class="srv-feature-title">Creator Development</span>
-              </div>
-              <p class="srv-feature-desc">Kami mengembangkan talent kreatif melalui pelatihan vokal, koreografi, dan
-                stage presence untuk memaksimalkan potensi mereka di era digital.</p>
-            </div>
-            <div class="srv-feature">
-              <div class="srv-feature-head">
-                <span class="srv-dot" aria-hidden="true"></span>
-                <span class="srv-feature-title">Live Host Management</span>
-              </div>
-              <p class="srv-feature-desc">Pengelolaan profesional live host termasuk produksi konten, strategi
-                engagement, dan brand management untuk memastikan setiap performa menciptakan impact.</p>
-            </div>
-            <div class="srv-feature">
-              <div class="srv-feature-head">
-                <span class="srv-dot" aria-hidden="true"></span>
-                <span class="srv-feature-title">Training & Coaching</span>
-              </div>
-              <p class="srv-feature-desc">Program pengembangan berkelanjutan yang mencakup mentoring, skill upgrade, dan
-                career guidance untuk pertumbuhan jangka panjang creator kami.</p>
+            <div class="about-text">
+              <p>
+                Rising Creators Entertainment adalah perusahaan ekosistem bisnis digital yang mengintegrasikan tiga
+                pilar
+                utama: pengembangan talenta melalui entertainment berkualitas, layanan konsultasi bisnis untuk
+                perusahaan
+                yang berkembang, dan operasional e-commerce yang menghubungkan produk dengan pasar yang tepat. Kami
+                tidak
+                hanya menciptakan konten menghibur, tetapi membangun peluang bisnis yang berkelanjutan.
+              </p>
+              <p>
+                Dalam satu platform, kami menghubungkan talenta kreatif dengan brand global, membantu perusahaan
+                internasional berekspansi ke Indonesia dengan dukungan konsultasi bisnis dan legalitas, dan mengelola
+                ekosistem perdagangan digital yang efisien. Setiap layanan dirancang untuk menciptakan nilai tambah yang
+                nyata bagi semua stakeholder.
+              </p>
             </div>
           </div>
         </div>
+      </section>
 
-        <!-- Panel 2 — Corporate Consulting -->
-        <div class="srv-panel" role="tabpanel" data-panel="1">
-          <div class="srv-panel-left">
-            <span class="srv-number" aria-hidden="true">02</span>
-            <div class="srv-icon-box">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="2" y="7" width="20" height="14" rx="2" />
-                <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
-                <line x1="12" y1="12" x2="12" y2="16" />
-                <line x1="10" y1="14" x2="14" y2="14" />
-              </svg>
-            </div>
-            <h3 class="srv-panel-title">Corporate Consulting</h3>
-            <p class="srv-panel-tagline">Jembatan strategis untuk pasar Indonesia.</p>
-            <a class="srv-detail-btn" href="pages/services/corporate-solutions.html">
-              Details
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
-            </a>
+      <section id="services" class="section services-section">
+        <div class="container">
+          <p class="services-eyebrow">What we do</p>
+          <h2 class="services-header">Our Three <span>Pillars</span></h2>
+          <p class="services-subtext">
+            Tiga bidang utama yang mendorong pertumbuhan ekosistem kreator dan bisnis digital kami.
+          </p>
+
+          <!-- Tab navigation -->
+          <div class="services-tabs" role="tablist">
+            <button class="srv-tab active" role="tab" aria-selected="true" data-panel="0">Talent Incubation</button>
+            <button class="srv-tab" role="tab" aria-selected="false" data-panel="1">Corporate Consulting</button>
+            <button class="srv-tab" role="tab" aria-selected="false" data-panel="2">E-Commerce Operations</button>
           </div>
 
-          <div class="srv-divider" aria-hidden="true"></div>
-
-          <div class="srv-panel-right">
-            <div class="srv-feature">
-              <div class="srv-feature-head">
-                <span class="srv-dot" aria-hidden="true"></span>
-                <span class="srv-feature-title">Business Advisory</span>
-              </div>
-              <p class="srv-feature-desc">Kami menjadi mitra strategis bagi perusahaan internasional yang ingin
-                berekspansi ke Indonesia, dengan dukungan konsultasi bisnis dan riset pasar lokal.</p>
-            </div>
-            <div class="srv-feature">
-              <div class="srv-feature-head">
-                <span class="srv-dot" aria-hidden="true"></span>
-                <span class="srv-feature-title">Digital Strategy</span>
-              </div>
-              <p class="srv-feature-desc">Pengembangan strategi digital yang komprehensif untuk membantu bisnis Anda
-                memanfaatkan peluang pasar kreatif digital Indonesia.</p>
-            </div>
-            <div class="srv-feature">
-              <div class="srv-feature-head">
-                <span class="srv-dot" aria-hidden="true"></span>
-                <span class="srv-feature-title">Brand Development</span>
-              </div>
-              <p class="srv-feature-desc">Membantu perusahaan membangun dan memperkuat brand presence mereka melalui
-                kolaborasi dengan creator dan KOL network kami.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Panel 3 — E-Commerce Operations -->
-        <div class="srv-panel" role="tabpanel" data-panel="2">
-          <div class="srv-panel-left">
-            <span class="srv-number" aria-hidden="true">03</span>
-            <div class="srv-icon-box">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="9" cy="21" r="1" />
-                <circle cx="20" cy="21" r="1" />
-                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-              </svg>
-            </div>
-            <h3 class="srv-panel-title">E-Commerce Operations</h3>
-            <p class="srv-panel-tagline">End-to-end commerce yang mengkonversi.</p>
-            <a class="srv-detail-btn" href="pages/services/e-commerce.html">
-              Details
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
-            </a>
-          </div>
-
-          <div class="srv-divider" aria-hidden="true"></div>
-
-          <div class="srv-panel-right">
-            <div class="srv-feature">
-              <div class="srv-feature-head">
-                <span class="srv-dot" aria-hidden="true"></span>
-                <span class="srv-feature-title">Marketplace Management</span>
-              </div>
-              <p class="srv-feature-desc">Pengelolaan komprehensif toko online Anda di berbagai platform, dari optimasi
-                produk hingga strategi pricing dan inventory.</p>
-            </div>
-            <div class="srv-feature">
-              <div class="srv-feature-head">
-                <span class="srv-dot" aria-hidden="true"></span>
-                <span class="srv-feature-title">Livestream Commerce</span>
-              </div>
-              <p class="srv-feature-desc">Integrasi live streaming dengan penjualan produk, memanfaatkan talent kami
-                untuk menciptakan shopping experience yang engaging dan konversi tinggi.</p>
-            </div>
-            <div class="srv-feature">
-              <div class="srv-feature-head">
-                <span class="srv-dot" aria-hidden="true"></span>
-                <span class="srv-feature-title">Operational Support</span>
-              </div>
-              <p class="srv-feature-desc">Dukungan operasional end-to-end termasuk fulfillment, customer service, dan
-                analytics untuk memastikan pertumbuhan penjualan yang berkelanjutan.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Progress indicators -->
-        <div class="srv-progress" aria-hidden="true">
-          <button class="srv-prog-dot active" data-panel="0"></button>
-          <button class="srv-prog-dot" data-panel="1"></button>
-          <button class="srv-prog-dot" data-panel="2"></button>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="talents" class="section talents-section">
-      <div class="container">
-        <h2>Meet Our Talents</h2>
-
-        <div id="talent-container">
-          <div class="talent-card-container">
-            <div class="talent-active">
-              <div class="current-talent-image-container">
-                <img src="./assets/talent-bingga.png" alt="Bingga performance">
-              </div>
-
-              <div class="talent-right">
-                <div class="talent-information">
-                  <h3 class="active-talent-name">Bingga</h3>
-                  <span class="active-talent-role">Singer</span>
-                  <p class="active-talent-description">Penyanyi dengan karakter vokal yang kuat dan penuh energi. Bingga
-                    siap menghidupkan setiap momen siaran dengan deretan lagu top charts dan interaksi yang selalu seru.
-                  </p>
-                </div>
-
-                <div class="talent-carousel-container">
-                  <div class="next-talent" data-index="1">
-                    <img src="./assets/talent-lala.png" alt="Lala dancer">
-                  </div>
-                  <div class="next-talent" data-index="2">
-                    <img src="./assets/talent-aiko.png" alt="Aiko dancer">
-                  </div>
-                  <div class="next-talent" data-index="3">
-                    <img src="./assets/talent-diandra.png" alt="Diandra dancer">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery" class="section gallery-section">
-      <div class="container">
-        <h2 class="gallery-header">Company Gallery</h2>
-
-        <div class="gallery-wrapper">
-          <div class="gallery-grid">
-            <div class="gallery-item gallery-item-1">
-              <img src="./assets/gallery-1.png" alt="Gallery image 1">
-            </div>
-            <div class="gallery-item gallery-item-2">
-              <img src="./assets/gallery-placeholder.png" alt="Gallery image 2">
-            </div>
-            <div class="gallery-item gallery-item-3">
-              <img src="./assets/gallery-placeholder.png" alt="Gallery image 3">
-            </div>
-            <div class="gallery-item gallery-item-4">
-              <img src="./assets/gallery-placeholder.png" alt="Gallery image 4">
-            </div>
-            <div class="gallery-item gallery-item-5">
-              <img src="./assets/gallery-placeholder.png" alt="Gallery image 5">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq" class="section faq-section">
-      <div class="container">
-        <h2 class="faq-heading">Frequently Asked Questions</h2>
-        <p class="faq-subheading">Jawaban cepat tentang layanan hiburan digital, solusi korporat, dan e-commerce kami.
-        </p>
-
-        <div class="faq-cards">
-          <div class="faq-card active">
-            <div class="faq-card-header">
-              <h4>Apa itu Rising Creators Entertainment?</h4>
-              <span class="faq-arrow">&#x25BC;</span>
-            </div>
-            <p class="faq-answer">Rising Creators Entertainment (RCE) adalah perusahaan ekosistem bisnis digital yang
-              menghubungkan talenta, bisnis, dan pasar melalui tiga pilar utama: Talent Incubation (pengembangan creator
-              dan live host), Corporate Consulting (layanan bisnis dan strategi digital), dan E-Commerce Operations
-              (pengelolaan marketplace dan livestream commerce). Kami menciptakan peluang bisnis yang terintegrasi untuk
-              semua stakeholder.</p>
-          </div>
-
-          <div class="faq-card">
-            <div class="faq-card-header">
-              <h4>Bagaimana sistem kerja sama di RCE?</h4>
-              <span class="faq-arrow">&#x25BC;</span>
-            </div>
-            <p class="faq-answer">RCE bekerja sama dengan berbagai brand dan campaign partner. Informasi campaign, brief
-              project, deliverables, serta ketentuan kerja sama akan dibagikan kepada creator dan KOL partner sesuai
-              kebutuhan campaign dan kecocokan profile.</p>
-          </div>
-
-          <div class="faq-card">
-            <div class="faq-card-header">
-              <h4>Apakah ada biaya untuk bergabung dengan RCE?</h4>
-              <span class="faq-arrow">&#x25BC;</span>
-            </div>
-            <p class="faq-answer">Tidak ada biaya pendaftaran maupun membership untuk creator dan KOL yang ingin
-              bergabung dalam network RCE.</p>
-          </div>
-
-          <div class="faq-card">
-            <div class="faq-card-header">
-              <h4>Apakah RCE menjamin campaign untuk semua creator?</h4>
-              <span class="faq-arrow">&#x25BC;</span>
-            </div>
-            <p class="faq-answer">Peluang campaign disesuaikan dengan kebutuhan brand, objective campaign, audience
-              alignment, serta kesesuaian creator dengan brief yang tersedia. Tim RCE berfokus pada proses matching agar
-              setiap kolaborasi memiliki relevansi dan potensi hasil yang optimal.</p>
-          </div>
-
-          <div class="faq-card">
-            <div class="faq-card-header">
-              <h4>Bagaimana brand dapat bekerja sama dengan RCE?</h4>
-              <span class="faq-arrow">&#x25BC;</span>
-            </div>
-            <p class="faq-answer">Brand dapat bekerja sama dengan RCE untuk kebutuhan influencer marketing, product
-              promotion, creator collaboration, social media activation, hingga digital campaign yang disesuaikan dengan
-              target market dan tujuan bisnis brand.</p>
-          </div>
-
-          <div class="faq-card">
-            <div class="faq-card-header">
-              <h4>Bagaimana RCE membantu perusahaan asing di Indonesia?</h4>
-              <span class="faq-arrow">&#x25BC;</span>
-            </div>
-            <p class="faq-answer">Kami bertindak sebagai mitra lokal. Kami membantu riset pasar, mengurus perizinan
-              resmi (legalitas/PMA), hingga menangani administrasi operasional harian agar bisnis Anda berjalan sesuai
-              aturan.</p>
-          </div>
-
-          <div class="faq-card">
-            <div class="faq-card-header">
-              <h4>Apa yang dilakukan dalam layanan E-Commerce?</h4>
-              <span class="faq-arrow">&#x25BC;</span>
-            </div>
-            <p class="faq-answer">Kami mengelola penjualan digital Anda dari awal hingga akhir. Layanan ini mencakup
-              pembuatan strategi marketplace dan konten pemasaran kreatif untuk meningkatkan penjualan produk Anda.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section collaboration-section">
-      <div class="container">
-        <div class="collaboration-card">
-          <div class="collaboration-content">
-            <div class="collaboration-text">
-              <h2>Interested in working with us?</h2>
-              <p>Kami selalu terbuka untuk talenta baru dan kolaborasi strategis. Kunjungi kantor kami atau hubungi kami
-                melalui kanal di bawah ini untuk memulai kerja sama.</p>
-
-              <div class="collaboration-contacts">
-                <div class="contact-item">
-                  <img src="./assets/email-icon.svg" alt="Email">
-                  <div class="contact-details">
-                    <span class="contact-label">General Inquiries</span>
-                    <span>vixicomteknologiindonesia@gmail.com</span>
-                  </div>
-                </div>
-
-                <div class="contact-item">
-                  <img src="./assets/email-icon.svg" alt="Email">
-                  <div class="contact-details">
-                    <span class="contact-label">
-                      <bold>Partnership & KOL</bold>
-                    </span>
-                    <span>business.vixicom@gmail.com</span>
-                  </div>
-                </div>
-
-                <div class="contact-item">
-                  <img src="./assets/email-icon.svg" alt="Email">
-                  <div class="contact-details">
-                    <span class="contact-label">
-                      <bold>Digital Marketing</bold>
-                    </span>
-                    <span>risingcreators.marketing@gmail.com </span>
-                  </div>
-                </div>
-
-                <!-- Location -->
-                <div class="contact-item">
-                  <img src="./assets/location-icon.svg" alt="Location">
-                  <div class="contact-details">
-                    <span class="contact-label">Headquarters</span>
-                    <span>Graha Boulevard Jl. Summarecon, Kota Bogor, Jawa Barat 16144</span>
-                  </div>
-                </div>
-              </div>
-
-              <a href="https://wa.me/+6285693040587" target="_blank" class="cta-whatsapp-btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-1.052 0-2.082.271-2.986.787l-.214-.123L7.04 5.61c.577-1.509 2.062-2.58 3.766-2.58 2.253 0 4.183 1.803 4.183 4.022 0 2.22-1.922 4.023-4.183 4.023zm11.26-7.99c-5.694-5.666-14.906-5.666-20.6 0-5.694 5.666-5.694 14.873 0 20.54 5.694 5.666 14.906 5.666 20.6 0 5.694-5.667 5.694-14.874 0-20.54zm-2.56 19.372c-1.596 1.616-3.751 2.514-6.023 2.514-2.272 0-4.427-.898-6.023-2.514-3.329-3.378-3.297-8.85.094-12.176 1.596-1.616 3.751-2.514 6.023-2.514 2.272 0 4.427.898 6.023 2.514 3.391 3.326 3.423 8.798.094 12.176z"/>
+          <!-- Panel 1 — Talent Incubation -->
+          <div class="srv-panel active" role="tabpanel" data-panel="0">
+            <div class="srv-panel-left">
+              <span class="srv-number" aria-hidden="true">01</span>
+              <div class="srv-icon-box">
+                <!-- star / talent icon -->
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                 </svg>
-                Contact us on WhatsApp
+              </div>
+              <h3 class="srv-panel-title">Talent Incubation</h3>
+              <p class="srv-panel-tagline">Membangun kreator masa depan dari akar.</p>
+              <a class="srv-detail-btn" href="pages/services/digital-entertainment.html">
+                Details
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
               </a>
             </div>
 
-            <div class="collaboration-map">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!4v1779077175815!6m8!1m7!1sa2ltjY6Stm24--zQYkc8HA!2m2!1d-6.618407990866337!2d106.8353051727466!3f59.24362937207798!4f0.41068579410269024!5f0.7820865974627469"
-                width="600" height="450" style="border:0;" a llowfullscreen="" loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+            <div class="srv-divider" aria-hidden="true"></div>
 
-    <section id="recruitment" class="section recruitment-section">
-      <div class="recruitment-card">
-        <div class="recruitment-content">
-          <div class="recruitment-text">
-            <h2>Talent <span>Recruitment</span></h2>
-            <p>Apakah kamu seorang dancer, singer, creator, atau KOL yang ingin melangkah lebih jauh? Kami tidak hanya
-              mencari bakat, kami mencari partner untuk berkembang. Lewat pelatihan intensif dan strategi branding yang
-              tepat, mari bangun landasan karier kreatifmu hingga ke level tertinggi.</p>
-            <p class="recruitment-bold">send your resume to</p>
-            <div class="recruitment-contact">
-              <img src="./assets/email-icon-white.svg" alt="Email icon">
-              <span>business.vixicom@gmail.com</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="recruitment-visual">
-        <div class="recruitment-svgs">
-          <img src="./assets/recruitment-svg-2.svg" alt="Recruitment graphic 2">
-          <img src="./assets/recruitment-svg-1.svg" alt="Recruitment graphic 1">
-        </div>
-      </div>
-    </section>
-
-    <section id="blog" class="section blog-section">
-      <div class="container">
-        <h2 class="blog-heading">Blog Articles</h2>
-        <p class="blog-subheading">Tips, strategi, dan wawasan praktis untuk berkembang di industri entertainment,
-          business consulting, dan e-commerce. Belajar dari para profesional di bidangnya.</p>
-
-        <div class="blog-grid">
-          <article class="blog-card">
-            <a href="/pages/blogs/teknik-vokal.html" class="blog-card-link">
-              <div class="blog-image"><img src="/assets/blog-1.png" alt="Blog 1"></div>
-              <div class="blog-card-body">
-                <h3 class="blog-title">Cara Meningkatkan Teknik Vokal</h3>
-                <p class="blog-excerpt">Pelajari latihan vokal harian yang membantu memperkuat pita suara, meningkatkan
-                  kontrol napas, dan menambah jangkauan vokal secara bertahap.</p>
-                <div class="blog-meta">May 16, 2026 • 7 min read</div>
+            <div class="srv-panel-right">
+              <div class="srv-feature">
+                <div class="srv-feature-head">
+                  <span class="srv-dot" aria-hidden="true"></span>
+                  <span class="srv-feature-title">Creator Development</span>
+                </div>
+                <p class="srv-feature-desc">Kami mengembangkan talent kreatif melalui pelatihan vokal, koreografi, dan
+                  stage presence untuk memaksimalkan potensi mereka di era digital.</p>
               </div>
-            </a>
-          </article>
-
-          <article class="blog-card">
-            <a href="/pages/blogs/koreografi-dasar.html" class="blog-card-link">
-              <div class="blog-image"><img src="/assets/blog-2.png" alt="Blog 2"></div>
-              <div class="blog-card-body">
-                <h3 class="blog-title">Koreografi Dasar untuk Pemula</h3>
-                <p class="blog-excerpt">Mulai dari gerakan dasar hingga kombinasi sederhana yang dapat meningkatkan
-                  kualitas pertunjukan panggungmu.</p>
-                <div class="blog-meta">Apr 22, 2026 • 5 min read</div>
+              <div class="srv-feature">
+                <div class="srv-feature-head">
+                  <span class="srv-dot" aria-hidden="true"></span>
+                  <span class="srv-feature-title">Live Host Management</span>
+                </div>
+                <p class="srv-feature-desc">Pengelolaan profesional live host termasuk produksi konten, strategi
+                  engagement, dan brand management untuk memastikan setiap performa menciptakan impact.</p>
               </div>
-            </a>
-          </article>
-
-          <article class="blog-card">
-            <a href="/pages/blogs/tips-live-streaming.html" class="blog-card-link">
-              <div class="blog-image"><img src="/assets/blog-3.png" alt="Blog 3"></div>
-              <div class="blog-card-body">
-                <h3 class="blog-title">Tips Live Streaming yang Menarik Audiens</h3>
-                <p class="blog-excerpt">Strategi interaksi, pemilihan musik, dan teknik storytelling yang membuat
-                  penonton
-                  betah menonton hingga selesai.</p>
-                <div class="blog-meta">Mar 10, 2026 • 6 min read</div>
+              <div class="srv-feature">
+                <div class="srv-feature-head">
+                  <span class="srv-dot" aria-hidden="true"></span>
+                  <span class="srv-feature-title">Training & Coaching</span>
+                </div>
+                <p class="srv-feature-desc">Program pengembangan berkelanjutan yang mencakup mentoring, skill upgrade,
+                  dan
+                  career guidance untuk pertumbuhan jangka panjang creator kami.</p>
               </div>
-            </a>
-          </article>
-        </div>
-
-        <div class="blog-more">
-          <a href="/pages/blogs.html" class="btn-see-more" style="text-decoration: none; display: inline-block;">See
-            More</a>
-        </div>
-      </div>
-    </section>
-
-    <footer id="footer" class="footer-section">
-      <div class="container">
-        <div class="footer-columns">
-          <div class="footer-column footer-about">
-            <div class="footer-logo">
-              <img src="./assets/rce-brand-logo.svg" alt="Rising Creators Entertainment logo">
-              <h3 class="footer-logo-title">Rising Creators Entertainment</h3>
-            </div>
-            <p class="footer-description">Connecting talent, business, and market through digital innovation.</p>
-            <div class="footer-social">
-              <a href="https://www.tiktok.com/@rce_87" target="_blank"><img src="./assets/tiktok-logo.svg"
-                  alt="Tiktok"></a>
-              <a href="https:///www.instagram.com/risingcreatorsentertainment" target="_blank" aria-label="Facebook"><img src="./assets/instagram-logo.svg" alt="instagram"></a>
-              <a href="https://www.facebook.com/profile.php?id=61590095679995" aria-label=""><img src="./assets/facebook-logo.svg" alt="facebook"></a>
             </div>
           </div>
 
-          <div class="footer-column">
-            <h4>Company</h4>
-            <ul class="footer-links">
-              <li><a href="#about">About us</a></li>
-              <li><a href="#services">Our Services</a></li>
-              <li><a href="#blog">Blog Articles</a></li>
-              <li><a href="#recruitment">Join Us</a></li>
-            </ul>
+          <!-- Panel 2 — Corporate Consulting -->
+          <div class="srv-panel" role="tabpanel" data-panel="1">
+            <div class="srv-panel-left">
+              <span class="srv-number" aria-hidden="true">02</span>
+              <div class="srv-icon-box">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="7" width="20" height="14" rx="2" />
+                  <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+                  <line x1="12" y1="12" x2="12" y2="16" />
+                  <line x1="10" y1="14" x2="14" y2="14" />
+                </svg>
+              </div>
+              <h3 class="srv-panel-title">Corporate Consulting</h3>
+              <p class="srv-panel-tagline">Jembatan strategis untuk pasar Indonesia.</p>
+              <a class="srv-detail-btn" href="pages/services/corporate-solutions.html">
+                Details
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </a>
+            </div>
+
+            <div class="srv-divider" aria-hidden="true"></div>
+
+            <div class="srv-panel-right">
+              <div class="srv-feature">
+                <div class="srv-feature-head">
+                  <span class="srv-dot" aria-hidden="true"></span>
+                  <span class="srv-feature-title">Business Advisory</span>
+                </div>
+                <p class="srv-feature-desc">Kami menjadi mitra strategis bagi perusahaan internasional yang ingin
+                  berekspansi ke Indonesia, dengan dukungan konsultasi bisnis dan riset pasar lokal.</p>
+              </div>
+              <div class="srv-feature">
+                <div class="srv-feature-head">
+                  <span class="srv-dot" aria-hidden="true"></span>
+                  <span class="srv-feature-title">Digital Strategy</span>
+                </div>
+                <p class="srv-feature-desc">Pengembangan strategi digital yang komprehensif untuk membantu bisnis Anda
+                  memanfaatkan peluang pasar kreatif digital Indonesia.</p>
+              </div>
+              <div class="srv-feature">
+                <div class="srv-feature-head">
+                  <span class="srv-dot" aria-hidden="true"></span>
+                  <span class="srv-feature-title">Brand Development</span>
+                </div>
+                <p class="srv-feature-desc">Membantu perusahaan membangun dan memperkuat brand presence mereka melalui
+                  kolaborasi dengan creator dan KOL network kami.</p>
+              </div>
+            </div>
           </div>
 
-          <div class="footer-column">
-            <h4>Support</h4>
-            <ul class="footer-links">
-              <li><a href="#faq">FAQ</a></li>
-              <li><a href="#privacy">Privacy Policy</a></li>
-              <li><a href="#terms">Terms &amp; Conditions</a></li>
-              <li><a href="#contact">Contact Support</a></li>
-            </ul>
+          <!-- Panel 3 — E-Commerce Operations -->
+          <div class="srv-panel" role="tabpanel" data-panel="2">
+            <div class="srv-panel-left">
+              <span class="srv-number" aria-hidden="true">03</span>
+              <div class="srv-icon-box">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="9" cy="21" r="1" />
+                  <circle cx="20" cy="21" r="1" />
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                </svg>
+              </div>
+              <h3 class="srv-panel-title">E-Commerce Operations</h3>
+              <p class="srv-panel-tagline">End-to-end commerce yang mengkonversi.</p>
+              <a class="srv-detail-btn" href="pages/services/e-commerce.html">
+                Details
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </a>
+            </div>
+
+            <div class="srv-divider" aria-hidden="true"></div>
+
+            <div class="srv-panel-right">
+              <div class="srv-feature">
+                <div class="srv-feature-head">
+                  <span class="srv-dot" aria-hidden="true"></span>
+                  <span class="srv-feature-title">Marketplace Management</span>
+                </div>
+                <p class="srv-feature-desc">Pengelolaan komprehensif toko online Anda di berbagai platform, dari
+                  optimasi
+                  produk hingga strategi pricing dan inventory.</p>
+              </div>
+              <div class="srv-feature">
+                <div class="srv-feature-head">
+                  <span class="srv-dot" aria-hidden="true"></span>
+                  <span class="srv-feature-title">Livestream Commerce</span>
+                </div>
+                <p class="srv-feature-desc">Integrasi live streaming dengan penjualan produk, memanfaatkan talent kami
+                  untuk menciptakan shopping experience yang engaging dan konversi tinggi.</p>
+              </div>
+              <div class="srv-feature">
+                <div class="srv-feature-head">
+                  <span class="srv-dot" aria-hidden="true"></span>
+                  <span class="srv-feature-title">Operational Support</span>
+                </div>
+                <p class="srv-feature-desc">Dukungan operasional end-to-end termasuk fulfillment, customer service, dan
+                  analytics untuk memastikan pertumbuhan penjualan yang berkelanjutan.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Progress indicators -->
+          <div class="srv-progress" aria-hidden="true">
+            <button class="srv-prog-dot active" data-panel="0"></button>
+            <button class="srv-prog-dot" data-panel="1"></button>
+            <button class="srv-prog-dot" data-panel="2"></button>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="talents" class="section talents-section">
+        <div class="container">
+          <h2>Meet Our Talents</h2>
+
+          <div id="talent-container">
+            <div class="talent-card-container">
+              <div class="talent-active">
+                <div class="current-talent-image-container">
+                  <img src="./assets/talent-bingga.png" alt="Bingga performance">
+                </div>
+
+                <div class="talent-right">
+                  <div class="talent-information">
+                    <h3 class="active-talent-name">Bingga</h3>
+                    <span class="active-talent-role">Singer</span>
+                    <p class="active-talent-description">Penyanyi dengan karakter vokal yang kuat dan penuh energi.
+                      Bingga
+                      siap menghidupkan setiap momen siaran dengan deretan lagu top charts dan interaksi yang selalu
+                      seru.
+                    </p>
+                  </div>
+
+                  <div class="talent-carousel-container">
+                    <div class="next-talent" data-index="1">
+                      <img src="./assets/talent-lala.png" alt="Lala dancer">
+                    </div>
+                    <div class="next-talent" data-index="2">
+                      <img src="./assets/talent-aiko.png" alt="Aiko dancer">
+                    </div>
+                    <div class="next-talent" data-index="3">
+                      <img src="./assets/talent-diandra.png" alt="Diandra dancer">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="section gallery-section">
+        <div class="container">
+          <h2 class="gallery-header">Company Gallery</h2>
+
+          <div class="gallery-wrapper">
+            <div class="gallery-grid">
+              <div class="gallery-item gallery-item-1">
+                <img src="./assets/gallery-1.png" alt="Gallery image 1">
+              </div>
+              <div class="gallery-item gallery-item-2">
+                <img src="./assets/gallery-placeholder.png" alt="Gallery image 2">
+              </div>
+              <div class="gallery-item gallery-item-3">
+                <img src="./assets/gallery-placeholder.png" alt="Gallery image 3">
+              </div>
+              <div class="gallery-item gallery-item-4">
+                <img src="./assets/gallery-placeholder.png" alt="Gallery image 4">
+              </div>
+              <div class="gallery-item gallery-item-5">
+                <img src="./assets/gallery-placeholder.png" alt="Gallery image 5">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section faq-section">
+        <div class="container">
+          <h2 class="faq-heading">Frequently Asked Questions</h2>
+          <p class="faq-subheading">Jawaban cepat tentang layanan hiburan digital, solusi korporat, dan e-commerce kami.
+          </p>
+
+          <div class="faq-cards">
+            <div class="faq-card active">
+              <div class="faq-card-header">
+                <h4>Apa itu Rising Creators Entertainment?</h4>
+                <span class="faq-arrow">&#x25BC;</span>
+              </div>
+              <p class="faq-answer">Rising Creators Entertainment (RCE) adalah perusahaan ekosistem bisnis digital yang
+                menghubungkan talenta, bisnis, dan pasar melalui tiga pilar utama: Talent Incubation (pengembangan
+                creator
+                dan live host), Corporate Consulting (layanan bisnis dan strategi digital), dan E-Commerce Operations
+                (pengelolaan marketplace dan livestream commerce). Kami menciptakan peluang bisnis yang terintegrasi
+                untuk
+                semua stakeholder.</p>
+            </div>
+
+            <div class="faq-card">
+              <div class="faq-card-header">
+                <h4>Bagaimana sistem kerja sama di RCE?</h4>
+                <span class="faq-arrow">&#x25BC;</span>
+              </div>
+              <p class="faq-answer">RCE bekerja sama dengan berbagai brand dan campaign partner. Informasi campaign,
+                brief
+                project, deliverables, serta ketentuan kerja sama akan dibagikan kepada creator dan KOL partner sesuai
+                kebutuhan campaign dan kecocokan profile.</p>
+            </div>
+
+            <div class="faq-card">
+              <div class="faq-card-header">
+                <h4>Apakah ada biaya untuk bergabung dengan RCE?</h4>
+                <span class="faq-arrow">&#x25BC;</span>
+              </div>
+              <p class="faq-answer">Tidak ada biaya pendaftaran maupun membership untuk creator dan KOL yang ingin
+                bergabung dalam network RCE.</p>
+            </div>
+
+            <div class="faq-card">
+              <div class="faq-card-header">
+                <h4>Apakah RCE menjamin campaign untuk semua creator?</h4>
+                <span class="faq-arrow">&#x25BC;</span>
+              </div>
+              <p class="faq-answer">Peluang campaign disesuaikan dengan kebutuhan brand, objective campaign, audience
+                alignment, serta kesesuaian creator dengan brief yang tersedia. Tim RCE berfokus pada proses matching
+                agar
+                setiap kolaborasi memiliki relevansi dan potensi hasil yang optimal.</p>
+            </div>
+
+            <div class="faq-card">
+              <div class="faq-card-header">
+                <h4>Bagaimana brand dapat bekerja sama dengan RCE?</h4>
+                <span class="faq-arrow">&#x25BC;</span>
+              </div>
+              <p class="faq-answer">Brand dapat bekerja sama dengan RCE untuk kebutuhan influencer marketing, product
+                promotion, creator collaboration, social media activation, hingga digital campaign yang disesuaikan
+                dengan
+                target market dan tujuan bisnis brand.</p>
+            </div>
+
+            <div class="faq-card">
+              <div class="faq-card-header">
+                <h4>Bagaimana RCE membantu perusahaan asing di Indonesia?</h4>
+                <span class="faq-arrow">&#x25BC;</span>
+              </div>
+              <p class="faq-answer">Kami bertindak sebagai mitra lokal. Kami membantu riset pasar, mengurus perizinan
+                resmi (legalitas/PMA), hingga menangani administrasi operasional harian agar bisnis Anda berjalan sesuai
+                aturan.</p>
+            </div>
+
+            <div class="faq-card">
+              <div class="faq-card-header">
+                <h4>Apa yang dilakukan dalam layanan E-Commerce?</h4>
+                <span class="faq-arrow">&#x25BC;</span>
+              </div>
+              <p class="faq-answer">Kami mengelola penjualan digital Anda dari awal hingga akhir. Layanan ini mencakup
+                pembuatan strategi marketplace dan konten pemasaran kreatif untuk meningkatkan penjualan produk Anda.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section collaboration-section">
+        <div class="container">
+          <div class="collaboration-card">
+            <div class="collaboration-content">
+              <div class="collaboration-text">
+                <h2>Interested in working with us?</h2>
+                <p>Kami selalu terbuka untuk talenta baru dan kolaborasi strategis. Kunjungi kantor kami atau hubungi
+                  kami
+                  melalui kanal di bawah ini untuk memulai kerja sama.</p>
+
+                <div class="collaboration-contacts">
+                  <div class="contact-item">
+                    <img src="./assets/email-icon.svg" alt="Email">
+                    <div class="contact-details">
+                      <span class="contact-label">General Inquiries</span>
+                      <span>vixicomteknologiindonesia@gmail.com</span>
+                    </div>
+                  </div>
+
+                  <div class="contact-item">
+                    <img src="./assets/email-icon.svg" alt="Email">
+                    <div class="contact-details">
+                      <span class="contact-label">
+                        <bold>Partnership & KOL</bold>
+                      </span>
+                      <span>business.vixicom@gmail.com</span>
+                    </div>
+                  </div>
+
+                  <div class="contact-item">
+                    <img src="./assets/email-icon.svg" alt="Email">
+                    <div class="contact-details">
+                      <span class="contact-label">
+                        <bold>Digital Marketing</bold>
+                      </span>
+                      <span>risingcreators.marketing@gmail.com </span>
+                    </div>
+                  </div>
+
+                  <!-- Location -->
+                  <div class="contact-item">
+                    <img src="./assets/location-icon.svg" alt="Location">
+                    <div class="contact-details">
+                      <span class="contact-label">Headquarters</span>
+                      <span>Graha Boulevard Jl. Summarecon, Kota Bogor, Jawa Barat 16144</span>
+                    </div>
+                  </div>
+                </div>
+
+                <a href="https://wa.me/+6285693040587" target="_blank" class="cta-whatsapp-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-1.052 0-2.082.271-2.986.787l-.214-.123L7.04 5.61c.577-1.509 2.062-2.58 3.766-2.58 2.253 0 4.183 1.803 4.183 4.022 0 2.22-1.922 4.023-4.183 4.023zm11.26-7.99c-5.694-5.666-14.906-5.666-20.6 0-5.694 5.666-5.694 14.873 0 20.54 5.694 5.666 14.906 5.666 20.6 0 5.694-5.667 5.694-14.874 0-20.54zm-2.56 19.372c-1.596 1.616-3.751 2.514-6.023 2.514-2.272 0-4.427-.898-6.023-2.514-3.329-3.378-3.297-8.85.094-12.176 1.596-1.616 3.751-2.514 6.023-2.514 2.272 0 4.427.898 6.023 2.514 3.391 3.326 3.423 8.798.094 12.176z" />
+                  </svg>
+                  Contact us on WhatsApp
+                </a>
+              </div>
+
+              <div class="collaboration-map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!4v1779077175815!6m8!1m7!1sa2ltjY6Stm24--zQYkc8HA!2m2!1d-6.618407990866337!2d106.8353051727466!3f59.24362937207798!4f0.41068579410269024!5f0.7820865974627469"
+                  width="600" height="450" style="border:0;" a llowfullscreen="" loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="recruitment" class="section recruitment-section">
+        <div class="recruitment-card">
+          <div class="recruitment-content">
+            <div class="recruitment-text">
+              <h2>Talent <span>Recruitment</span></h2>
+              <p>Apakah kamu seorang dancer, singer, creator, atau KOL yang ingin melangkah lebih jauh? Kami tidak hanya
+                mencari bakat, kami mencari partner untuk berkembang. Lewat pelatihan intensif dan strategi branding
+                yang
+                tepat, mari bangun landasan karier kreatifmu hingga ke level tertinggi.</p>
+              <p class="recruitment-bold">send your resume to</p>
+              <div class="recruitment-contact">
+                <img src="./assets/email-icon-white.svg" alt="Email icon">
+                <span>business.vixicom@gmail.com</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <p class="footer-copy">&copy; 2026 Rising Creators Entertainment. All Rights Reserved.</p>
-      </div>
-    </footer>
-  </main>
+        <div class="recruitment-visual">
+          <div class="recruitment-svgs">
+            <img src="./assets/recruitment-svg-2.svg" alt="Recruitment graphic 2">
+            <img src="./assets/recruitment-svg-1.svg" alt="Recruitment graphic 1">
+          </div>
+        </div>
+      </section>
+
+      <section id="blog" class="section blog-section">
+        <div class="container">
+          <h2 class="blog-heading">Blog Articles</h2>
+          <p class="blog-subheading">Tips, strategi, dan wawasan praktis untuk berkembang di industri entertainment,
+            business consulting, dan e-commerce. Belajar dari para profesional di bidangnya.</p>
+
+          <div class="blog-grid">
+            <article class="blog-card">
+              <a href="/pages/blogs/teknik-vokal.html" class="blog-card-link">
+                <div class="blog-image"><img src="/assets/blog-1.png" alt="Blog 1"></div>
+                <div class="blog-card-body">
+                  <h3 class="blog-title">Cara Meningkatkan Teknik Vokal</h3>
+                  <p class="blog-excerpt">Pelajari latihan vokal harian yang membantu memperkuat pita suara,
+                    meningkatkan
+                    kontrol napas, dan menambah jangkauan vokal secara bertahap.</p>
+                  <div class="blog-meta">May 16, 2026 • 7 min read</div>
+                </div>
+              </a>
+            </article>
+
+            <article class="blog-card">
+              <a href="/pages/blogs/koreografi-dasar.html" class="blog-card-link">
+                <div class="blog-image"><img src="/assets/blog-2.png" alt="Blog 2"></div>
+                <div class="blog-card-body">
+                  <h3 class="blog-title">Koreografi Dasar untuk Pemula</h3>
+                  <p class="blog-excerpt">Mulai dari gerakan dasar hingga kombinasi sederhana yang dapat meningkatkan
+                    kualitas pertunjukan panggungmu.</p>
+                  <div class="blog-meta">Apr 22, 2026 • 5 min read</div>
+                </div>
+              </a>
+            </article>
+
+            <article class="blog-card">
+              <a href="/pages/blogs/tips-live-streaming.html" class="blog-card-link">
+                <div class="blog-image"><img src="/assets/blog-3.png" alt="Blog 3"></div>
+                <div class="blog-card-body">
+                  <h3 class="blog-title">Tips Live Streaming yang Menarik Audiens</h3>
+                  <p class="blog-excerpt">Strategi interaksi, pemilihan musik, dan teknik storytelling yang membuat
+                    penonton
+                    betah menonton hingga selesai.</p>
+                  <div class="blog-meta">Mar 10, 2026 • 6 min read</div>
+                </div>
+              </a>
+            </article>
+          </div>
+
+          <div class="blog-more">
+            <a href="/pages/blogs.html" class="btn-see-more" style="text-decoration: none; display: inline-block;">See
+              More</a>
+          </div>
+        </div>
+      </section>
+
+      <footer id="footer" class="footer-section">
+        <div class="container">
+          <div class="footer-columns">
+            <div class="footer-column footer-about">
+              <div class="footer-logo">
+                <img src="./assets/rce-brand-logo.svg" alt="Rising Creators Entertainment logo">
+                <h3 class="footer-logo-title">Rising Creators Entertainment</h3>
+              </div>
+              <p class="footer-description">Connecting talent, business, and market through digital innovation.</p>
+              <div class="footer-social">
+                <a href="https://www.tiktok.com/@rce_87" target="_blank"><img src="./assets/tiktok-logo.svg"
+                    alt="Tiktok"></a>
+                <a href="https:///www.instagram.com/risingcreatorsentertainment" target="_blank"
+                  aria-label="Facebook"><img src="./assets/instagram-logo.svg" alt="instagram"></a>
+                <a href="https://www.facebook.com/profile.php?id=61590095679995" aria-label=""><img
+                    src="./assets/facebook-logo.svg" alt="facebook"></a>
+              </div>
+            </div>
+
+            <div class="footer-column">
+              <h4>Company</h4>
+              <ul class="footer-links">
+                <li><a href="#about">About us</a></li>
+                <li><a href="#services">Our Services</a></li>
+                <li><a href="#blog">Blog Articles</a></li>
+                <li><a href="#recruitment">Join Us</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h4>Support</h4>
+              <ul class="footer-links">
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms &amp; Conditions</a></li>
+                <li><a href="#contact">Contact Support</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="footer-copy">&copy; 2026 Rising Creators Entertainment. All Rights Reserved.</p>
+        </div>
+      </footer>
+    </main>
   </div><!-- End of #app -->
 
   <script type="module" src="/js/main.js"></script>
@@ -699,9 +720,10 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-W056BT8ZDC"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
 
   gtag('config', 'G-W056BT8ZDC');
 </script>
+
 </html>
