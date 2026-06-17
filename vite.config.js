@@ -32,6 +32,7 @@ export default defineConfig({
         storytellingLiveStreaming: resolve(__dirname, 'src/pages/blogs/storytelling-untuk-live-host.html'),
         apaYangDilakukanHostProfesionalSaatSepiPenonton: resolve(__dirname, 'src/pages/blogs/apa-yang-dilakukan-host-profesional-saat-sepi-penonton.html'),
         expandingBusinesssToIndonesia: resolve(__dirname, 'src/pages/blogs/expanding-business-to-indonesia.html'),
+        whyGlobalBrandsFailInIndonesia: resolve(__dirname, 'src/pages/blogs/why-global-brands-fail-in-indonesia.html'),
       },
     },
   },
