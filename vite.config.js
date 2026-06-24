@@ -34,6 +34,7 @@ export default defineConfig({
         expandingBusinesssToIndonesia: resolve(__dirname, 'src/pages/blogs/expanding-business-to-indonesia.html'),
         whyGlobalBrandsFailInIndonesia: resolve(__dirname, 'src/pages/blogs/why-global-brands-fail-in-indonesia.html'),
         taxObligationsForForeignCompaniesInIndonesia: resolve(__dirname, 'src/pages/blogs/tax-obligations-for-foreign-companies-in-indonesia.html'),
+        peraturanLiveTiktokAntiBanned: resolve(__dirname, 'src/pages/blogs/peraturan-live-tiktok-anti-banned.html'),
       },
     },
   },
