@@ -9,15 +9,20 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       input: {
+        // ── Public site ──────────────────────────────
         main: resolve(__dirname, 'src/index.html'),
         blog: resolve(__dirname, 'src/blog/index.html'),
         digitalEntertainment: resolve(__dirname, 'src/pages/services/digital-entertainment.html'),
         corporateSolutions: resolve(__dirname, 'src/pages/services/corporate-solutions.html'),
         eCommerce: resolve(__dirname, 'src/pages/services/e-commerce.html'),
-
-        // New pages
         register:               resolve(__dirname, 'src/pages/register.html'),
         registerSuccess:        resolve(__dirname, 'src/pages/register-success.html'),
+
+        // ── Admin dashboard ──────────────────────────
+        adminIndex:           resolve(__dirname, 'src/admin/index.html'),
+        adminLogin:           resolve(__dirname, 'src/admin/login.html'),
+        adminDashboard:       resolve(__dirname, 'src/admin/dashboard.html'),
+        adminKol:             resolve(__dirname, 'src/admin/kol-database.html'),
 
         // Blogs
         allBlogs: resolve(__dirname, 'src/pages/blogs.html'),

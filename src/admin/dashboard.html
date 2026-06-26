@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — RCE Admin</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/admin/css/admin-base.css" />
+  <link rel="stylesheet" href="/admin/css/admin-layout.css" />
+  <link rel="stylesheet" href="/admin/css/admin-components.css" />
+</head>
+<body>
+
+<div class="admin-app">
+
+  <!-- ═══════════════════════════════════════════════════════
+       SIDEBAR
+  ═══════════════════════════════════════════════════════ -->
+  <aside class="admin-sidebar">
+    <div class="admin-sidebar__logo">
+      <img src="/public/assets/rce-brand-logo.svg" alt="RCE" />
+      <span class="admin-sidebar__logo-badge">Admin</span>
+    </div>
+
+    <nav class="admin-sidebar__nav">
+      <span class="admin-sidebar__section-label">Menu Utama</span>
+
+      <a href="/admin/dashboard.html" class="admin-sidebar__link active">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+        </svg>
+        Dashboard
+      </a>
+
+      <a href="/admin/kol-database.html" class="admin-sidebar__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+        KOL Database
+      </a>
+
+      <span class="admin-sidebar__section-label">Segera Hadir</span>
+
+      <span class="admin-sidebar__link admin-sidebar__link--disabled">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+        </svg>
+        Analytics
+        <span class="admin-sidebar__coming-soon">Soon</span>
+      </span>
+
+      <span class="admin-sidebar__link admin-sidebar__link--disabled">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+        </svg>
+        Export Data
+        <span class="admin-sidebar__coming-soon">Soon</span>
+      </span>
+
+      <span class="admin-sidebar__link admin-sidebar__link--disabled">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/>
+        </svg>
+        Kolaborasi
+        <span class="admin-sidebar__coming-soon">Soon</span>
+      </span>
+    </nav>
+
+    <div class="admin-sidebar__footer">
+      <div class="admin-sidebar__user">
+        <div class="admin-sidebar__avatar" id="userAvatar">A</div>
+        <div class="admin-sidebar__user-info">
+          <div class="admin-sidebar__user-email" id="userEmail">Loading...</div>
+        </div>
+      </div>
+      <button class="admin-sidebar__logout" id="logoutBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+        Keluar
+      </button>
+    </div>
+  </aside>
+
+  <!-- ═══════════════════════════════════════════════════════
+       HEADER
+  ═══════════════════════════════════════════════════════ -->
+  <header class="admin-header">
+    <div>
+      <div class="admin-header__title">Dashboard</div>
+      <div class="admin-header__subtitle">Ringkasan aktivitas pendaftaran</div>
+    </div>
+    <div class="admin-header__right">
+      <span class="admin-header__date" id="headerDate"></span>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════
+       MAIN
+  ═══════════════════════════════════════════════════════ -->
+  <main class="admin-main">
+
+    <div class="admin-page-header">
+      <h1>Selamat Datang 👋</h1>
+      <p>Berikut ringkasan pendaftaran KOL/KOC terbaru.</p>
+    </div>
+
+    <!-- Stat Cards -->
+    <div class="stats-grid">
+
+      <div class="stat-card">
+        <div class="stat-card__icon stat-card__icon--pink">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div class="stat-card__body">
+          <div class="stat-card__label">Total Pendaftar</div>
+          <div class="stat-card__value" id="statTotal">
+            <span class="skeleton" style="width:60px;height:32px;display:block;border-radius:6px;"></span>
+          </div>
+          <div class="stat-card__sub" id="statTotalSub"></div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-card__icon stat-card__icon--green">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+        </div>
+        <div class="stat-card__body">
+          <div class="stat-card__label">Hari Ini</div>
+          <div class="stat-card__value" id="statToday">
+            <span class="skeleton" style="width:40px;height:32px;display:block;border-radius:6px;"></span>
+          </div>
+          <div class="stat-card__sub" id="statTodaySub"></div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-card__icon stat-card__icon--blue">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <div class="stat-card__body">
+          <div class="stat-card__label">Bulan Ini</div>
+          <div class="stat-card__value" id="statMonth">
+            <span class="skeleton" style="width:40px;height:32px;display:block;border-radius:6px;"></span>
+          </div>
+          <div class="stat-card__sub" id="statMonthSub"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Recent Registrations -->
+    <div class="admin-card">
+      <div class="admin-toolbar" style="margin-bottom:20px;">
+        <div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:1rem;">Pendaftaran Terbaru</div>
+          <div style="font-size:0.78rem;color:var(--admin-text-muted);margin-top:2px;">10 pendaftar terakhir</div>
+        </div>
+        <div class="admin-toolbar__right">
+          <a href="/admin/kol-database.html" class="btn btn--ghost" style="font-size:0.82rem;">
+            Lihat Semua →
+          </a>
+        </div>
+      </div>
+      <div id="recentList" class="recent-list">
+        <!-- Skeleton rows -->
+        <div style="display:flex;flex-direction:column;gap:12px;padding:8px 0;">
+          ${[...Array(5)].map(() => `
+          <div style="display:flex;align-items:center;gap:14px;">
+            <span class="skeleton" style="width:36px;height:36px;border-radius:50%;flex-shrink:0;"></span>
+            <div style="flex:1;display:flex;flex-direction:column;gap:6px;">
+              <span class="skeleton" style="width:140px;height:14px;"></span>
+              <span class="skeleton" style="width:90px;height:11px;"></span>
+            </div>
+            <span class="skeleton" style="width:60px;height:11px;"></span>
+          </div>`).join('')}
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script type="module" src="/admin/js/dashboard.js"></script>
+</body>
+</html>

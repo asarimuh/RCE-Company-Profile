@@ -1,0 +1,289 @@
+/* ============================================================
+   ADMIN BASE — variables, reset, typography
+   ============================================================ */
+
+:root {
+  /* Brand */
+  --brand-pink:          #FF62F4;
+  --brand-pink-dark:     #d946ef;
+  --brand-pink-glow:     rgba(255, 98, 244, 0.12);
+
+  /* Admin UI surfaces */
+  --admin-bg:            #0f0f0f;
+  --admin-surface:       #161616;
+  --admin-surface-2:     #1e1e1e;
+  --admin-surface-3:     #262626;
+  --admin-surface-hover: #2a2a2a;
+
+  /* Borders */
+  --admin-border:        #2a2a2a;
+  --admin-border-light:  #333333;
+
+  /* Text */
+  --admin-text-primary:  #f0f0f0;
+  --admin-text-secondary:#a0a0a0;
+  --admin-text-muted:    #606060;
+
+  /* Status colors */
+  --status-pending:      #f59e0b;
+  --status-reviewing:    #3b82f6;
+  --status-approved:     #22c55e;
+  --status-rejected:     #ef4444;
+  --status-on-hold:      #8b5cf6;
+
+  /* Feedback */
+  --success:             #22c55e;
+  --error:               #ef4444;
+  --warning:             #f59e0b;
+  --info:                #3b82f6;
+
+  /* Sizing */
+  --sidebar-width:       240px;
+  --header-height:       64px;
+  --radius-sm:           6px;
+  --radius-md:           10px;
+  --radius-lg:           16px;
+
+  /* Transitions */
+  --transition:          0.18s ease;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { font-size: 16px; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--admin-bg);
+  color: var(--admin-text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+button { cursor: pointer; font-family: inherit; }
+a { text-decoration: none; color: inherit; }
+input, select, textarea { font-family: inherit; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--admin-surface); }
+::-webkit-scrollbar-thumb { background: var(--admin-border-light); border-radius: 100px; }
+::-webkit-scrollbar-thumb:hover { background: var(--admin-text-muted); }
+
+/* ── Utility ── */
+.hidden { display: none !important; }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.badge--pending   { background: rgba(245,158,11,0.12);  color: var(--status-pending);   border: 1px solid rgba(245,158,11,0.25); }
+.badge--reviewing { background: rgba(59,130,246,0.12);  color: var(--status-reviewing); border: 1px solid rgba(59,130,246,0.25); }
+.badge--approved  { background: rgba(34,197,94,0.12);   color: var(--status-approved);  border: 1px solid rgba(34,197,94,0.25); }
+.badge--rejected  { background: rgba(239,68,68,0.12);   color: var(--status-rejected);  border: 1px solid rgba(239,68,68,0.25); }
+.badge--on-hold   { background: rgba(139,92,246,0.12);  color: var(--status-on-hold);   border: 1px solid rgba(139,92,246,0.25); }
+
+.badge--tiktok    { background: rgba(0,0,0,0.3);        color: #fff;                    border: 1px solid #333; }
+.badge--instagram { background: rgba(225,48,108,0.12);  color: #e1306c;                 border: 1px solid rgba(225,48,108,0.25); }
+.badge--youtube   { background: rgba(255,0,0,0.1);      color: #ff4444;                 border: 1px solid rgba(255,0,0,0.2); }
+.badge--other     { background: var(--admin-surface-3); color: var(--admin-text-secondary); border: 1px solid var(--admin-border); }
+
+/* ── Toast notification ── */
+.admin-toast {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #fff;
+  z-index: 9999;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  animation: toastIn 0.3s ease;
+  max-width: 340px;
+}
+
+.admin-toast--success { background: #166534; border: 1px solid #22c55e; }
+.admin-toast--error   { background: #7f1d1d; border: 1px solid #ef4444; }
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Confirm dialog ── */
+.admin-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.admin-dialog {
+  background: var(--admin-surface);
+  border: 1px solid var(--admin-border-light);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+  animation: dialogIn 0.25s ease;
+}
+
+@keyframes dialogIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.admin-dialog__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(239,68,68,0.12);
+  border: 1px solid rgba(239,68,68,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.admin-dialog__icon svg { stroke: var(--error); }
+
+.admin-dialog h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.admin-dialog p {
+  font-size: 0.875rem;
+  color: var(--admin-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.admin-dialog__actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, #FF62F4, #a855f7);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(255,98,244,0.25);
+}
+
+.btn--primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(255,98,244,0.4);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--admin-text-secondary);
+  border: 1px solid var(--admin-border-light);
+}
+
+.btn--ghost:hover {
+  border-color: var(--admin-text-muted);
+  color: var(--admin-text-primary);
+}
+
+.btn--danger {
+  background: rgba(239,68,68,0.12);
+  color: var(--error);
+  border: 1px solid rgba(239,68,68,0.25);
+}
+
+.btn--danger:hover {
+  background: rgba(239,68,68,0.2);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* ── Loading spinner ── */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.2);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Empty state ── */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+  text-align: center;
+  color: var(--admin-text-muted);
+  gap: 12px;
+}
+
+.empty-state svg { opacity: 0.3; }
+.empty-state h3 { font-size: 1rem; font-weight: 600; color: var(--admin-text-secondary); }
+.empty-state p  { font-size: 0.85rem; max-width: 280px; line-height: 1.6; }
+
+/* ── Skeleton loader ── */
+.skeleton {
+  background: linear-gradient(90deg, var(--admin-surface-2) 25%, var(--admin-surface-3) 50%, var(--admin-surface-2) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
