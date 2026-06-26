@@ -397,12 +397,21 @@ function collectFormData () {
     const platformName = input.value.trim()
     const handleInput = input.closest('.reg-field').querySelector('.additionalPlatformHandle')
     const platformHandle = handleInput ? handleInput.value.trim().replace(/^@/, '') : ''
-    
+    // Try to read follower/subscriber count for the custom platform (optional)
+    const followerInput = input.closest('.reg-field').querySelector('.additionalPlatformFollowers')
+    let followers = null
+    if (followerInput) {
+      const v = parseInt(followerInput.value.replace(/[^0-9]/g, ''), 10)
+      followers = Number.isNaN(v) ? null : v
+    }
+
     if (platformName && platformHandle) {
-      additionalPlatforms.push({
+      const platformObj = {
         platform: platformName,
         handle: platformHandle
-      })
+      }
+      if (followers !== null) platformObj.followers = followers
+      additionalPlatforms.push(platformObj)
     }
   })
 
@@ -603,6 +612,14 @@ function addPlatformField () {
           maxlength="100"
         />
       </div>
+      <input
+        type="number"
+        class="additionalPlatformFollowers"
+        id="additionalPlatformFollowers-${platformCount}"
+        placeholder="Followers"
+        min="0"
+        style="width: 120px; padding: 0.6rem; border: 1px solid #2e2e2e; border-radius: 8px; background: #111111; color: #ffffff;"
+      />
       <button type="button" class="removePlatformBtn" data-id="${platformCount}" style="padding: 0.6rem 0.8rem; background: #ef4444; border: none; border-radius: 6px; color: white; cursor: pointer; font-weight: 500;">
         ✕
       </button>
