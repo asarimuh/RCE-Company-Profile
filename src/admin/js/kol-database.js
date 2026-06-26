@@ -12,6 +12,7 @@ import {
   getInitials, showToast, showConfirm,
   debounce, setHeaderDate, setSidebarUser
 } from './admin-utils.js'
+import ExcelJS from 'exceljs/dist/exceljs.min.js'
 
 // ── Auth ──────────────────────────────────────────────────────
 const session = await requireAuth()
@@ -432,6 +433,34 @@ pageSizeSelect.addEventListener('change', (e) => {
   loadTable()
 })
 
+// ── Export support ───────────────────────────────────────────
+const exportBtn = document.getElementById('exportBtn')
+
+exportBtn?.addEventListener('click', async () => {
+  const originalText = exportBtn.textContent
+  exportBtn.disabled = true
+  exportBtn.textContent = 'Menyusun...'
+
+  try {
+    const { data } = await fetchExportRows()
+    if (!data?.length) {
+      showToast('Tidak ada data yang cocok untuk diekspor.', 'error')
+      return
+    }
+
+    const filename = `kol-database-export-${new Date().toISOString().slice(0, 10)}.xlsx`
+    const workbook = buildWorkbook(data)
+    downloadWorkbook(filename, workbook)
+    showToast('Export berhasil. File sedang diunduh.')
+  } catch (err) {
+    console.error('Export error:', err)
+    showToast('Gagal mengekspor data. Coba lagi.', 'error')
+  } finally {
+    exportBtn.disabled = false
+    exportBtn.textContent = originalText
+  }
+})
+
 // ── Check URL for ?open=id on load (from dashboard recent list) ──
 const urlParams = new URLSearchParams(window.location.search)
 const openId    = urlParams.get('open')
@@ -439,3 +468,154 @@ const openId    = urlParams.get('open')
 // ── Init ──────────────────────────────────────────────────────
 await loadTable()
 if (openId) openDetail(openId)
+
+async function fetchExportRows () {
+  let query = supabase
+    .from('talent_registrations')
+    .select('*')
+
+  if (state.search) {
+    const term = state.search.trim()
+    query = query.or(
+      `full_name.ilike.%${term}%,email.ilike.%${term}%,tiktok_handle.ilike.%${term}%,instagram_handle.ilike.%${term}%,youtube_handle.ilike.%${term}%,whatsapp_number.ilike.%${term}%`
+    )
+  }
+
+  if (state.platform) query = query.eq('primary_platform', state.platform)
+  if (state.category) query = query.contains('content_category', [state.category])
+
+  if (state.sortCol === 'followers') {
+    query = query.order('follower_count_tt', { ascending: state.sortDir === 'asc', nullsFirst: false })
+  } else {
+    query = query.order(state.sortCol, { ascending: state.sortDir === 'asc', nullsFirst: false })
+  }
+
+  const { data, error } = await query
+  if (error) throw error
+  return { data: data ?? [] }
+}
+
+function buildWorkbook (rows) {
+  const headers = [
+    'Nama Lengkap',
+    'Email',
+    'WhatsApp',
+    'Platform Utama',
+    'TikTok',
+    'Instagram',
+    'YouTube',
+    'Followers TikTok',
+    'Followers Instagram',
+    'Subscribers YouTube',
+    'Kota',
+    'Provinsi',
+    'Negara',
+    'Kategori Konten',
+    'Deskripsi Konten',
+    'Tanggal Daftar',
+    'Status'
+  ]
+
+  const workbook = new ExcelJS.Workbook()
+  const worksheet = workbook.addWorksheet('KOL Database', {
+    views: [{ state: 'frozen', ySplit: 3 }],
+    properties: { defaultRowHeight: 20 }
+  })
+
+  const columnWidths = [24, 30, 18, 16, 20, 20, 18, 16, 18, 18, 16, 16, 16, 30, 36, 20, 14]
+  columnWidths.forEach((width, index) => {
+    worksheet.getColumn(index + 1).width = width
+  })
+
+  const titleRow = worksheet.addRow(['Laporan Data Pendaftar KOL/KOC'])
+  titleRow.font = { bold: true, size: 16, color: { argb: 'FF1F2937' } }
+  titleRow.alignment = { horizontal: 'center', vertical: 'middle' }
+  titleRow.height = 24
+  worksheet.mergeCells(1, 1, 1, headers.length)
+
+  const subtitleRow = worksheet.addRow(['Tanggal Ekspor:', new Date()])
+  subtitleRow.getCell(1).font = { size: 11, color: { argb: 'FF374151' } }
+  subtitleRow.getCell(2).font = { size: 11, color: { argb: 'FF374151' } }
+  subtitleRow.getCell(2).numFmt = 'yyyy-mm-dd hh:mm:ss'
+  subtitleRow.alignment = { vertical: 'middle' }
+  subtitleRow.height = 18
+
+  const border = {
+    top: { style: 'thin', color: { argb: 'FF9CA3AF' } },
+    left: { style: 'thin', color: { argb: 'FF9CA3AF' } },
+    bottom: { style: 'thin', color: { argb: 'FF9CA3AF' } },
+    right: { style: 'thin', color: { argb: 'FF9CA3AF' } }
+  }
+
+  const headerRow = worksheet.addRow(headers)
+  headerRow.font = { bold: true, color: { argb: 'FF111827' } }
+  headerRow.alignment = { horizontal: 'center', vertical: 'middle' }
+  headerRow.fill = {
+    type: 'pattern',
+    pattern: 'solid',
+    fgColor: { argb: 'FFD1D5DB' }
+  }
+  headerRow.height = 22
+  headerRow.eachCell((cell) => {
+    cell.border = border
+  })
+
+  titleRow.eachCell(cell => {
+    cell.border = border
+  })
+  subtitleRow.eachCell(cell => {
+    cell.border = border
+  })
+  headerRow.eachCell(cell => {
+    cell.border = border
+  })
+
+  rows.forEach((row) => {
+    const dataRow = worksheet.addRow([
+      row.full_name,
+      row.email,
+      row.whatsapp_number,
+      row.primary_platform,
+      row.tiktok_handle,
+      row.instagram_handle,
+      row.youtube_handle,
+      row.follower_count_tt,
+      row.follower_count_ig,
+      row.follower_count_yt,
+      row.city,
+      row.province,
+      row.country,
+      Array.isArray(row.content_category) ? row.content_category.join('; ') : row.content_category || '',
+      row.content_description,
+      row.created_at ? new Date(row.created_at) : null,
+      row.status,
+    ])
+
+    dataRow.eachCell((cell) => {
+      cell.border = border
+      cell.alignment = { vertical: 'middle', wrapText: true }
+      if (cell.value instanceof Date) {
+        cell.numFmt = 'yyyy-mm-dd hh:mm:ss'
+      }
+    })
+  })
+
+  const dateColumnIndex = headers.indexOf('Tanggal Daftar') + 1
+  worksheet.getColumn(dateColumnIndex).numFmt = 'yyyy-mm-dd hh:mm:ss'
+  worksheet.properties.defaultRowHeight = 20
+
+  return workbook
+}
+
+async function downloadWorkbook (filename, workbook) {
+  const buffer = await workbook.xlsx.writeBuffer()
+  const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = filename
+  document.body.appendChild(a)
+  a.click()
+  document.body.removeChild(a)
+  URL.revokeObjectURL(url)
+}
