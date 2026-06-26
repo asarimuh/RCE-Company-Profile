@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daftar sebagai Talent — Rising Creators Entertainment</title>
+  <meta name="description" content="Daftarkan diri kamu sebagai KOL, KOC, atau influencer bersama Rising Creators Entertainment." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/components/navbar.css" />
+  <link rel="stylesheet" href="../css/components/footer.css" />
+  <link rel="stylesheet" href="../css/pages/register.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════════════════ -->
+  <header class="navbar">
+    <div class="navbar__container">
+      <a href="/" class="navbar__logo">
+        <img src="../public/assets/rce-brand-logo.svg" alt="Rising Creators Entertainment" />
+      </a>
+      <nav class="navbar__links" id="navLinks">
+        <a href="/#about">Tentang Kami</a>
+        <a href="/#services">Layanan</a>
+        <a href="/#talent">Talent</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#contact">Kontak</a>
+      </nav>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════
+       PAGE HERO
+  ═══════════════════════════════════════════════════════ -->
+  <section class="reg-hero">
+    <div class="reg-hero__inner">
+      <span class="reg-hero__label">Talent Registration</span>
+      <h1 class="reg-hero__title">Bergabung Bersama<br /><em>Rising Creators</em></h1>
+      <p class="reg-hero__subtitle">
+        Daftarkan diri kamu sebagai KOL, KOC, atau influencer dan mulai perjalanan kolaborasimu bersama kami.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FORM SECTION
+  ═══════════════════════════════════════════════════════ -->
+  <section class="reg-section">
+    <div class="reg-container">
+
+      <!-- Progress Bar -->
+      <div class="reg-progress" aria-label="Progress pendaftaran">
+        <div class="reg-progress__track">
+          <div class="reg-progress__fill" id="progressFill"></div>
+        </div>
+        <div class="reg-progress__steps">
+          <div class="reg-progress__step active" data-step="1">
+            <div class="reg-progress__dot">1</div>
+            <span>Data Diri</span>
+          </div>
+          <div class="reg-progress__step" data-step="2">
+            <div class="reg-progress__dot">2</div>
+            <span>Kontak & Sosial</span>
+          </div>
+          <div class="reg-progress__step" data-step="3">
+            <div class="reg-progress__dot">3</div>
+            <span>Profil Kreator</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Card -->
+      <div class="reg-card">
+        <form id="registrationForm" novalidate>
+
+          <!-- Honeypot (anti-spam, hidden from humans) -->
+          <input
+            type="text"
+            name="website"
+            id="honeypot"
+            tabindex="-1"
+            autocomplete="off"
+            aria-hidden="true"
+            style="display:none"
+          />
+
+          <!-- ─────────────────────────────────────────────
+               STEP 1 — Data Diri
+          ───────────────────────────────────────────── -->
+          <div class="reg-step active" id="step1">
+            <div class="reg-step__header">
+              <h2>Data Diri</h2>
+              <p>Isi informasi pribadi kamu dengan lengkap dan benar.</p>
+            </div>
+
+            <div class="reg-fields">
+
+              <div class="reg-field">
+                <label for="fullName">Nama Lengkap <span class="req">*</span></label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="full_name"
+                  placeholder="Contoh: Budi Santoso"
+                  maxlength="100"
+                  autocomplete="name"
+                />
+                <span class="reg-field__error" id="fullNameError"></span>
+              </div>
+
+              <div class="reg-field--row">
+                <div class="reg-field">
+                  <label for="dateOfBirth">Tanggal Lahir</label>
+                  <input
+                    type="date"
+                    id="dateOfBirth"
+                    name="date_of_birth"
+                  />
+                  <span class="reg-field__error" id="dateOfBirthError"></span>
+                </div>
+
+                <div class="reg-field">
+                  <label for="gender">Jenis Kelamin</label>
+                  <select id="gender" name="gender">
+                    <option value="">— Pilih —</option>
+                    <option value="male">Laki-laki</option>
+                    <option value="female">Perempuan</option>
+                    <option value="prefer_not_to_say">Tidak ingin menyebutkan</option>
+                  </select>
+                  <span class="reg-field__error" id="genderError"></span>
+                </div>
+              </div>
+
+              <div class="reg-field--row">
+                <div class="reg-field">
+                  <label for="city">Kota <span class="req">*</span></label>
+                  <input
+                    type="text"
+                    id="city"
+                    name="city"
+                    placeholder="Contoh: Jakarta"
+                    maxlength="100"
+                  />
+                  <span class="reg-field__error" id="cityError"></span>
+                </div>
+
+                <div class="reg-field">
+                  <label for="province">Provinsi</label>
+                  <input
+                    type="text"
+                    id="province"
+                    name="province"
+                    placeholder="Contoh: DKI Jakarta"
+                    maxlength="100"
+                  />
+                </div>
+              </div>
+
+            </div><!-- /.reg-fields -->
+
+            <div class="reg-nav">
+              <span></span>
+              <button type="button" class="reg-btn reg-btn--next" id="toStep2">
+                Selanjutnya <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- ─────────────────────────────────────────────
+               STEP 2 — Kontak & Sosial
+          ───────────────────────────────────────────── -->
+          <div class="reg-step" id="step2">
+            <div class="reg-step__header">
+              <h2>Kontak & Media Sosial</h2>
+              <p>Kami akan menghubungi kamu melalui informasi ini.</p>
+            </div>
+
+            <div class="reg-fields">
+
+              <div class="reg-field">
+                <label for="email">Email <span class="req">*</span></label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="contoh@email.com"
+                  maxlength="254"
+                  autocomplete="email"
+                />
+                <span class="reg-field__error" id="emailError"></span>
+              </div>
+
+              <div class="reg-field">
+                <label for="whatsappNumber">Nomor WhatsApp <span class="req">*</span></label>
+                <div class="reg-field__prefix-wrap">
+                  <span class="reg-field__prefix">+62</span>
+                  <input
+                    type="tel"
+                    id="whatsappNumber"
+                    name="whatsapp_number"
+                    placeholder="812-3456-7890"
+                    maxlength="15"
+                    autocomplete="tel"
+                  />
+                </div>
+                <span class="reg-field__hint">Tanpa angka 0 di depan. Contoh: 81234567890</span>
+                <span class="reg-field__error" id="whatsappError"></span>
+              </div>
+
+              <div class="reg-field--row">
+                <div class="reg-field">
+                  <label for="tiktokHandle">TikTok</label>
+                  <div class="reg-field__prefix-wrap">
+                    <span class="reg-field__prefix">@</span>
+                    <input
+                      type="text"
+                      id="tiktokHandle"
+                      name="tiktok_handle"
+                      placeholder="usernamekamu"
+                      maxlength="24"
+                    />
+                  </div>
+                  <span class="reg-field__error" id="tiktokError"></span>
+                </div>
+
+                <div class="reg-field">
+                  <label for="instagramHandle">Instagram</label>
+                  <div class="reg-field__prefix-wrap">
+                    <span class="reg-field__prefix">@</span>
+                    <input
+                      type="text"
+                      id="instagramHandle"
+                      name="instagram_handle"
+                      placeholder="usernamekamu"
+                      maxlength="30"
+                    />
+                  </div>
+                  <span class="reg-field__error" id="instagramError"></span>
+                </div>
+              </div>
+
+              <div class="reg-field">
+                <label for="youtubeHandle">YouTube</label>
+                <div class="reg-field__prefix-wrap">
+                  <span class="reg-field__prefix">@</span>
+                  <input
+                    type="text"
+                    id="youtubeHandle"
+                    name="youtube_handle"
+                    placeholder="channelkamu"
+                    maxlength="100"
+                  />
+                </div>
+                <span class="reg-field__error" id="youtubeError"></span>
+              </div>
+
+            </div><!-- /.reg-fields -->
+
+            <div class="reg-nav">
+              <button type="button" class="reg-btn reg-btn--back" id="toStep1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Kembali
+              </button>
+              <button type="button" class="reg-btn reg-btn--next" id="toStep3">
+                Selanjutnya <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- ─────────────────────────────────────────────
+               STEP 3 — Profil Kreator
+          ───────────────────────────────────────────── -->
+          <div class="reg-step" id="step3">
+            <div class="reg-step__header">
+              <h2>Profil Kreator</h2>
+              <p>Ceritakan lebih lanjut tentang konten dan audiensmu.</p>
+            </div>
+
+            <div class="reg-fields">
+
+              <div class="reg-field">
+                <label>Platform Utama <span class="req">*</span></label>
+                <div class="reg-platform-options">
+                  <label class="reg-platform-option">
+                    <input type="radio" name="primary_platform" value="tiktok" />
+                    <span>🎵 TikTok</span>
+                  </label>
+                  <label class="reg-platform-option">
+                    <input type="radio" name="primary_platform" value="instagram" />
+                    <span>📸 Instagram</span>
+                  </label>
+                  <label class="reg-platform-option">
+                    <input type="radio" name="primary_platform" value="youtube" />
+                    <span>▶️ YouTube</span>
+                  </label>
+                  <label class="reg-platform-option">
+                    <input type="radio" name="primary_platform" value="other" />
+                    <span>🌐 Lainnya</span>
+                  </label>
+                </div>
+                <span class="reg-field__error" id="platformError"></span>
+              </div>
+
+              <div class="reg-field">
+                <label>Kategori Konten <span class="req">*</span></label>
+                <p class="reg-field__hint">Pilih semua yang sesuai.</p>
+                <div class="reg-category-options">
+                  <label class="reg-category-option"><input type="checkbox" name="content_category" value="lifestyle" /><span>Lifestyle</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="content_category" value="fashion" /><span>Fashion</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="content_category" value="beauty" /><span>Beauty</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="content_category" value="gaming" /><span>Gaming</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="content_category" value="food" /><span>Food & Kuliner</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="content_category" value="travel" /><span>Travel</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="content_category" value="education" /><span>Edukasi</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="content_category" value="entertainment" /><span>Entertainment</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="content_category" value="tech" /><span>Teknologi</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="content_category" value="fitness" /><span>Fitness & Health</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="content_category" value="business" /><span>Bisnis</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="content_category" value="other" /><span>Lainnya</span></label>
+                </div>
+                <span class="reg-field__error" id="categoryError"></span>
+              </div>
+
+              <div class="reg-field--row">
+                <div class="reg-field">
+                  <label for="followerTt">Jumlah Followers TikTok</label>
+                  <input type="number" id="followerTt" name="follower_count_tt" placeholder="0" min="0" max="999999999" />
+                </div>
+                <div class="reg-field">
+                  <label for="followerIg">Jumlah Followers Instagram</label>
+                  <input type="number" id="followerIg" name="follower_count_ig" placeholder="0" min="0" max="999999999" />
+                </div>
+              </div>
+
+              <div class="reg-field">
+                <label for="followerYt">Jumlah Subscribers YouTube</label>
+                <input type="number" id="followerYt" name="follower_count_yt" placeholder="0" min="0" max="999999999" />
+              </div>
+
+              <div class="reg-field">
+                <label for="contentDescription">Deskripsi Konten</label>
+                <textarea
+                  id="contentDescription"
+                  name="content_description"
+                  placeholder="Ceritakan tentang konten yang kamu buat, gaya kontenmu, dan audiens utamamu..."
+                  maxlength="500"
+                  rows="4"
+                ></textarea>
+                <span class="reg-field__char-count"><span id="descCount">0</span>/500</span>
+                <span class="reg-field__error" id="descriptionError"></span>
+              </div>
+
+              <div class="reg-field">
+                <label for="portfolioUrl">Link Portfolio / Highlight (opsional)</label>
+                <input
+                  type="url"
+                  id="portfolioUrl"
+                  name="portfolio_url"
+                  placeholder="https://linktr.ee/usernamekamu"
+                />
+                <span class="reg-field__error" id="portfolioError"></span>
+              </div>
+
+            </div><!-- /.reg-fields -->
+
+            <!-- Terms -->
+            <div class="reg-terms">
+              <label class="reg-terms__label">
+                <input type="checkbox" id="agreeTerms" />
+                <span>Saya menyatakan bahwa informasi yang saya berikan adalah benar dan saya menyetujui penggunaan data ini untuk keperluan kolaborasi dengan Rising Creators Entertainment.</span>
+              </label>
+              <span class="reg-field__error" id="termsError"></span>
+            </div>
+
+            <div class="reg-nav">
+              <button type="button" class="reg-btn reg-btn--back" id="toStep2b">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Kembali
+              </button>
+              <button type="submit" class="reg-btn reg-btn--submit" id="submitBtn" disabled>
+                <span id="submitLabel">Kirim Pendaftaran</span>
+                <span id="submitSpinner" class="reg-spinner" hidden></span>
+              </button>
+            </div>
+          </div>
+
+        </form>
+      </div><!-- /.reg-card -->
+
+    </div><!-- /.reg-container -->
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__brand">
+        <img src="../public/assets/rce-brand-logo.svg" alt="Rising Creators Entertainment" />
+      </div>
+      <p class="footer__copy">© 2025 Rising Creators Entertainment. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="../js/registration-form.js"></script>
+
+</body>
+</html>

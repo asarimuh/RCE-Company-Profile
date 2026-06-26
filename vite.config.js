@@ -14,6 +14,10 @@ export default defineConfig({
         corporateSolutions: resolve(__dirname, 'src/pages/services/corporate-solutions.html'),
         eCommerce: resolve(__dirname, 'src/pages/services/e-commerce.html'),
 
+        // New pages
+        register:               resolve(__dirname, 'src/pages/register.html'),
+        registerSuccess:        resolve(__dirname, 'src/pages/register-success.html'),
+
         // Blogs
         allBlogs: resolve(__dirname, 'src/pages/blogs.html'),
         teknikVokal: resolve(__dirname, 'src/pages/blogs/teknik-vokal.html'),
