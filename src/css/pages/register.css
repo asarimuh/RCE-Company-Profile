@@ -33,12 +33,13 @@ body {
   line-height: 1.6;
 }
 
+
 /* ============================================================
    HERO
    ============================================================ */
 .reg-hero {
   background: linear-gradient(135deg, var(--brand-dark) 0%, #1a0a1a 50%, var(--brand-dark) 100%);
-  padding: clamp(100px, 14vw, 160px) 24px clamp(60px, 8vw, 100px);
+  padding: clamp(80px, 9vw, 120px) 24px clamp(20px, 2vw, 30px);
   text-align: center;
   position: relative;
   overflow: hidden;

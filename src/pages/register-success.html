@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pendaftaran Berhasil — Rising Creators Entertainment</title>
+  <meta name="robots" content="noindex" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/pages/register.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+      background: var(--brand-dark);
+      text-align: center;
+    }
+
+    .success-card {
+      background: var(--brand-dark-2);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: clamp(40px, 6vw, 64px) clamp(28px, 5vw, 56px);
+      max-width: 520px;
+      width: 100%;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.4);
+      animation: stepFadeIn 0.5s ease;
+    }
+
+    .success-icon {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, #FF62F4, #a855f7);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      box-shadow: 0 0 32px rgba(255, 98, 244, 0.35);
+    }
+
+    .success-icon svg {
+      width: 36px;
+      height: 36px;
+      stroke: #fff;
+      stroke-width: 2.5;
+    }
+
+    .success-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--brand-pink);
+      background: var(--brand-pink-glow);
+      border: 1px solid rgba(255, 98, 244, 0.3);
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+
+    .success-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+
+    .success-title em {
+      font-style: normal;
+      background: linear-gradient(135deg, #FF62F4, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .success-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    .success-divider {
+      height: 1px;
+      background: var(--border-color);
+      margin: 0 0 28px;
+    }
+
+    .success-next-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .success-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .success-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 24px;
+      border-radius: var(--radius-sm);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .success-btn--whatsapp {
+      background: #25D366;
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.25);
+    }
+
+    .success-btn--whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(37, 211, 102, 0.4);
+    }
+
+    .success-btn--home {
+      background: transparent;
+      color: var(--text-secondary);
+      border: 1.5px solid var(--border-color);
+    }
+
+    .success-btn--home:hover {
+      border-color: var(--text-muted);
+      color: var(--text-primary);
+    }
+
+    .success-footer {
+      margin-top: 40px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="success-card">
+
+    <!-- Icon -->
+    <div class="success-icon">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <!-- Label -->
+    <span class="success-label">Pendaftaran Terkirim</span>
+
+    <!-- Title -->
+    <h1 class="success-title">Selamat Datang di<br /><em>Rising Creators!</em></h1>
+
+    <!-- Description -->
+    <p class="success-desc">
+      Formulir pendaftaranmu telah kami terima. Tim kami akan meninjau profilmu dan menghubungi kamu melalui WhatsApp atau email dalam waktu <strong>3–5 hari kerja</strong>.
+    </p>
+
+    <div class="success-divider"></div>
+
+    <!-- Next steps -->
+    <p class="success-next-label">Langkah Selanjutnya</p>
+
+    <div class="success-actions">
+      <a
+        href="https://wa.me/6285693040587?text=Halo%20Rising%20Creators!%20Saya%20baru%20saja%20mendaftar%20sebagai%20talent%20dan%20ingin%20memperkenalkan%20diri."
+        class="success-btn success-btn--whatsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.121.554 4.242 1.606 6.09L0 24l6.09-1.597A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.373l-.36-.214-3.724.977.997-3.632-.234-.373A9.818 9.818 0 1112 21.818z"/>
+        </svg>
+        Hubungi Kami via WhatsApp
+      </a>
+
+      <a href="/" class="success-btn success-btn--home">
+        Kembali ke Beranda
+      </a>
+    </div>
+
+  </div>
+
+  <p class="success-footer">© 2025 Rising Creators Entertainment. All rights reserved.</p>
+
+</body>
+</html>

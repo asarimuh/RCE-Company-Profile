@@ -15,32 +15,39 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="../css/reset.css" />
-  <link rel="stylesheet" href="../css/components/navbar.css" />
-  <link rel="stylesheet" href="../css/components/footer.css" />
-  <link rel="stylesheet" href="../css/pages/register.css" />
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/components/footer.css" />
+  <link rel="stylesheet" href="/css/pages/register-navbar.css"/>
+  <link rel="stylesheet" href="/css/pages/register.css" />
 </head>
 <body>
 
   <!-- ═══════════════════════════════════════════════════════
        NAVBAR
   ═══════════════════════════════════════════════════════ -->
-  <header class="navbar">
-    <div class="navbar__container">
-      <a href="/" class="navbar__logo">
-        <img src="../public/assets/rce-brand-logo.svg" alt="Rising Creators Entertainment" />
-      </a>
-      <nav class="navbar__links" id="navLinks">
-        <a href="/#about">Tentang Kami</a>
-        <a href="/#services">Layanan</a>
-        <a href="/#talent">Talent</a>
-        <a href="/#blog">Blog</a>
-        <a href="/#contact">Kontak</a>
-      </nav>
-      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
+  <!-- ================= NAVBAR ================= -->
+  <header id="header">
+    <nav class="navbar">
+      <div class="nav-left">
+        <div class="nav-logo"><img src="/assets/rce-brand-logo.svg" alt="brand logo"></div>
+        <div class="nav-text"><h1>Rising Creators Entertainment</h1></div>
+      </div>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
       </button>
-    </div>
+      <div class="nav-right">
+        <ul id="primary-navigation" class="nav-links">
+          <li><a href="/index.html#talents">Talents</a></li>
+          <li><a href="/index.html#live">Live</a></li>
+          <li><a href="/index.html#about">About Us</a></li>
+          <li><a href="/index.html#gallery">Gallery</a></li>
+          <li><a href="/index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
   </header>
 
   <!-- ═══════════════════════════════════════════════════════
@@ -212,13 +219,19 @@
                     type="tel"
                     id="whatsappNumber"
                     name="whatsapp_number"
-                    placeholder="812-3456-7890"
+                    placeholder=""
                     maxlength="15"
                     autocomplete="tel"
                   />
                 </div>
-                <span class="reg-field__hint">Tanpa angka 0 di depan. Contoh: 81234567890</span>
+                <span class="reg-field__hint">Dengan atau tanpa angka 0 di depan. Contoh: 081245678976 atau 81245678976</span>
                 <span class="reg-field__error" id="whatsappError"></span>
+              </div>
+
+              <!-- Social Media Section with Parent Label -->
+              <div class="reg-field">
+                <label>Media Sosial <span class="req">*</span></label>
+                <p class="reg-field__hint">Masukkan minimal satu media sosial dari opsi di bawah</p>
               </div>
 
               <div class="reg-field--row">
@@ -238,7 +251,7 @@
                 </div>
 
                 <div class="reg-field">
-                  <label for="instagramHandle">Instagram</label>
+                  <label for="instagramHandle">Instagram <span style="color: #a0a0a0;">(Opsional)</span></label>
                   <div class="reg-field__prefix-wrap">
                     <span class="reg-field__prefix">@</span>
                     <input
@@ -254,7 +267,7 @@
               </div>
 
               <div class="reg-field">
-                <label for="youtubeHandle">YouTube</label>
+                <label for="youtubeHandle">YouTube <span style="color: #a0a0a0;">(Opsional)</span></label>
                 <div class="reg-field__prefix-wrap">
                   <span class="reg-field__prefix">@</span>
                   <input
@@ -267,6 +280,15 @@
                 </div>
                 <span class="reg-field__error" id="youtubeError"></span>
               </div>
+
+              <!-- Additional Platforms Container -->
+              <div id="additionalPlatformsContainer"></div>
+
+              <!-- Add More Platforms Button -->
+              <button type="button" id="addPlatformBtn" class="reg-btn reg-btn--secondary" style="background: transparent; border: 1px solid #a0a0a0; color: #a0a0a0; padding: 0.6rem 1.2rem; border-radius: 8px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display: inline; margin-right: 0.5rem;"><path d="M12 5v14M5 12h14"/></svg>
+                Tambah Platform Lainnya
+              </button>
 
             </div><!-- /.reg-fields -->
 
@@ -312,6 +334,11 @@
                     <span>🌐 Lainnya</span>
                   </label>
                 </div>
+                <div class="reg-field" id="otherPlatformField" style="display: none; margin-top: 1rem;">
+                  <label for="otherPlatform">Sebutkan platform lainnya <span class="req">*</span></label>
+                  <input type="text" id="otherPlatform" name="other_platform" placeholder="Contoh: TikTok Live" maxlength="100" />
+                  <span class="reg-field__error" id="otherPlatformError"></span>
+                </div>
                 <span class="reg-field__error" id="platformError"></span>
               </div>
 
@@ -331,6 +358,11 @@
                   <label class="reg-category-option"><input type="checkbox" name="content_category" value="fitness" /><span>Fitness & Health</span></label>
                   <label class="reg-category-option"><input type="checkbox" name="content_category" value="business" /><span>Bisnis</span></label>
                   <label class="reg-category-option"><input type="checkbox" name="content_category" value="other" /><span>Lainnya</span></label>
+                </div>
+                <div class="reg-field" id="otherCategoryField" style="display: none; margin-top: 1rem;">
+                  <label for="otherCategory">Sebutkan kategori lainnya <span class="req">*</span></label>
+                  <input type="text" id="otherCategory" name="other_category" placeholder="Contoh: Olahraga Air" maxlength="100" />
+                  <span class="reg-field__error" id="otherCategoryError"></span>
                 </div>
                 <span class="reg-field__error" id="categoryError"></span>
               </div>
@@ -407,17 +439,51 @@
   <!-- ═══════════════════════════════════════════════════════
        FOOTER
   ═══════════════════════════════════════════════════════ -->
-  <footer class="footer">
-    <div class="footer__container">
-      <div class="footer__brand">
-        <img src="../public/assets/rce-brand-logo.svg" alt="Rising Creators Entertainment" />
+  <footer id="footer" class="footer-section">
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-column footer-about">
+          <div class="footer-logo">
+            <img src="/assets/rce-brand-logo.svg" alt="Rising Creators Entertainment logo">
+            <h3 class="footer-logo-title">Rising Creators Entertainment</h3>
+          </div>
+          <p class="footer-description">Connecting talent, business, and market through digital innovation.</p>
+          <div class="footer-social">
+            <a href="https://www.tiktok.com/@rce_87" target="_blank"><img src="/assets/tiktok-logo.svg"
+                alt="Tiktok"></a>
+            <a href="https://www.instagram.com/risingcreatorsentertainment" target="_blank" aria-label="Instagram"><img src="/assets/instagram-logo.svg" alt="instagram"></a>
+            <a href="https://www.facebook.com/profile.php?id=61590095679995" target="_blank" aria-label="Facebook"><img src="/assets/facebook-logo.svg" alt="Facebook"></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="/index.html#about">About us</a></li>
+            <li><a href="/index.html#services">Our Services</a></li>
+            <li><a href="/index.html#blog">Blog Articles</a></li>
+            <li><a href="/index.html#recruitment">Join Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Support</h4>
+          <ul class="footer-links">
+            <li><a href="/index.html#faq">FAQ</a></li>
+            <li><a href="/index.html#privacy">Privacy Policy</a></li>
+            <li><a href="/index.html#terms">Terms &amp; Conditions</a></li>
+            <li><a href="/index.html#contact">Contact Support</a></li>
+          </ul>
+        </div>
       </div>
-      <p class="footer__copy">© 2025 Rising Creators Entertainment. All rights reserved.</p>
+
+      <p class="footer-copy">&copy; 2026 Rising Creators Entertainment. All Rights Reserved.</p>
     </div>
   </footer>
 
   <!-- Scripts -->
-  <script type="module" src="../js/registration-form.js"></script>
+  <script type="module" src="/js/main.js"></script>
+  <script type="module" src="/js/registration-form.js"></script>
 
 </body>
 </html>
