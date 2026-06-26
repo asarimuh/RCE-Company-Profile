@@ -1,4 +1,6 @@
 import { loginWithEmail, redirectIfAuthenticated } from './admin-auth.js'
+import '../css/admin-base.css'
+import '../css/admin-login.css'
 
 // Redirect if already logged in
 await redirectIfAuthenticated()
@@ -61,7 +63,7 @@ form.addEventListener('submit', async (e) => {
 
   try {
     await loginWithEmail(emailInput.value.trim(), passwordInput.value)
-    // admin-auth.js handles redirect on success
+    window.location.replace('/admin/dashboard.html')
   } catch (err) {
     loginError.textContent = 'Email atau password salah. Silakan coba lagi.'
     loginLabel.textContent = 'Masuk'

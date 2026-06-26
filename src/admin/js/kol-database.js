@@ -3,6 +3,7 @@
 // Full table with search, filter, sort, pagination, detail panel, delete
 // ============================================================
 
+import '../css/admin-components.css'
 import { requireAuth, logout, getCurrentUser } from './admin-auth.js'
 import { supabase } from './admin-supabase.js'
 import {
@@ -50,9 +51,8 @@ async function fetchData () {
   let query = supabase
     .from('talent_registrations')
     .select('*', { count: 'exact' })
-    .is('deleted_at', null)
+    .filter('deleted_at', 'is', null)
 
-  // Search
   if (state.search) {
     const term = state.search.trim()
     query = query.or(
@@ -60,29 +60,18 @@ async function fetchData () {
     )
   }
 
-  // Platform filter
-  if (state.platform) {
-    query = query.eq('primary_platform', state.platform)
-  }
+  if (state.platform) query = query.eq('primary_platform', state.platform)
+  if (state.category) query = query.contains('content_category', [state.category])
 
-  // Category filter
-  if (state.category) {
-    query = query.contains('content_category', [state.category])
-  }
-
-  // Sort
   if (state.sortCol === 'followers') {
-    // Sort by primary platform followers
     query = query.order('follower_count_tt', { ascending: state.sortDir === 'asc', nullsFirst: false })
   } else {
     query = query.order(state.sortCol, { ascending: state.sortDir === 'asc', nullsFirst: false })
   }
 
-  // Pagination
   query = query.range(from, to)
 
   const { data, count, error } = await query
-
   if (error) throw error
   return { data: data ?? [], count: count ?? 0 }
 }
@@ -223,11 +212,6 @@ function handleDelete (id, name) {
     message:       `Yakin ingin menghapus data <strong>${name}</strong>? Tindakan ini tidak dapat dibatalkan.`,
     confirmLabel:  'Ya, Hapus',
     onConfirm:     async () => {
-      const { error } = await supabase
-        .from('talent_registrations')
-        .update({ deleted_at: new Date().toISOString() })
-        .eq('id', id)
-
       if (error) {
         showToast('Gagal menghapus data.', 'error')
       } else {

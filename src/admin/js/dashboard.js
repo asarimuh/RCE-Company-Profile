@@ -1,6 +1,8 @@
 import { requireAuth, logout, getCurrentUser } from './admin-auth.js'
 import { supabase } from './admin-supabase.js'
 import { formatDate, platformBadge, getInitials, getPrimaryHandle, setHeaderDate, setSidebarUser } from './admin-utils.js'
+import '../css/admin-base.css'
+import '../css/admin-layout.css'
 
 // ── Auth guard ────────────────────────────────────────────────
 const session = await requireAuth()
@@ -15,19 +17,36 @@ document.getElementById('logoutBtn').addEventListener('click', logout)
 
 // ── Load stats ────────────────────────────────────────────────
 async function loadStats () {
-  const now       = new Date()
-  const todayStr  = now.toISOString().slice(0, 10)           // YYYY-MM-DD
-  const monthStr  = now.toISOString().slice(0, 7)            // YYYY-MM
+  const now      = new Date()
+  const todayStr = now.toISOString().slice(0, 10)
+  const monthStr = now.toISOString().slice(0, 7)
 
   const [
-    { count: total },
-    { count: today },
-    { count: month },
+    { count: total, error: e1 },
+    { count: today, error: e2 },
+    { count: month, error: e3 },
   ] = await Promise.all([
-    supabase.from('talent_registrations').select('*', { count: 'exact', head: true }).is('deleted_at', null),
-    supabase.from('talent_registrations').select('*', { count: 'exact', head: true }).is('deleted_at', null).gte('created_at', `${todayStr}T00:00:00`),
-    supabase.from('talent_registrations').select('*', { count: 'exact', head: true }).is('deleted_at', null).gte('created_at', `${monthStr}-01T00:00:00`),
+    supabase
+      .from('talent_registrations')
+      .select('*', { count: 'exact', head: true })
+      .filter('deleted_at', 'is', null),
+
+    supabase
+      .from('talent_registrations')
+      .select('*', { count: 'exact', head: true })
+      .filter('deleted_at', 'is', null)
+      .gte('created_at', `${todayStr}T00:00:00`),
+
+    supabase
+      .from('talent_registrations')
+      .select('*', { count: 'exact', head: true })
+      .filter('deleted_at', 'is', null)
+      .gte('created_at', `${monthStr}-01T00:00:00`),
   ])
+
+  if (e1 || e2 || e3) {
+    console.error('Stats error:', e1 || e2 || e3)
+  }
 
   document.getElementById('statTotal').textContent = total ?? 0
   document.getElementById('statToday').textContent = today ?? 0
@@ -43,7 +62,7 @@ async function loadRecent () {
   const { data, error } = await supabase
     .from('talent_registrations')
     .select('id, full_name, primary_platform, tiktok_handle, instagram_handle, youtube_handle, city, created_at')
-    .is('deleted_at', null)
+    .filter('deleted_at', 'is', null)
     .order('created_at', { ascending: false })
     .limit(10)
 
