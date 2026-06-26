@@ -8,11 +8,5 @@ export const supabase = createClient(supabaseUrl, supabaseKey, {
     persistSession: true,
     autoRefreshToken: true,
     storageKey: 'rce_admin_session',
-  },
-  global: {
-    headers: {
-      'apikey': supabaseKey,
-      'Authorization': `Bearer ${supabaseKey}`,
-    }
   }
 })

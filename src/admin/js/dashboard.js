@@ -11,6 +11,7 @@ if (!session) throw new Error('Unauthenticated')
 // ── Init UI ───────────────────────────────────────────────────
 setHeaderDate()
 const user = await getCurrentUser()
+console.log('Admin user session:', user)
 setSidebarUser(user)
 
 document.getElementById('logoutBtn').addEventListener('click', logout)
@@ -45,6 +46,8 @@ async function loadStats () {
     console.error('Stats error:', e1 || e2 || e3)
   }
 
+  console.log('Stats results', { total, today, month, e1, e2, e3 })
+
   document.getElementById('statTotal').textContent = total ?? 0
   document.getElementById('statToday').textContent = today ?? 0
   document.getElementById('statMonth').textContent = month ?? 0
@@ -61,6 +64,8 @@ async function loadRecent () {
     .select('id, full_name, primary_platform, tiktok_handle, instagram_handle, youtube_handle, city, created_at')
     .order('created_at', { ascending: false })
     .limit(10)
+
+  console.log('Recent registrations query:', { data, error })
 
   const container = document.getElementById('recentList')
 
