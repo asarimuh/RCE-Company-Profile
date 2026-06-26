@@ -28,19 +28,16 @@ async function loadStats () {
   ] = await Promise.all([
     supabase
       .from('talent_registrations')
-      .select('*', { count: 'exact', head: true })
-      .filter('deleted_at', 'is', null),
+      .select('*', { count: 'exact', head: true }),
 
     supabase
       .from('talent_registrations')
       .select('*', { count: 'exact', head: true })
-      .filter('deleted_at', 'is', null)
       .gte('created_at', `${todayStr}T00:00:00`),
 
     supabase
       .from('talent_registrations')
       .select('*', { count: 'exact', head: true })
-      .filter('deleted_at', 'is', null)
       .gte('created_at', `${monthStr}-01T00:00:00`),
   ])
 
@@ -62,7 +59,6 @@ async function loadRecent () {
   const { data, error } = await supabase
     .from('talent_registrations')
     .select('id, full_name, primary_platform, tiktok_handle, instagram_handle, youtube_handle, city, created_at')
-    .filter('deleted_at', 'is', null)
     .order('created_at', { ascending: false })
     .limit(10)
 

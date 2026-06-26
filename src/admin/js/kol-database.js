@@ -51,7 +51,6 @@ async function fetchData () {
   let query = supabase
     .from('talent_registrations')
     .select('*', { count: 'exact' })
-    .filter('deleted_at', 'is', null)
 
   if (state.search) {
     const term = state.search.trim()
