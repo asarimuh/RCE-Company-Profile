@@ -130,8 +130,9 @@
   line-height: 1;
   user-select: none;
   pointer-events: none;
-}
-
+  display: inline-block;
+  margin-bottom: 18px;
+} 
 .srv-icon-box {
   width: 54px;
   height: 54px;
