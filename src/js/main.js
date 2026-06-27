@@ -37,7 +37,7 @@ const talentRight = document.querySelector('.talent-right');
 const talentCardContainer = document.querySelector('.talent-card-container');
 const thumbnailItems = Array.from(document.querySelectorAll('.next-talent'));
 const revealTargets = Array.from(document.querySelectorAll(
-  '.hero-image-left, .hero-image-right, .hero-text, ' +
+  '.hero-body, .hero-pillars, ' +
   '.blog-card, .recruitment-card, .faq-card, .talent-active'
 ));
 let activeIndex = 0;
