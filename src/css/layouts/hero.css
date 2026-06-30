@@ -62,7 +62,7 @@
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: #FF62F4;
+  background: #6366F1;
   opacity: 0.6;
   flex-shrink: 0;
 }
@@ -119,7 +119,7 @@
 }
 
 .hero-btn-primary:hover {
-  background: #e040d0;
+  background: #6366F1;
   color: #ffffff;
 }
 

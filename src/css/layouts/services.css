@@ -71,6 +71,11 @@
   min-height: 360px;
 }
 
+.srv-card-grid .srv-card:first-child .srv-card-title {
+  max-width: 14rem;
+  word-break: break-word;
+}
+
 .srv-card-number {
   display: inline-block;
   font-family: 'Poppins', sans-serif;

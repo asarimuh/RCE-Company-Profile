@@ -56,9 +56,9 @@ body.loaded #loading-screen {
 .spinner-ring {
   width: 60px;
   height: 60px;
-  border: 4px solid rgba(255, 98, 244, 0.15);
-  border-top-color: #FF62F4;
-  border-right-color: #FF62F4;
+  border: 4px solid rgba(124, 58, 237, 0.15);
+  border-top-color: #7c3aed;
+  border-right-color: #7c3aed;
   border-radius: 50%;
   animation: spinnerRotate 0.8s linear infinite;
 }

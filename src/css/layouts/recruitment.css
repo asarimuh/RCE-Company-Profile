@@ -3,6 +3,7 @@
   background: #1a1a1a;
   padding: clamp(40px, 6vw, 80px) 24px;
   overflow: hidden;
+  margin-top: 90px;
 }
 
 .recruitment-card {
@@ -11,7 +12,7 @@
   width: min(100%, 1280px);
   margin: 0 auto;
   border-radius: 32px;
-  padding: clamp(24px, 4vw, 48px); 
+  padding: clamp(24px, 4vw, 48px);
   overflow: hidden;
   z-index: 1;
   opacity: 0;
@@ -26,18 +27,73 @@
 
 .recruitment-content {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   gap: 32px;
-  align-items: start;
+  align-items: stretch;
   position: relative;
-  max-width: 58%;
-  margin-right: auto;
 }
 
-.recruitment-text {
+.recruitment-panel {
   color: #ffffff;
-  z-index: 2;
-  min-width: 0; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* distribute top and bottom */
+  gap: 20px;
+  min-width: 0;
+  height: 100%;
+}
+
+.recruitment-separator {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  margin: 0;
+  align-self: stretch;
+}
+
+.recruitment-separator::before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100%;
+}
+
+.recruitment-panel-left,
+.recruitment-panel-right {
+  padding: 0;
+}
+
+.recruitment-panel-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recruitment-eyebrow {
+  display: inline-flex;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #7c3aed;
+  margin: 0 0 6px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.recruitment-panel h2 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800;
+  margin-top: 12px;
+  margin-bottom: 18px;
+  line-height: 1.1;
+  font-family: "Poppins", sans-serif;
+}
+
+.recruitment-panel p {
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  line-height: 1.8;
+  margin-bottom: 0;
+  color: #d3d3d3;
+  font-family: "Poppins", sans-serif;
 }
 
 .recruitment-text h2 {
@@ -48,13 +104,12 @@
   font-family: "Poppins", sans-serif;
 }
 
-.recruitment-text p {
+.recruitment-panel p {
   font-size: clamp(0.9rem, 2vw, 1.05rem);
   line-height: 1.8;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   color: #d3d3d3;
   font-family: "Poppins", sans-serif;
-  max-width: 620px;
 }
 
 .recruitment-bold {
@@ -130,11 +185,12 @@ p.recruitment-bold {
 
 @media (max-width: 1200px) {
   .recruitment-content {
-    max-width: 100%; 
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .recruitment-svgs {
-    display: none; 
+    display: none;
   }
 }
 
@@ -156,7 +212,7 @@ p.recruitment-bold {
 
 /* ── Registration CTA ── */
 .recruitment-cta {
-  margin-top: 28px;
+  margin-top: 0; /* CTA placement handled by panel flex layout */
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -175,11 +231,11 @@ p.recruitment-bold {
   border-radius: 8px;
   text-decoration: none;
   width: fit-content;
-  box-shadow: 0 4px 20px rgba(255, 98, 244, 0.3);
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .recruitment-register-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(255, 98, 244, 0.45);
+  box-shadow: 0 8px 28px rgba(99, 102, 241, 0.45);
 }

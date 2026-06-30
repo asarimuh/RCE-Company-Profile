@@ -103,7 +103,7 @@ h2.blog-heading {
 }
 
 .blog-more {
-  text-align: left;
+  text-align: center;
   margin-top: clamp(28px, 2.2vw, 34px);
 }
 
