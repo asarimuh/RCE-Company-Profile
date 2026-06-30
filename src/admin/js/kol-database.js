@@ -5,7 +5,7 @@
 
 import '../css/admin-components.css'
 import { requireAuth, logout, getCurrentUser } from './admin-auth.js'
-import { supabase } from './admin-supabase.js'
+import { supabase, updateVerificationStatus } from './admin-supabase.js'
 import {
   formatDate, compactNumber, platformBadge,
   getPrimaryHandle, getPrimaryFollowers,
@@ -28,6 +28,8 @@ const state = {
   search:    '',
   platform:  '',
   category:  '',
+  status:    '',
+  viewMode:  'all',
   sortCol:   'created_at',
   sortDir:   'desc',
   page:      1,
@@ -42,6 +44,8 @@ const paginationControls= document.getElementById('paginationControls')
 const searchInput       = document.getElementById('searchInput')
 const filterPlatform    = document.getElementById('filterPlatform')
 const filterCategory    = document.getElementById('filterCategory')
+const filterStatus      = document.getElementById('filterStatus')
+const filterView        = document.getElementById('filterView')
 const pageSizeSelect    = document.getElementById('pageSize')
 
 // ── Fetch data from Supabase ──────────────────────────────────
@@ -49,29 +53,47 @@ async function fetchData () {
   const from = (state.page - 1) * state.pageSize
   const to   = from + state.pageSize - 1
 
-  let query = supabase
-    .from('talent_registrations')
-    .select('*', { count: 'exact' })
+  const buildQuery = (tableName, statusField = 'verification_status') => {
+    let query = supabase
+      .from(tableName)
+      .select('*', { count: 'exact' })
 
-  if (state.search) {
-    const term = state.search.trim()
-    query = query.or(
-      `full_name.ilike.%${term}%,email.ilike.%${term}%,tiktok_handle.ilike.%${term}%,instagram_handle.ilike.%${term}%,youtube_handle.ilike.%${term}%,whatsapp_number.ilike.%${term}%`
-    )
+    if (state.search) {
+      const term = state.search.trim()
+      query = query.or(
+        `full_name.ilike.%${term}%,email.ilike.%${term}%,tiktok_handle.ilike.%${term}%,instagram_handle.ilike.%${term}%,youtube_handle.ilike.%${term}%,whatsapp_number.ilike.%${term}%`
+      )
+    }
+
+    if (state.platform) query = query.eq('primary_platform', state.platform)
+    if (state.category) query = query.contains('content_category', [state.category])
+    if (state.status) query = query.eq(statusField, state.status)
+    if (state.viewMode === 'verified' && !state.status) query = query.neq(statusField, 'pending')
+
+    if (state.sortCol === 'followers') {
+      query = query.order('follower_count_tt', { ascending: state.sortDir === 'asc', nullsFirst: false })
+    } else {
+      query = query.order(state.sortCol, { ascending: state.sortDir === 'asc', nullsFirst: false })
+    }
+
+    return query.range(from, to)
   }
 
-  if (state.platform) query = query.eq('primary_platform', state.platform)
-  if (state.category) query = query.contains('content_category', [state.category])
+  let query = buildQuery('data_kol_koc', 'verification_status')
+  let { data, count, error } = await query
 
-  if (state.sortCol === 'followers') {
-    query = query.order('follower_count_tt', { ascending: state.sortDir === 'asc', nullsFirst: false })
-  } else {
-    query = query.order(state.sortCol, { ascending: state.sortDir === 'asc', nullsFirst: false })
+  if (error) {
+    const message = error.message?.toLowerCase() || ''
+    const canFallback = message.includes('relation') || message.includes('does not exist') || message.includes('not found') || message.includes('column')
+    if (canFallback) {
+      query = buildQuery('data_kol_koc', 'status')
+      const fallbackResult = await query
+      data = fallbackResult.data
+      count = fallbackResult.count
+      error = fallbackResult.error
+    }
   }
 
-  query = query.range(from, to)
-
-  const { data, count, error } = await query
   if (error) throw error
   return { data: data ?? [], count: count ?? 0 }
 }
@@ -103,6 +125,7 @@ function renderTable (rows) {
         <td class="cell-muted">${escHtml(row.whatsapp_number)}</td>
         <td class="cell-muted">${escHtml(row.email)}</td>
         <td class="cell-muted">${escHtml(row.city ?? '—')}</td>
+        <td>${statusBadgeInline(getRecordStatus(row))}</td>
         <td class="cell-muted">${formatDate(row.created_at)}</td>
         <td class="cell-actions">
           <button class="action-btn delete-btn" data-id="${row.id}" data-name="${escHtml(row.full_name)}" title="Hapus">
@@ -196,10 +219,10 @@ async function loadTable () {
   } catch (err) {
     console.error(err)
     tableBody.innerHTML = `
-      <tr><td colspan="9">
+      <tr><td colspan="10">
         <div class="empty-state">
           <h3>Gagal memuat data</h3>
-          <p>${err.message}</p>
+          <p>${err?.message || 'Terjadi kesalahan yang tidak diketahui.'}</p>
         </div>
       </td></tr>`
   }
@@ -212,12 +235,20 @@ function handleDelete (id, name) {
     message:       `Yakin ingin menghapus data <strong>${name}</strong>? Tindakan ini tidak dapat dibatalkan.`,
     confirmLabel:  'Ya, Hapus',
     onConfirm:     async () => {
-      if (error) {
-        showToast('Gagal menghapus data.', 'error')
-      } else {
+      try {
+        const { error } = await supabase
+          .from('data_kol_koc')
+          .delete()
+          .eq('id', id)
+
+        if (error) throw error
+
         showToast(`Data ${name} berhasil dihapus.`)
         closeDetail()
         loadTable()
+      } catch (err) {
+        console.error('Delete error:', err)
+        showToast('Gagal menghapus data.', 'error')
       }
     }
   })
@@ -270,7 +301,7 @@ async function renderDetailPanel (id) {
 
   // Fetch full record
   const { data, error } = await supabase
-    .from('talent_registrations')
+    .from('data_kol_koc')
     .select('*')
     .eq('id', id)
     .single()
@@ -285,13 +316,41 @@ async function renderDetailPanel (id) {
 
   // Footer actions
   document.getElementById('detailFooter').innerHTML = `
-    <button class="btn btn--danger" id="detailDeleteBtn">
-      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
-      Hapus Data
-    </button>`
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between;width:100%;">
+      <button class="btn btn--danger" id="detailDeleteBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
+        Hapus Data
+      </button>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+        <select class="admin-filter" id="statusSelect">
+          <option value="pending">Pending</option>
+          <option value="reviewing">Review</option>
+          <option value="approved">Approved</option>
+          <option value="rejected">Rejected</option>
+          <option value="on_hold">On Hold</option>
+        </select>
+        <button class="btn btn--primary" id="detailSaveBtn">Simpan Status</button>
+      </div>
+    </div>`
+
+  document.getElementById('statusSelect').value = data.verification_status ?? data.status ?? 'pending'
 
   document.getElementById('detailDeleteBtn').addEventListener('click', () => {
     handleDelete(data.id, data.full_name)
+  })
+
+  document.getElementById('detailSaveBtn').addEventListener('click', async () => {
+    const nextStatus = document.getElementById('statusSelect').value
+    try {
+      await updateRecordStatus(data.id, nextStatus, data)
+
+      showToast('Status berhasil diperbarui.')
+      await loadTable()
+      await renderDetailPanel(data.id)
+    } catch (err) {
+      console.error('Update status error:', err)
+      showToast(getStatusUpdateErrorMessage(err), 'error')
+    }
   })
 }
 
@@ -361,11 +420,65 @@ function buildDetailHTML (d) {
     <div class="detail-section">
       <div class="detail-section__title">Informasi Pendaftaran</div>
       <div class="detail-grid">
-        ${field('Status', statusBadgeInline(d.status))}
+        ${field('Status', statusBadgeInline(getRecordStatus(d)))}
         ${field('Tanggal Daftar', formatDate(d.created_at))}
         ${field('Terakhir Diperbarui', formatDate(d.updated_at))}
       </div>
     </div>`
+}
+
+function getRecordStatus (row) {
+  return row?.verification_status ?? row?.status ?? 'pending'
+}
+
+function getStatusUpdateErrorMessage (error) {
+  const message = error?.message || ''
+  const lower = message.toLowerCase()
+
+  if (lower.includes('row-level security') || lower.includes('permission denied') || lower.includes('policy')) {
+    return 'Update ditolak oleh policy Supabase. Periksa RLS table di dashboard Supabase.'
+  }
+
+  if (lower.includes('does not exist') || lower.includes('42703') || (lower.includes('column') && lower.includes('not exist'))) {
+    return 'Kolom status belum tersedia di tabel Supabase. Tambahkan kolom status atau verification_status melalui SQL editor Supabase.'
+  }
+
+  return message || 'Gagal memperbarui status.'
+}
+
+async function updateRecordStatus (id, nextStatus, row) {
+  try {
+    await updateVerificationStatus('data_kol_koc', id, nextStatus)
+    return
+  } catch (error) {
+    const lower = (error?.message || '').toLowerCase()
+    const isPermissionIssue = lower.includes('row-level security') || lower.includes('permission denied') || lower.includes('policy')
+
+    if (!isPermissionIssue) {
+      const candidates = [
+        ...(row?.verification_status !== undefined ? ['verification_status'] : []),
+        ...(row?.status !== undefined ? ['status'] : []),
+        'verification_status',
+        'status'
+      ].filter((field, index, array) => array.indexOf(field) === index)
+
+      let lastError = null
+
+      for (const field of candidates) {
+        const { error: directError } = await supabase
+          .from('data_kol_koc')
+          .update({ [field]: nextStatus, updated_at: new Date().toISOString() })
+          .eq('id', id)
+
+        if (!directError) return
+        lastError = directError
+      }
+
+      throw lastError
+    }
+
+    throw error
+  }
 }
 
 function statusBadgeInline (status) {
@@ -426,6 +539,18 @@ filterCategory.addEventListener('change', (e) => {
   loadTable()
 })
 
+filterStatus.addEventListener('change', (e) => {
+  state.status = e.target.value
+  state.page   = 1
+  loadTable()
+})
+
+filterView.addEventListener('change', (e) => {
+  state.viewMode = e.target.value
+  state.page     = 1
+  loadTable()
+})
+
 // ── Page size ─────────────────────────────────────────────────
 pageSizeSelect.addEventListener('change', (e) => {
   state.pageSize = parseInt(e.target.value)
@@ -434,6 +559,35 @@ pageSizeSelect.addEventListener('change', (e) => {
 })
 
 // ── Export support ───────────────────────────────────────────
+function slugify (value) {
+  return String(value || '')
+    .toLowerCase()
+    .trim()
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '') || 'all'
+}
+
+function buildExportFilename () {
+  const parts = ['kol-koc-export']
+
+  if (state.status) {
+    parts.push(slugify(state.status))
+  } else if (state.viewMode === 'verified') {
+    parts.push('verified')
+  }
+
+  if (state.platform) parts.push(`platform-${slugify(state.platform)}`)
+  if (state.category) parts.push(`category-${slugify(state.category)}`)
+  if (state.search.trim()) parts.push(`search-${slugify(state.search.trim())}`)
+
+  if (parts.length === 1) parts.push('all')
+
+  const datePart = new Date().toISOString().slice(0, 10)
+  return `${parts.join('-')}-${datePart}.xlsx`
+}
+
 const exportBtn = document.getElementById('exportBtn')
 
 exportBtn?.addEventListener('click', async () => {
@@ -448,7 +602,7 @@ exportBtn?.addEventListener('click', async () => {
       return
     }
 
-    const filename = `kol-database-export-${new Date().toISOString().slice(0, 10)}.xlsx`
+    const filename = buildExportFilename()
     const workbook = buildWorkbook(data)
     downloadWorkbook(filename, workbook)
     showToast('Export berhasil. File sedang diunduh.')
@@ -471,7 +625,7 @@ if (openId) openDetail(openId)
 
 async function fetchExportRows () {
   let query = supabase
-    .from('talent_registrations')
+    .from('data_kol_koc')
     .select('*')
 
   if (state.search) {
@@ -483,6 +637,8 @@ async function fetchExportRows () {
 
   if (state.platform) query = query.eq('primary_platform', state.platform)
   if (state.category) query = query.contains('content_category', [state.category])
+  if (state.status) query = query.eq('verification_status', state.status)
+  if (state.viewMode === 'verified' && !state.status) query = query.neq('verification_status', 'pending')
 
   if (state.sortCol === 'followers') {
     query = query.order('follower_count_tt', { ascending: state.sortDir === 'asc', nullsFirst: false })
@@ -588,7 +744,7 @@ function buildWorkbook (rows) {
       Array.isArray(row.content_category) ? row.content_category.join('; ') : row.content_category || '',
       row.content_description,
       row.created_at ? new Date(row.created_at) : null,
-      row.status,
+      row.verification_status ?? row.status,
     ])
 
     dataRow.eachCell((cell) => {

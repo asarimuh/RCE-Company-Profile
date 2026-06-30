@@ -1,7 +1,7 @@
 .recruitment-section {
   position: relative;
   background: #1a1a1a;
-  padding: clamp(40px, 6vw, 80px) 0;
+  padding: clamp(40px, 6vw, 80px) 24px;
   overflow: hidden;
 }
 
@@ -73,7 +73,7 @@
 }
 
 .recruitment-text span {
-  color: #d46fa0;
+  color: #7c3aed;
 }
 
 .recruitment-contact img {
@@ -125,7 +125,7 @@
 }
 
 p.recruitment-bold { 
-  color: #d46fa0;
+  color: #7c3aed;
 }
 
 @media (max-width: 1200px) {
@@ -167,7 +167,7 @@ p.recruitment-bold {
   align-items: center;
   gap: 10px;
   padding: 14px 28px;
-  background: linear-gradient(135deg, #FF62F4, #a855f7);
+  background: linear-gradient(90deg, #7c3aed 0%, #5724ae 100%);
   color: #fff;
   font-family: 'Poppins', sans-serif;
   font-size: 0.95rem;

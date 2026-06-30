@@ -19,7 +19,7 @@ const highlightsList = document.getElementById('highlightsList')
 
 async function loadAnalytics () {
   const { data, error } = await supabase
-    .from('talent_registrations')
+    .from('data_kol_koc')
     .select('*')
     .order('created_at', { ascending: false })
 

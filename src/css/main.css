@@ -16,6 +16,10 @@
 @import "./layouts/recruitment.css";
 @import "./layouts/faq.css";
 
+body {
+  background-color: #f9f8ff;
+}
+
 /* ================================================
    LOADING SCREEN - Index Page Only
    ================================================ */
@@ -122,6 +126,11 @@ body.loaded {
 
 body.loaded #app {
   visibility: visible;
+}
+
+section .container {
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 * {

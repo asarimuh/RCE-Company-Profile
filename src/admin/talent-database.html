@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Analytics — RCE Admin</title>
+  <title>Talent Database — RCE Admin</title>
   <meta name="robots" content="noindex, nofollow" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -19,7 +19,6 @@
 <body>
 
 <div class="admin-app">
-
   <aside class="admin-sidebar">
     <div class="admin-sidebar__logo">
       <img src="/public/assets/rce-brand-logo.svg" alt="RCE" />
@@ -43,14 +42,14 @@
         KOL / KOC Database
       </a>
 
-      <a href="/admin/talent-database.html" class="admin-sidebar__link">
+      <a href="/admin/talent-database.html" class="admin-sidebar__link active">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M4 20a8 8 0 0 1 16 0"/>
         </svg>
         Talent Database
       </a>
 
-      <a href="/admin/analytics.html" class="admin-sidebar__link active">
+      <a href="/admin/analytics.html" class="admin-sidebar__link">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
         </svg>
@@ -64,14 +63,6 @@
           <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/>
         </svg>
         Kolaborasi
-        <span class="admin-sidebar__coming-soon">Soon</span>
-      </span>
-
-      <span class="admin-sidebar__link admin-sidebar__link--disabled">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
-        </svg>
-        Test Feature
         <span class="admin-sidebar__coming-soon">Soon</span>
       </span>
     </nav>
@@ -94,8 +85,8 @@
 
   <header class="admin-header">
     <div>
-      <div class="admin-header__title">Analytics</div>
-      <div class="admin-header__subtitle">Ringkasan performa pendaftaran dan potensi talent</div>
+      <div class="admin-header__title">Talent Database</div>
+      <div class="admin-header__subtitle">Kelola data pendaftar talent</div>
     </div>
     <div class="admin-header__right">
       <span class="admin-header__date" id="headerDate"></span>
@@ -104,58 +95,76 @@
 
   <main class="admin-main">
     <div class="admin-page-header">
-      <h1>Insight Pendaftaran</h1>
-      <p>Data ringkas dari pendaftar yang masuk melalui form publik, disusun untuk membantu tim melihat tren dan fokus pertumbuhan.</p>
+      <h1>Talent Database</h1>
+      <p>Semua data pendaftar talent dari form registrasi publik.</p>
     </div>
 
-    <div class="stats-grid" id="summaryCards"></div>
-
-    <div class="analytics-grid">
-      <section class="analytics-card">
-        <div class="analytics-card__header">
-          <div>
-            <h3>Platform Utama</h3>
-            <p>Distribusi pendaftar berdasarkan platform yang dipilih</p>
+    <div class="admin-card">
+      <div class="admin-toolbar">
+        <div class="admin-toolbar__left">
+          <div class="admin-search">
+            <svg class="admin-search__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="text" id="searchInput" placeholder="Cari nama, email, talent, username..." />
           </div>
-        </div>
-        <div id="platformChart" class="analytics-chart"></div>
-      </section>
 
-      <section class="analytics-card">
-        <div class="analytics-card__header">
-          <div>
-            <h3>Tren Bulanan</h3>
-            <p>Jumlah pendaftar dalam 6 bulan terakhir</p>
-          </div>
-        </div>
-        <div id="monthlyChart" class="monthly-chart"></div>
-      </section>
+          <select class="admin-filter" id="filterStatus">
+            <option value="">Semua Status</option>
+            <option value="pending">Pending</option>
+            <option value="reviewing">Review</option>
+            <option value="approved">Approved</option>
+            <option value="rejected">Rejected</option>
+            <option value="on_hold">On Hold</option>
+          </select>
 
-      <section class="analytics-card">
-        <div class="analytics-card__header">
-          <div>
-            <h3>Kategori Konten</h3>
-            <p>Top kategori yang paling sering dipilih</p>
-          </div>
+          <select class="admin-filter" id="filterView">
+            <option value="all">Semua Data</option>
+            <option value="verified">Verified</option>
+          </select>
         </div>
-        <div id="categoryList" class="category-list"></div>
-      </section>
 
-      <section class="analytics-card analytics-card--wide">
-        <div class="analytics-card__header">
-          <div>
-            <h3>Potensi Talent</h3>
-            <p>Daftar pendaftar dengan follower terbesar berdasarkan platform utama</p>
-          </div>
-          <a href="/admin/kol-database.html" class="btn btn--ghost">Lihat Database</a>
+        <div class="admin-toolbar__right">
+          <button class="btn btn--primary" id="addTalentBtn">Tambah Talent</button>
+          <button class="btn btn--ghost" id="exportBtn">Export Excel</button>
+          <select class="admin-filter" id="pageSize">
+            <option value="10">10 / halaman</option>
+            <option value="25">25 / halaman</option>
+            <option value="50">50 / halaman</option>
+          </select>
         </div>
-        <div id="highlightsList" class="mini-list"></div>
-      </section>
+      </div>
+
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th class="sortable" data-col="full_name">Nama</th>
+              <th class="sortable" data-col="primary_talent">Talent Utama</th>
+              <th class="sortable" data-col="city">Kota</th>
+              <th>WhatsApp</th>
+              <th>Email</th>
+              <th>Social</th>
+              <th class="sortable" data-col="verification_status">Status</th>
+              <th class="sortable" data-col="created_at">Tanggal</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="admin-pagination">
+        <div id="paginationInfo" class="admin-pagination__info"></div>
+        <div id="paginationControls" class="admin-pagination__controls"></div>
+      </div>
     </div>
   </main>
 </div>
 
+<div id="detailMount"></div>
+
 <script type="module" src="/admin/js/admin-theme.js"></script>
-<script type="module" src="/admin/js/analytics.js"></script>
+<script type="module" src="/admin/js/talent-database.js"></script>
 </body>
 </html>

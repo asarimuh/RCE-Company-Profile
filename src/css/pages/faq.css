@@ -1,31 +1,56 @@
-.faq-section {
-  background-color: #f8fafc;
-  padding-top: 80px;
-  font-family: "Poppins";
+.page-wrapper {
+  background-color: #f9f8ff;
+  padding: 70px 0 80px;
+  font-family: "Poppins", sans-serif;
+  color: #0f172a;
+}
+
+.content-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.page-header {
+  text-align: left;
+  max-width: 1100px;
+  margin: 0 auto 48px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.back-link:hover {
+  color: #000000;
+  transform: translateX(-4px);
+}
+
+.page-header h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.page-header p {
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  color: #475569;
+  max-width: 760px;
+  line-height: 1.7;
 }
 
 .faq-section .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 24px;
-}
-
-h2.faq-heading {
-  font-size: clamp(1.40rem, 3vw, 2.25rem);
-  font-weight: 800;
-  color: #1f2937;
-  text-align: center;
-  margin-bottom: 12px;
-}
-
-.faq-subheading {
-  font-size: clamp(0.95rem, 2.5vw, 1.125rem);
-  color: #475569;
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 40px;
-  line-height: 1.7;
-  font-weight: 500;
+  padding: 0;
 }
 
 .faq-cards {
@@ -33,34 +58,18 @@ h2.faq-heading {
   gap: clamp(10px, 1.5vw, 14px);
 }
 
-/* Reveal animation for FAQ cards */
-.faq-card {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.45s ease, transform 0.45s ease;
-}
-
-.faq-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .faq-card {
   background: white;
   border-radius: 8px;
   padding: clamp(14px, 3vw, 20px);
-  box-shadow: rgba(0, 0, 0, 0.14) 0px 1px 4px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 8px;
-
-  opacity: 0;
-  transform: translateY(16px);
 }
 
 .faq-card:hover {
   transform: translateY(-2px);
-  box-shadow: rgba(14, 14, 14, 0.18) 2px 3px 8px;
+  box-shadow: rgba(14, 14, 14, 0.2) 2px 4px 12px;
 }
 
 .faq-card-header {
@@ -71,8 +80,8 @@ h2.faq-heading {
 }
 
 .faq-card h4 {
-  font-size: clamp(0.85rem, 2.25vw, 1.1rem);
-  font-weight: 600;
+  font-size: clamp(0.9rem, 2.4vw, 1.1rem);
+  font-weight: 700;
   color: #0f172a;
   line-height: 1.35;
   margin: 0;
@@ -86,14 +95,13 @@ h2.faq-heading {
 
 .faq-answer {
   margin-top: clamp(10px, 2vw, 14px);
-  font-size: clamp(0.83rem, 1.7vw, 0.95rem);
+  font-size: clamp(0.85rem, 1.7vw, 0.95rem);
   color: #475569;
   line-height: 1.7;
   max-height: 0;
   overflow: hidden;
   opacity: 0;
   transition: max-height 0.35s ease, opacity 0.35s ease;
-  max-width: 900px;
 }
 
 .faq-card.active .faq-answer {
@@ -129,4 +137,14 @@ h2.faq-heading {
 .btn-see-more:hover {
   background-color: #6f6f6f;
   transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .page-wrapper {
+    padding-top: 30px;
+  }
+
+  .page-header {
+    margin-bottom: 32px;
+  }
 }

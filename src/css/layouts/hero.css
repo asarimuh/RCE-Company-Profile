@@ -5,13 +5,8 @@
 
 .hero {
   font-family: "Poppins", sans-serif;
-  background-image: url('../assets/hero-section-bg-pattern.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  /* lighter background → use dark text */
-  color: #0d0d0d;
-  /* increased hero height for stronger presence */
+  background-color: #1a1a1a;
+  color: #ffffff;
   min-height: 75vh;
   display: flex;
   flex-direction: column;
@@ -20,9 +15,9 @@
 /* ── Main split grid ── */
 .hero-main {
   flex: 1;
-  /* single unified section — flow as a block so text occupies full width */
   display: block;
   min-height: inherit;
+  padding: 0 24px;
 }
 
 /* ── Left: text side ── */
@@ -30,17 +25,16 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* viewport-relative padding so text can expand while keeping comfortable margins */
-  padding: 0 6vw;
+  padding: 0;
   width: 100%;
 }
 
 .hero-body {
   padding-top: 60px;
   /* padding-bottom: 48px; */
-  /* allow text to use full available width */
-  max-width: 100%;
+  max-width: 1120px;
   width: 100%;
+  margin: 0 auto 60px;
 
   opacity: 0;
   transform: translateY(24px);
@@ -57,10 +51,10 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 10px;
+  font-size: 15px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #FF62F4;
+  color: #7c3aed;
   margin-bottom: 28px;
 }
 
@@ -79,26 +73,25 @@
   font-weight: 700;
   line-height: 1.22;
   letter-spacing: -0.3px;
-  color: #0d0d0d;
+  color: #ffffff;
   margin-bottom: 22px;
   font-family: "Poppins", sans-serif;
 }
 
 .hero-header em {
   font-style: italic;
-  color: #FF62F4;
+  color: #7c3aed;
   font-weight: 300;
 }
 
 /* ── Description ── */
 .hero-description {
-  font-size: clamp(0.9rem, 1vw, 1.02rem);
-  /* dark description for readability on lighter backgrounds */
-  color: rgba(13, 13, 13, 0.82);
-  line-height: 1.85;
+  font-size: clamp(1rem, 1.1vw, 1.1rem);
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.9;
   max-width: 720px;
-  margin-bottom: 36px;
-  font-weight: 300;
+  margin-bottom: 45px;
+  font-weight: 400;
 }
 
 /* ── CTAs ── */
@@ -111,8 +104,8 @@
 
 .hero-btn-primary {
   display: inline-block;
-  background: #FF62F4;
-  color: #0d0d0d;
+  background: #7c3aed;
+  color: #ffffff;
   border: none;
   padding: 13px 28px;
   border-radius: 4px;
@@ -135,8 +128,8 @@
   align-items: center;
   gap: 8px;
   background: transparent;
-  color: rgba(13, 13, 13, 0.72);
-  border: 2px solid rgba(0, 0, 0, 0.12);
+  color: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.18);
   padding: 13px 28px;
   border-radius: 4px;
   font-size: 13px;
@@ -148,8 +141,8 @@
 }
 
 .hero-btn-ghost:hover {
-  border-color: rgba(13, 13, 13, 0.22);
-  color: rgba(13, 13, 13, 0.92);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #ffffff;
 }
 
 .hero-tiktok-icon {
@@ -194,7 +187,7 @@
   }
 
   .hero-left {
-    padding: 0 48px;
+    padding: 0 24px;
   }
 }
 
@@ -204,7 +197,7 @@
   }
 
   .hero-left {
-    padding: 0 28px;
+    padding: 0 24px;
   }
 
   .hero-body {

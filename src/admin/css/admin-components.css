@@ -338,6 +338,158 @@
   text-underline-offset: 3px;
 }
 
+.detail-photo-preview {
+  width: min(100%, 240px);
+  aspect-ratio: 1 / 1;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--admin-border);
+  background: linear-gradient(135deg, rgba(255, 98, 244, 0.1), rgba(255, 98, 244, 0.03));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-photo-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Talent CRUD form styling ── */
+.talent-crud-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.talent-crud-section {
+  padding: 18px 20px;
+  border: 1px solid var(--admin-border);
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 98, 244, 0.05), rgba(255, 98, 244, 0.015));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.talent-crud-section__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--admin-text-primary);
+  margin-bottom: 14px;
+}
+
+.talent-crud-section__subtitle {
+  font-size: 0.8rem;
+  color: var(--admin-text-muted);
+  margin-top: -6px;
+  margin-bottom: 14px;
+}
+
+.talent-crud-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.talent-crud-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.talent-crud-field--full {
+  grid-column: 1 / -1;
+}
+
+.talent-crud-field label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--admin-text-secondary);
+}
+
+.talent-crud-field input,
+.talent-crud-field select,
+.talent-crud-field textarea {
+  width: 100%;
+  border: 1px solid var(--admin-border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: var(--admin-surface);
+  color: var(--admin-text-primary);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  box-sizing: border-box;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.talent-crud-field textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.talent-crud-field input:focus,
+.talent-crud-field select:focus,
+.talent-crud-field textarea:focus {
+  outline: none;
+  border-color: var(--brand-pink);
+  box-shadow: 0 0 0 3px rgba(255, 98, 244, 0.14);
+}
+
+.talent-crud-field__hint {
+  font-size: 0.74rem;
+  color: var(--admin-text-muted);
+}
+
+.talent-crud-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 6px;
+}
+
+.talent-crud-chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.talent-crud-chip-option {
+  cursor: pointer;
+}
+
+.talent-crud-chip-option input[type="checkbox"] {
+  display: none;
+}
+
+.talent-crud-chip-option span {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  background: var(--admin-surface-2);
+  border: 1px solid var(--admin-border);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--admin-text-secondary);
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.talent-crud-chip-option input[type="checkbox"]:checked + span {
+  background: rgba(255, 98, 244, 0.12);
+  border-color: var(--brand-pink);
+  color: var(--brand-pink);
+}
+
+.talent-crud-chip-option:hover span {
+  border-color: var(--brand-pink);
+  color: var(--admin-text-primary);
+}
+
 .detail-tags {
   display: flex;
   flex-wrap: wrap;

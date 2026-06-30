@@ -10,3 +10,14 @@ export const supabase = createClient(supabaseUrl, supabaseKey, {
     storageKey: 'rce_admin_session',
   }
 })
+
+export async function updateVerificationStatus(tableName, id, nextStatus) {
+  const { data, error } = await supabase.rpc('set_verification_status', {
+    table_name: tableName,
+    row_id: String(id),
+    next_status: nextStatus,
+  })
+
+  if (error) throw error
+  return data
+}

@@ -4,24 +4,25 @@
 
 /* ----- Section shell ----- */
 .services-section {
-  background: #1a1a1a;
+  background-color: #f9f8ff;
+  padding: 90px 0;
+
 }
 
 .services-section .container {
   position: relative;
   z-index: 2;
-  max-width: 1120px;
+  max-width: 1180px;
   margin: 0 auto;
-  padding: 80px 40px;
 }
 
 /* ----- Header copy ----- */
 .services-eyebrow {
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #d46fa0;
+  color: #7c3aed;
   margin: 0 0 12px;
   font-family: 'Poppins', sans-serif;
 }
@@ -29,271 +30,108 @@
 .services-header {
   font-size: clamp(1.75rem, 3.5vw, 2.75rem);
   font-weight: 700;
-  color: #ffffff;
+  color: #1a1a1a;
   text-align: left;
-  margin: 0 0 12px;
+  margin: 0 0 20px;
   font-family: 'Poppins', sans-serif;
   line-height: 1.15;
 }
 
 /* accent word inside heading */
 .services-header span {
-  color: #d46fa0;
+  color: #7c3aed;
 }
 
 .services-subtext {
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.45);
+  font-size: 1rem;
+  color: rgba(26, 26, 26, 0.74);
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  line-height: 1.7;
-  max-width: 480px;
+  line-height: 1.8;
+  max-width: 520px;
   margin: 0 0 48px;
 }
 
-/* ----- Tab navigation ----- */
-.services-tabs {
+/* ----- Card grid ----- */
+.srv-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.srv-card {
   display: flex;
-  gap: 4px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
-  margin-bottom: 40px;
+  flex-direction: column;
+  gap: 22px;
+  padding: 32px;
+  background: #ffffff;
+  border: 1px solid rgba(26, 26, 26, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(26, 26, 26, 0.08);
+  min-height: 360px;
 }
 
-.srv-tab {
-  padding: 10px 22px 14px;
-  background: none;
-  border: none;
-  font-family: 'Poppins', sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.38);
-  cursor: pointer;
-  position: relative;
-  margin-bottom: -1px;
-  transition: color 0.22s;
-}
-
-.srv-tab::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: #d46fa0;
-  border-radius: 2px 2px 0 0;
-  transform: scaleX(0);
-  transition: transform 0.22s ease;
-}
-
-.srv-tab:hover {
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.srv-tab.active {
-  color: #ffffff;
-}
-
-.srv-tab.active::after {
-  transform: scaleX(1);
-}
-
-/* ----- Panels ----- */
-.srv-panel {
-  display: none;
-  gap: 48px;
-  align-items: flex-start;
-}
-
-.srv-panel.active {
-  display: flex;
-}
-
-/* LEFT column — title / CTA */
-.srv-panel-left {
-  flex: 0 0 260px;
-  position: relative;
-}
-
-.srv-panel-head {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 18px;
-}
-
-.srv-number {
-  font-family: 'Poppins', sans-serif;
-  font-size: 44px;
-  font-weight: 800;
-  color: #ffffff;
-  line-height: 1;
-  user-select: none;
-  pointer-events: none;
+.srv-card-number {
   display: inline-block;
-  margin-bottom: 18px;
-} 
-.srv-icon-box {
-  width: 54px;
-  height: 54px;
-  background: rgba(212, 111, 160, 0.22);
-  border: 1px solid rgba(212, 111, 160, 0.32);
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #d46fa0;
-  position: relative;
-  z-index: 1;
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #7c3aed;
+  line-height: 1;
 }
 
-.srv-panel-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0 0 10px;
-  line-height: 1.3;
-  position: relative;
-  z-index: 1;
-}
-
-.srv-panel-tagline {
-  font-family: 'Poppins', sans-serif;
-  font-size: 13px;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.38);
-  line-height: 1.6;
+.srv-card-title {
   margin: 0;
-  position: relative;
-  z-index: 1;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.4rem, 2vw, 1.75rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.15;
 }
 
-.srv-detail-btn {
+.srv-card-tagline {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(26, 26, 26, 0.72);
+  line-height: 1.65;
+}
+
+.srv-card-desc {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(26, 26, 26, 0.7);
+  line-height: 1.8;
+  flex: 1;
+}
+
+.srv-card-btn {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  margin-top: 28px;
-  padding: 10px 22px;
-  background: #d46fa0;
-  border: none;
-  border-radius: 8px;
+  gap: 8px;
+  padding: 12px 22px;
+  background: #7c3aed;
+  color: #ffffff;
+  border-radius: 999px;
   font-family: 'Poppins', sans-serif;
-  font-size: 13px;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: #fff;
   text-decoration: none;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
-  position: relative;
-  z-index: 1;
+  transition: background 0.22s ease, transform 0.18s ease;
+  width: fit-content;
 }
 
-.srv-detail-btn:hover {
-  background: #be5a8a;
+.srv-card-btn:hover {
+  background: #9163f0;
   transform: translateY(-2px);
 }
 
-/* vertical divider */
-.srv-divider {
-  width: 1px;
-  background: rgba(255, 255, 255, 0.07);
-  align-self: stretch;
-}
-
-/* RIGHT column — feature cards */
-.srv-panel-right {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.srv-feature {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 12px;
-  padding: 20px 22px;
-  transition: background 0.2s, border-color 0.2s;
-}
-
-.srv-feature:hover {
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(212, 111, 160, 0.2);
-}
-
-.srv-feature-head {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 8px;
-}
-
-.srv-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #d46fa0;
-  flex-shrink: 0;
-}
-
-.srv-feature-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  color: #ffffff;
-}
-
-.srv-feature-desc {
-  font-family: 'Poppins', sans-serif;
-  font-size: 13.5px;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.48);
-  line-height: 1.7;
-  margin: 0;
-  padding-left: 16px;
-}
-
-/* ----- Progress dots ----- */
-.srv-progress {
-  display: flex;
-  gap: 8px;
-  margin-top: 44px;
-}
-
-.srv-prog-dot {
-  height: 3px;
-  width: 24px;
-  border-radius: 2px;
-  border: none;
-  background: rgba(255, 255, 255, 0.14);
-  cursor: pointer;
-  padding: 0;
-  transition: background 0.25s, width 0.25s;
-}
-
-.srv-prog-dot.active {
-  background: #d46fa0;
-  width: 40px;
-}
-
-/* ============================================================
-   Responsive
-   ============================================================ */
-
 @media (max-width: 900px) {
-  .srv-panel.active {
-    flex-direction: column;
-    gap: 32px;
-  }
-
-  .srv-panel-left {
-    flex: none;
-    width: 100%;
-  }
-
-  .srv-divider {
-    display: none;
+  .srv-card-grid {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
   }
 }
 
@@ -302,29 +140,7 @@
     padding: 56px 20px;
   }
 
-  .services-tabs {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    gap: 0;
-  }
-
-  .srv-tab {
-    white-space: nowrap;
-    font-size: 12px;
-    padding: 10px 16px 14px;
-  }
-
-  .srv-number {
-    font-size: 64px;
-    top: -14px;
-    left: -6px;
-  }
-
-  .srv-panel-title {
-    font-size: 18px;
-  }
-
-  .srv-feature {
-    padding: 16px 18px;
+  .srv-card-grid {
+    grid-template-columns: 1fr;
   }
 }

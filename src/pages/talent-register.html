@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daftar sebagai Talent — Rising Creators Entertainment</title>
+  <meta name="description" content="Daftarkan diri kamu sebagai talent bersama Rising Creators Entertainment." />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/components/footer.css" />
+  <link rel="stylesheet" href="/css/pages/register-navbar.css" />
+  <link rel="stylesheet" href="/css/pages/register.css" />
+</head>
+<body>
+  <header id="header">
+    <nav class="navbar">
+      <div class="nav-left">
+        <div class="nav-logo"><img src="/assets/rce-brand-logo.svg" alt="brand logo" /></div>
+        <div class="nav-text"><h1>Rising Creators Entertainment</h1></div>
+      </div>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <div class="nav-right">
+        <ul id="primary-navigation" class="nav-links">
+          <li><a href="/index.html#talents">Talents</a></li>
+          <li><a href="/index.html#live">Live</a></li>
+          <li><a href="/index.html#about">About Us</a></li>
+          <li><a href="/index.html#gallery">Gallery</a></li>
+          <li><a href="/index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <section class="reg-hero">
+    <div class="reg-hero__inner">
+      <span class="reg-hero__label">Talent Registration</span>
+      <h1 class="reg-hero__title">Daftar sebagai<br /><em>Talent</em></h1>
+      <p class="reg-hero__subtitle">
+        Isi formulir singkat ini untuk mendaftarkan diri kamu sebagai talent dan mulai kesempatan kolaborasi bersama kami.
+      </p>
+    </div>
+  </section>
+
+  <section class="reg-section">
+    <div class="reg-container">
+      <div class="reg-progress" aria-label="Progress pendaftaran talent">
+        <div class="reg-progress__track">
+          <div class="reg-progress__fill" id="progressFill"></div>
+        </div>
+        <div class="reg-progress__steps">
+          <div class="reg-progress__step active" data-step="1">
+            <div class="reg-progress__dot">1</div>
+            <span>Data Diri</span>
+          </div>
+          <div class="reg-progress__step" data-step="2">
+            <div class="reg-progress__dot">2</div>
+            <span>Kontak & Talenta</span>
+          </div>
+          <div class="reg-progress__step" data-step="3">
+            <div class="reg-progress__dot">3</div>
+            <span>Upload & Konfirmasi</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reg-card">
+        <form id="talentRegistrationForm" novalidate>
+          <input
+            type="text"
+            name="website"
+            id="honeypot"
+            tabindex="-1"
+            autocomplete="off"
+            aria-hidden="true"
+            style="display:none"
+          />
+
+          <div class="reg-step active" id="step1">
+            <div class="reg-step__header">
+              <h2>Informasi Personal</h2>
+              <p>Isi bagian yang wajib terlebih dahulu, lalu lanjutkan ke bagian yang lebih detail.</p>
+            </div>
+
+            <div class="reg-fields">
+              <div class="reg-field">
+                <label for="fullName">Nama Lengkap <span class="req">*</span></label>
+                <input type="text" id="fullName" name="full_name" placeholder="Contoh: Budi Santoso" maxlength="100" autocomplete="name" />
+                <span class="reg-field__error" id="fullNameError"></span>
+              </div>
+
+              <div class="reg-field--row">
+                <div class="reg-field">
+                  <label for="gender">Gender <span class="req">*</span></label>
+                  <select id="gender" name="gender">
+                    <option value="">— Pilih —</option>
+                    <option value="male">Laki-laki</option>
+                    <option value="female">Perempuan</option>
+                    <option value="prefer_not_to_say">Tidak ingin menyebutkan</option>
+                  </select>
+                  <span class="reg-field__error" id="genderError"></span>
+                </div>
+
+                <div class="reg-field">
+                  <label for="dateOfBirth">Tanggal Lahir <span class="req">*</span></label>
+                  <input type="date" id="dateOfBirth" name="date_of_birth" />
+                  <span class="reg-field__error" id="dateOfBirthError"></span>
+                </div>
+              </div>
+
+              <div class="reg-field--row">
+                <div class="reg-field">
+                  <label for="city">Kota <span class="req">*</span></label>
+                  <input type="text" id="city" name="city" placeholder="Contoh: Jakarta" maxlength="100" />
+                  <span class="reg-field__error" id="cityError"></span>
+                </div>
+
+                <div class="reg-field">
+                  <label for="province">Provinsi <span style="color:#a0a0a0;">(Opsional)</span></label>
+                  <input type="text" id="province" name="province" placeholder="Contoh: DKI Jakarta" maxlength="100" />
+                  <span class="reg-field__error" id="provinceError"></span>
+                </div>
+              </div>
+
+              <div class="reg-field">
+                <label for="stageName">Stage Name / Alias <span style="color:#a0a0a0;">(Opsional)</span></label>
+                <input type="text" id="stageName" name="stage_name" placeholder="Contoh: Naya" maxlength="100" />
+                <span class="reg-field__error" id="stageNameError"></span>
+              </div>
+
+              <div class="reg-field">
+                <label for="languages">Bahasa yang Dikuasai <span style="color:#a0a0a0;">(Opsional)</span></label>
+                <input type="text" id="languages" name="languages_spoken" placeholder="Contoh: Indonesia, Inggris" maxlength="200" />
+                <span class="reg-field__error" id="languagesError"></span>
+              </div>
+            </div>
+
+            <div class="reg-nav">
+              <span></span>
+              <button type="button" class="reg-btn reg-btn--next" id="toStep2">
+                Selanjutnya
+              </button>
+            </div>
+          </div>
+
+          <div class="reg-step" id="step2">
+            <div class="reg-step__header">
+              <h2>Kontak & Profil Talenta</h2>
+              <p>Bagian ini membantu kami menghubungi kamu dan memahami bidang yang kamu tekuni.</p>
+            </div>
+
+            <div class="reg-fields">
+              <div class="reg-field">
+                <label for="whatsappNumber">Nomor WhatsApp <span class="req">*</span></label>
+                <div class="reg-field__prefix-wrap">
+                  <span class="reg-field__prefix">+62</span>
+                  <input type="tel" id="whatsappNumber" name="whatsapp_number" maxlength="15" autocomplete="tel" />
+                </div>
+                <span class="reg-field__hint">Dengan atau tanpa angka 0 di depan.</span>
+                <span class="reg-field__error" id="whatsappError"></span>
+              </div>
+
+              <div class="reg-field">
+                <label for="email">Email Address <span class="req">*</span></label>
+                <input type="email" id="email" name="email" placeholder="contoh@email.com" maxlength="254" autocomplete="email" />
+                <span class="reg-field__error" id="emailError"></span>
+              </div>
+
+              <div class="reg-field">
+                <label for="primaryTalent">Primary Talent <span class="req">*</span></label>
+                <select id="primaryTalent" name="primary_talent">
+                  <option value="">— Pilih —</option>
+                  <option value="Singer">Singer</option>
+                  <option value="Dancer">Dancer</option>
+                  <option value="Host">Host</option>
+                  <option value="MC">MC</option>
+                  <option value="Actor">Actor</option>
+                  <option value="Model">Model</option>
+                  <option value="Live Streamer">Live Streamer</option>
+                  <option value="Content Creator">Content Creator</option>
+                  <option value="Musician">Musician</option>
+                  <option value="DJ">DJ</option>
+                  <option value="Cosplayer">Cosplayer</option>
+                  <option value="Voice Actor">Voice Actor</option>
+                  <option value="Other">Other</option>
+                </select>
+                <span class="reg-field__error" id="primaryTalentError"></span>
+              </div>
+
+              <div class="reg-field">
+                <label for="secondaryTalents">Secondary Talents <span style="color:#a0a0a0;">(Opsional, boleh isi lebih dari satu)</span></label>
+                <div class="reg-category-options" id="secondaryTalents" role="group" aria-label="Secondary talents">
+                  <label class="reg-category-option"><input type="checkbox" name="secondary_talents" value="Singer" /><span>Singer</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="secondary_talents" value="Dancer" /><span>Dancer</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="secondary_talents" value="Host" /><span>Host</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="secondary_talents" value="MC" /><span>MC</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="secondary_talents" value="Actor" /><span>Actor</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="secondary_talents" value="Model" /><span>Model</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="secondary_talents" value="Live Streamer" /><span>Live Streamer</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="secondary_talents" value="Content Creator" /><span>Content Creator</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="secondary_talents" value="Musician" /><span>Musician</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="secondary_talents" value="DJ" /><span>DJ</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="secondary_talents" value="Cosplayer" /><span>Cosplayer</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="secondary_talents" value="Voice Actor" /><span>Voice Actor</span></label>
+                </div>
+              </div>
+
+              <div class="reg-field">
+                <label for="skills">Skills <span style="color:#a0a0a0;">(Opsional, boleh isi lebih dari satu)</span></label>
+                <div class="reg-category-options" id="skills" role="group" aria-label="Skills">
+                  <label class="reg-category-option"><input type="checkbox" name="skills" value="Singing" /><span>Singing</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="skills" value="Dancing" /><span>Dancing</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="skills" value="Acting" /><span>Acting</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="skills" value="Hosting" /><span>Hosting</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="skills" value="Gaming" /><span>Gaming</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="skills" value="Public Speaking" /><span>Public Speaking</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="skills" value="Video Editing" /><span>Video Editing</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="skills" value="Makeup" /><span>Makeup</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="skills" value="Comedy" /><span>Comedy</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="skills" value="Instrument Playing" /><span>Instrument Playing</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="skills" value="Other" /><span>Other</span></label>
+                </div>
+              </div>
+
+              <div class="reg-field">
+                <label>Social Media <span style="color:#a0a0a0;">Wajib isi salah satu</span></label>
+                <p class="reg-field__hint">Boleh mengisi lebih dari satu platform sosial media</p>
+              </div>
+
+              <div class="reg-field--row">
+                <div class="reg-field">
+                  <label for="tiktokUsername">TikTok</label>
+                  <input type="text" id="tiktokUsername" name="tiktok_username" placeholder="usernamekamu" maxlength="100" />
+                  <span class="reg-field__error" id="tiktokUsernameError"></span>
+                </div>
+                <div class="reg-field">
+                  <label for="instagramUsername">Instagram</label>
+                  <input type="text" id="instagramUsername" name="instagram_username" placeholder="usernamekamu" maxlength="100" />
+                  <span class="reg-field__error" id="instagramUsernameError"></span>
+                </div>
+              </div>
+
+              <div class="reg-field--row">
+                <div class="reg-field">
+                  <label for="youtubeUsername">YouTube</label>
+                  <input type="text" id="youtubeUsername" name="youtube_username" placeholder="usernamekamu" maxlength="100" />
+                  <span class="reg-field__error" id="youtubeUsernameError"></span>
+                </div>
+                <div class="reg-field">
+                  <label for="facebookUsername">Facebook</label>
+                  <input type="text" id="facebookUsername" name="facebook_username" placeholder="usernamekamu" maxlength="100" />
+                  <span class="reg-field__error" id="facebookUsernameError"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="reg-nav">
+              <button type="button" class="reg-btn reg-btn--back" id="toStep1">Kembali</button>
+              <button type="button" class="reg-btn reg-btn--next" id="toStep3">Selanjutnya</button>
+            </div>
+          </div>
+
+          <div class="reg-step" id="step3">
+            <div class="reg-step__header">
+              <h2>Upload & Konfirmasi</h2>
+              <p>Bagian ini singkat dan ringan, sesuai dengan pengalaman pendaftaran yang kami inginkan.</p>
+            </div>
+
+            <div class="reg-fields">
+              <div class="reg-field">
+                <label for="profilePhoto">Foto Profil <span class="req">*</span></label>
+                <div class="reg-upload">
+                  <input type="file" id="profilePhoto" name="profile_photo" accept="image/*" />
+                  <div class="reg-upload__preview" id="profilePhotoPreview" hidden>
+                    <img id="profilePhotoPreviewImg" alt="Preview foto profil" />
+                  </div>
+                </div>
+                <span class="reg-field__hint">Unggah foto yang jelas dan rapi untuk profil kamu.</span>
+                <span class="reg-field__error" id="profilePhotoError"></span>
+              </div>
+
+              <div class="reg-field">
+                <label for="resumeFile">Resume / CV <span style="color:#a0a0a0;">(Opsional)</span></label>
+                <input type="file" id="resumeFile" name="resume_file" accept=".pdf" />
+                <span class="reg-field__hint">Format PDF saja.</span>
+                <span class="reg-field__error" id="resumeFileError"></span>
+              </div>
+
+              <div class="reg-field">
+                <label for="availableDays">Available Days <span class="req">*</span></label>
+                <div class="reg-category-options" id="availableDays" role="group" aria-label="Available days">
+                  <label class="reg-category-option"><input type="checkbox" name="available_days" value="Weekdays" /><span>Weekdays (Senin–Jumat)</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="available_days" value="Monday" /><span>Senin</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="available_days" value="Tuesday" /><span>Selasa</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="available_days" value="Wednesday" /><span>Rabu</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="available_days" value="Thursday" /><span>Kamis</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="available_days" value="Friday" /><span>Jumat</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="available_days" value="Saturday" /><span>Sabtu</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="available_days" value="Sunday" /><span>Minggu</span></label>
+                </div>
+                <span class="reg-field__error" id="availableDaysError"></span>
+              </div>
+
+              <div class="reg-field">
+                <label>Available Time <span class="req">*</span></label>
+                <div class="reg-category-options" id="availableTime" role="group" aria-label="Available time">
+                  <label class="reg-category-option"><input type="checkbox" name="available_time" value="Morning" /><span>Pagi</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="available_time" value="Afternoon" /><span>Sore</span></label>
+                  <label class="reg-category-option"><input type="checkbox" name="available_time" value="Night" /><span>Malam</span></label>
+                </div>
+                <p class="reg-field__hint" style="margin-top: 8px;">Ini membantu kami memahami ketersediaan kamu untuk jadwal live yang fleksibel, bisa dari pagi sampai sore, atau siang sampai malam.</p>
+                <span class="reg-field__error" id="availableTimeError"></span>
+              </div>
+
+              <div class="reg-field">
+                <div class="reg-terms" style="margin-bottom: 0;">
+                  <p class="reg-field__hint" style="margin-top: 0; margin-bottom: 10px;">🏠 Fasilitas Mess</p>
+                  <p class="reg-field__hint">Kami menyediakan fasilitas mess khusus untuk talent perempuan yang ingin tinggal bersama selama bergabung dan bekerja dengan kami.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="reg-terms">
+              <label class="reg-terms__label">
+                <input type="checkbox" id="agreeTerms" />
+                <span>Saya menyatakan bahwa informasi yang saya berikan adalah benar dan saya setuju untuk melanjutkan proses pendaftaran sebagai talent.</span>
+              </label>
+              <span class="reg-field__error" id="termsError"></span>
+            </div>
+
+            <div class="reg-nav">
+              <button type="button" class="reg-btn reg-btn--back" id="toStep2b">Kembali</button>
+              <button type="submit" class="reg-btn reg-btn--submit" id="submitBtn" disabled>
+                <span id="submitLabel">Kirim Pendaftaran</span>
+                <span id="submitSpinner" class="reg-spinner" hidden></span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer" class="footer-section">
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-column footer-about">
+          <div class="footer-logo">
+            <img src="/assets/rce-brand-logo.svg" alt="Rising Creators Entertainment logo" />
+            <h3 class="footer-logo-title">Rising Creators Entertainment</h3>
+          </div>
+          <p class="footer-description">Connecting talent, business, and market through digital innovation.</p>
+          <div class="footer-social">
+            <a href="https://www.tiktok.com/@rce_87" target="_blank"><img src="/assets/tiktok-logo.svg" alt="TikTok" /></a>
+            <a href="https://www.instagram.com/risingcreatorsentertainment" target="_blank" aria-label="Instagram"><img src="/assets/instagram-logo.svg" alt="Instagram" /></a>
+            <a href="https://www.facebook.com/profile.php?id=61590095679995" target="_blank" aria-label="Facebook"><img src="/assets/facebook-logo.svg" alt="Facebook" /></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="/index.html#about">About us</a></li>
+            <li><a href="/index.html#services">Our Services</a></li>
+            <li><a href="/index.html#blog">Blog Articles</a></li>
+            <li><a href="/index.html#recruitment">Join Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Support</h4>
+          <ul class="footer-links">
+            <li><a href="/index.html#faq">FAQ</a></li>
+            <li><a href="/index.html#privacy">Privacy Policy</a></li>
+            <li><a href="/index.html#terms">Terms &amp; Conditions</a></li>
+            <li><a href="/index.html#contact">Contact Support</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="footer-copy">&copy; 2026 Rising Creators Entertainment. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/js/main.js"></script>
+  <script type="module" src="/js/talent-registration-form.js"></script>
+</body>
+</html>

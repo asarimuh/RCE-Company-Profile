@@ -459,6 +459,7 @@ function collectFormData () {
     content_description: get('contentDescription') || 'not_provided',
     portfolio_url:       get('portfolioUrl') || 'not_provided',
     additional_platforms: additionalPlatforms.length > 0 ? JSON.stringify(additionalPlatforms) : null,
+    verification_status: 'pending',
     user_agent:          navigator.userAgent,
     referrer_url:        document.referrer || 'not_provided',
   }
@@ -492,7 +493,7 @@ async function handleSubmit (e) {
     const data = collectFormData()
 
     const { error } = await supabase
-      .from('talent_registrations')
+      .from('data_kol_koc')
       .insert([data])
 
     if (error) throw error

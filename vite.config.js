@@ -17,6 +17,7 @@ export default defineConfig({
         corporateSolutions: resolve(__dirname, 'src/pages/services/corporate-solutions.html'),
         eCommerce: resolve(__dirname, 'src/pages/services/e-commerce.html'),
         register:               resolve(__dirname, 'src/pages/register.html'),
+        talentRegister:         resolve(__dirname, 'src/pages/talent-register.html'),
         registerSuccess:        resolve(__dirname, 'src/pages/register-success.html'),
 
         // ── Admin dashboard ──────────────────────────
