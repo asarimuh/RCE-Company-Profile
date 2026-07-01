@@ -17,13 +17,37 @@ const talents = [
     name: 'Lala',
     role: 'Host/Dancer',
     description: 'Dikenal dengan gerakannya yang lincah dan kepribadian yang ceria, Lala adalah pilihan tepat untuk memeriahkan suasana. Ia ahli dalam menciptakan vibe positif dan menjaga keterlibatan penonton secara konsisten.',
-    image: new URL('../assets/talent-lala.png', import.meta.url).href
+    image: new URL('../assets/talent-kayla.png', import.meta.url).href
   },
   {
-    name: 'Diandra',
+    name: 'Andria',
     role: 'Host/Dancer',
-    description: 'Seorang multitalenta yang memadukan keanggunan tari dengan gaya komunikasi yang elegan. Diandra sangat mahir dalam membawakan acara dengan transisi yang halus dan profesionalisme yang tinggi.',
-    image: new URL('../assets/talent-diandra.png', import.meta.url).href
+    description: 'Seorang multitalenta yang memadukan keanggunan tari dengan gaya komunikasi yang elegan. Andria sangat mahir dalam membawakan acara dengan transisi yang halus dan profesionalisme yang tinggi.',
+    image: new URL('../assets/talent-andria.png', import.meta.url).href
+  },
+  {
+    name: 'Ashei',
+    role: 'Host/Dancer',
+    description: 'Dikenal dengan energi antusias dan kemampuan improvisasi yang cepat. Ashei selalu mampu menghidupkan suasana siaran dengan interaksi yang hangat dan penuh semangat.',
+    image: new URL('../assets/talent-ashei.png', import.meta.url).href
+  },
+  {
+    name: 'Nathalia',
+    role: 'Host/Dancer',
+    description: 'Pembawa acara yang elegan dengan gerakan dance yang halus. Nathalia menjaga engagement audiens sambil menghadirkan kesan profesional dan personal setiap kali tampil.',
+    image: new URL('../assets/talent-nathalia.png', import.meta.url).href
+  },
+  {
+    name: 'Sanny',
+    role: 'Host/Dancer',
+    description: 'Talenta dinamis dengan gaya ekspresif dan aura positif. Sanny cocok untuk event yang membutuhkan momentum tinggi dan interaksi yang selalu menyenangkan.',
+    image: new URL('../assets/talent-sanny.png', import.meta.url).href
+  },
+  {
+    name: 'Yura',
+    role: 'Host/Dancer',
+    description: 'Kombinasi host yang ramah dan dancer yang gesit. Yura menghadirkan performa yang rapi, penuh perhatian, dan mudah dicerna oleh audiens luas.',
+    image: new URL('../assets/talent-yura.png', import.meta.url).href
   }
 ];
 
