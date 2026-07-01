@@ -25,6 +25,7 @@ export default defineConfig({
         adminLogin:           resolve(__dirname, 'src/admin/login.html'),
         adminDashboard:       resolve(__dirname, 'src/admin/dashboard.html'),
         adminKol:             resolve(__dirname, 'src/admin/kol-database.html'),
+        adminTalent:          resolve(__dirname, 'src/admin/talent-database.html'),
         adminAnalytics:       resolve(__dirname, 'src/admin/analytics.html'),
 
         // Blogs
