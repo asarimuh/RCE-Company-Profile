@@ -10,6 +10,19 @@
   padding: 0 24px;
 }
 
+.section-label{
+    font-family: "Poppins", sans-serif;
+    margin-bottom:10px;
+    font-size:.8rem;
+    letter-spacing:2px;
+    font-weight:700;
+    color:#7c3aed;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 h2.faq-heading {
   font-size: clamp(1.40rem, 3vw, 2.25rem);
   font-weight: 800;

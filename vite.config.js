@@ -49,6 +49,8 @@ export default defineConfig({
         whyGlobalBrandsFailInIndonesia: resolve(__dirname, 'src/pages/blogs/why-global-brands-fail-in-indonesia.html'),
         taxObligationsForForeignCompaniesInIndonesia: resolve(__dirname, 'src/pages/blogs/tax-obligations-for-foreign-companies-in-indonesia.html'),
         peraturanLiveTiktokAntiBanned: resolve(__dirname, 'src/pages/blogs/peraturan-live-tiktok-anti-banned.html'),
+        jadiLiveHostSinger: resolve(__dirname, 'src/pages/blogs/jadi-live-host-singer.html'),
+        jadiLiveHostDancer: resolve(__dirname, 'src/pages/blogs/jadi-live-host-dancer.html'),
       },
     },
   },
