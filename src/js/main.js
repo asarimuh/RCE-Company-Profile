@@ -8,22 +8,10 @@ const talents = [
     image: new URL('../assets/talent-bingga.png', import.meta.url).href
   },
   {
-    name: 'Aiko',
-    role: 'Host/Dancer',
-    description: 'Performa panggung yang karismatik bertemu dengan keahlian hosting yang natural. Aiko menguasai berbagai genre dance dan memiliki kemampuan storytelling yang mampu memikat audiens dari segala kalangan.',
-    image: new URL('../assets/talent-aiko.png', import.meta.url).href
-  },
-  {
     name: 'Lala',
     role: 'Host/Dancer',
     description: 'Dikenal dengan gerakannya yang lincah dan kepribadian yang ceria, Lala adalah pilihan tepat untuk memeriahkan suasana. Ia ahli dalam menciptakan vibe positif dan menjaga keterlibatan penonton secara konsisten.',
     image: new URL('../assets/talent-kayla.png', import.meta.url).href
-  },
-  {
-    name: 'Andria',
-    role: 'Host/Dancer',
-    description: 'Seorang multitalenta yang memadukan keanggunan tari dengan gaya komunikasi yang elegan. Andria sangat mahir dalam membawakan acara dengan transisi yang halus dan profesionalisme yang tinggi.',
-    image: new URL('../assets/talent-andria.png', import.meta.url).href
   },
   {
     name: 'Ashei',
@@ -42,13 +30,7 @@ const talents = [
     role: 'Host/Dancer',
     description: 'Talenta dinamis dengan gaya ekspresif dan aura positif. Sanny cocok untuk event yang membutuhkan momentum tinggi dan interaksi yang selalu menyenangkan.',
     image: new URL('../assets/talent-sanny.png', import.meta.url).href
-  },
-  {
-    name: 'Yura',
-    role: 'Host/Dancer',
-    description: 'Kombinasi host yang ramah dan dancer yang gesit. Yura menghadirkan performa yang rapi, penuh perhatian, dan mudah dicerna oleh audiens luas.',
-    image: new URL('../assets/talent-yura.png', import.meta.url).href
-  }
+  } 
 ];
 
 const activeImage = document.querySelector('.current-talent-image-container img');

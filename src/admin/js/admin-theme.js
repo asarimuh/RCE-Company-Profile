@@ -38,7 +38,7 @@ function updateToggleLabel (theme) {
 function createToggleButton () {
   if (document.getElementById(TOGGLE_ID)) return
 
-  const target = document.querySelector('.admin-header__right') || document.querySelector('.admin-login__actions') || document.querySelector('.admin-login__card') || document.body
+  const target = document.querySelector('.admin-header__right') 
   if (!target) return
 
   const button = document.createElement('button')
