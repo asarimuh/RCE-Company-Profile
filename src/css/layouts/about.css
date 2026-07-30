@@ -20,10 +20,9 @@
 
 .about-content {
   display: grid;
-  /* Simpler grid: Image takes 0.8 parts, Text takes 1.2 parts */
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 60px;
-  align-items: center; /* Vertically centers the text with the image */
+  grid-template-columns: 1fr;
+  gap: 0;
+  align-items: start;
   max-width: 1120px;
   margin: 0 auto;
 }
@@ -47,6 +46,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
+  max-width: 960px;
 }
 
 .about-text p {
