@@ -1,6 +1,68 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
+function publicRouteRewrites() {
+  return {
+    name: 'public-route-rewrites',
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        if (!req.url) {
+          next();
+          return;
+        }
+
+        const url = req.url.split('?')[0];
+
+        if (url === '/register') {
+          req.url = '/pages/register.html';
+          next();
+          return;
+        }
+
+        if (url === '/register/talent') {
+          req.url = '/pages/talent-register.html';
+          next();
+          return;
+        }
+
+        if (url === '/register/success') {
+          req.url = '/pages/register-success.html';
+          next();
+          return;
+        }
+
+        if (url === '/faq') {
+          req.url = '/pages/faq.html';
+          next();
+          return;
+        }
+
+        if (url === '/blog') {
+          req.url = '/pages/blogs.html';
+          next();
+          return;
+        }
+
+        const blogMatch = url.match(/^\/blog\/([^/]+)\/?$/);
+        if (blogMatch) {
+          req.url = `/pages/blogs/${blogMatch[1]}.html`;
+          next();
+          return;
+        }
+
+        const serviceMatch = url.match(/^\/services\/([^/]+)\/?$/);
+        if (serviceMatch) {
+          req.url = `/pages/services/${serviceMatch[1]}.html`;
+          next();
+          return;
+        }
+
+        next();
+      });
+    },
+  };
+}
+
 export default defineConfig({
   root: 'src', 
   envDir: '../',
@@ -54,6 +116,7 @@ export default defineConfig({
       },
     },
   },
+  plugins: [publicRouteRewrites()],
   server: {
     port: 3000,
     open: true, 

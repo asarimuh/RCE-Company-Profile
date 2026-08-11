@@ -1,4 +1,4 @@
-// ============================================================
+﻿// ============================================================
 // registration-form.js
 // Handles multi-step form logic, validation, and Supabase submission
 // ============================================================
@@ -500,7 +500,7 @@ async function handleSubmit (e) {
 
     // Success
     setCooldown()
-    window.location.href = '/pages/register-success.html'
+    window.location.href = '/register/success'
 
   } catch (err) {
     console.error('Submission error:', err)

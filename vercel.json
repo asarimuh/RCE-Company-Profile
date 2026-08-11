@@ -1,6 +1,13 @@
 {
   "rewrites": [
     { "source": "/admin", "destination": "/admin/login.html" },
-    { "source": "/admin/", "destination": "/admin/login.html" }
+    { "source": "/admin/", "destination": "/admin/login.html" },
+    { "source": "/services/:slug", "destination": "/pages/services/:slug.html" },
+    { "source": "/register", "destination": "/pages/register.html" },
+    { "source": "/register/talent", "destination": "/pages/talent-register.html" },
+    { "source": "/register/success", "destination": "/pages/register-success.html" },
+    { "source": "/faq", "destination": "/pages/faq.html" },
+    { "source": "/blog", "destination": "/pages/blogs.html" },
+    { "source": "/blog/:slug", "destination": "/pages/blogs/:slug.html" }
   ]
 }

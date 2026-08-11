@@ -1,4 +1,4 @@
-import { supabase } from './supabase-client.js'
+﻿import { supabase } from './supabase-client.js'
 import {
   showFieldError,
   clearFieldError,
@@ -282,7 +282,7 @@ async function handleSubmit (event) {
     if (error) throw error
 
     setCooldown()
-    window.location.href = '/pages/register-success.html'
+    window.location.href = '/register/success'
   } catch (error) {
     console.error('Talent registration error:', error)
     document.getElementById('termsError').textContent = 'Terjadi kesalahan saat mengirim formulir. Silakan coba lagi.'
@@ -344,3 +344,4 @@ function bindEvents () {
 
 bindEvents()
 updateProgress(1)
+
