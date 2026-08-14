@@ -78,6 +78,7 @@ export default defineConfig({
         digitalEntertainment: resolve(__dirname, 'src/pages/services/digital-entertainment.html'),
         corporateSolutions: resolve(__dirname, 'src/pages/services/corporate-solutions.html'),
         eCommerce: resolve(__dirname, 'src/pages/services/e-commerce.html'),
+        aiEcommerce: resolve(__dirname, 'src/pages/services/ai-ecommerce.html'),
         register:               resolve(__dirname, 'src/pages/register.html'),
         talentRegister:         resolve(__dirname, 'src/pages/talent-register.html'),
         registerSuccess:        resolve(__dirname, 'src/pages/register-success.html'),

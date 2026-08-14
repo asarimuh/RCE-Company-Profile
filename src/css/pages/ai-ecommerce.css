@@ -1,0 +1,983 @@
+.page-wrapper {
+  background-color: #ffffff; 
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  color: #0f172a;
+}
+
+.actual-content {
+  padding: 0;
+}
+
+.content-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 55px;
+}
+
+section {
+  padding: 80px 0;
+}
+
+.section-label {
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #7c3aed;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-heading {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1.6rem, 3.8vw, 2rem);
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.section-description {
+  font-size: 0.98rem;
+  color: #475569;
+  max-width: 650px;
+  line-height: 1.7;
+  margin-bottom: 48px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-bottom: 24px; 
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.back-link:hover {
+  color: #000000;
+  transform: translateX(-4px);
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+
+.hero-section {
+  padding: 80px 0 100px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+  border-bottom: 1px solid #e2e8f0;
+  margin-top: 35px;
+}
+
+.hero-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.back-link-wrapper {
+  margin-bottom: 20px;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #7c3aed;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.hero-heading {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1.8rem, 4.5vw, 2.3rem);
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.hero-description {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.hero-supporting {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.cta-primary,
+.cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  border: none;
+}
+
+.cta-primary {
+  background: #7c3aed;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.25);
+}
+
+.cta-primary:hover {
+  background: #6d28d9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.35);
+}
+
+.cta-secondary {
+  background: transparent;
+  color: #7c3aed;
+  border: 2px solid #7c3aed;
+}
+
+.cta-secondary:hover {
+  background: #f8f5ff;
+  transform: translateY(-2px);
+}
+
+.hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.visual-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  background: linear-gradient(135deg, #f0e6ff 0%, #f8f5ff 100%);
+  border: 2px solid rgba(124, 58, 237, 0.2);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.placeholder-content {
+  text-align: center;
+}
+
+.placeholder-icon {
+  font-size: 4rem;
+  margin-bottom: 16px;
+}
+
+.placeholder-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.placeholder-subtext {
+  font-size: 0.95rem;
+  color: #64748b;
+}
+
+/* ============================================================
+   WHAT IS AI E-COMMERCE SECTION
+   ============================================================ */
+
+.what-is-section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.flow-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.flow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 120px;
+}
+
+.flow-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.flow-step p {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.flow-arrow {
+  font-size: 1.5rem;
+  color: #7c3aed;
+  font-weight: 700;
+}
+
+/* ============================================================
+   FEATURES SECTION
+   ============================================================ */
+
+.features-section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 28px;
+  margin-top: 50px;
+}
+
+.feature-card {
+  background: #f8fafc;
+  padding: 40px 28px; 
+  border-radius: 16px; 
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: inline-block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feature-card h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.65;
+  flex-grow: 1;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px); 
+  background: #ffffff; 
+  border-color: #cbd5e1; 
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06); 
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.15);
+}
+
+/* ============================================================
+   HOW IT WORKS SECTION
+   ============================================================ */
+
+.how-it-works {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9ff 0%, #f0e6ff 100%);
+  border-top: 1px solid rgba(124, 58, 237, 0.1);
+  border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+}
+
+.how-it-works .section-heading {
+  text-align: center;
+  margin: 0 auto 12px;
+  max-width: 100%;
+}
+
+.how-it-works .section-description {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  margin-top: 50px;
+  align-items: center;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: #7c3aed;
+  color: #ffffff;
+  border-radius: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.step h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.step p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.step-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #7c3aed;
+  font-weight: 700;
+  margin: 0 -16px;
+  z-index: 1;
+}
+
+/* ============================================================
+   BENEFITS SECTION
+   ============================================================ */
+
+.benefits-section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 50px;
+}
+
+.benefit-card {
+  padding: 32px 24px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.benefit-number {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #7c3aed;
+  line-height: 1;
+}
+
+.benefit-card h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.benefit-card p {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.benefit-card:hover {
+  border-color: #7c3aed;
+  box-shadow: 0 12px 30px rgba(124, 58, 237, 0.1);
+  transform: translateY(-4px);
+}
+
+/* ============================================================
+   CONTENT SHOWCASE SECTION
+   ============================================================ */
+
+.showcase-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f9f8ff 0%, #ffffff 100%);
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 28px;
+  margin-top: 50px;
+}
+
+.showcase-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.showcase-placeholder {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(135deg, #e9d5ff 0%, #f3e8ff 100%);
+  border-radius: 16px;
+  border: 2px solid rgba(124, 58, 237, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.showcase-placeholder:hover {
+  border-color: rgba(124, 58, 237, 0.4);
+  box-shadow: 0 16px 40px rgba(124, 58, 237, 0.1);
+}
+
+.placeholder-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(124, 58, 237, 0.9);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ============================================================
+   PARTNER SECTION
+   ============================================================ */
+
+.partner-section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.partner-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.highlight-card {
+  background: linear-gradient(135deg, #f8f5ff 0%, #f3e8ff 100%);
+  padding: 32px 28px;
+  border-radius: 16px;
+  border: 2px solid rgba(124, 58, 237, 0.1);
+  transition: all 0.3s ease;
+}
+
+.highlight-card h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.highlight-card p {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.highlight-card:hover {
+  border-color: #7c3aed;
+  box-shadow: 0 12px 30px rgba(124, 58, 237, 0.12);
+  transform: translateY(-4px);
+}
+
+.partner-cta-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* ============================================================
+   FINAL CTA SECTION
+   ============================================================ */
+
+.final-cta-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  color: #ffffff;
+  text-align: center;
+}
+
+.final-cta-section .section-heading {
+  color: #ffffff;
+}
+
+.final-cta-section .section-description {
+  color: rgba(255, 255, 255, 0.9);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+}
+
+.final-ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.final-cta-section .cta-primary {
+  background: #ffffff;
+  color: #7c3aed;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.final-cta-section .cta-primary:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.final-cta-section .cta-secondary {
+  background: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.final-cta-section .cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.final-cta-note {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 24px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .content-container {
+    padding: 0 45px;
+  }
+
+  .hero-wrapper {
+    gap: 40px;
+  }
+
+  .hero-heading {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  .showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    padding: 0 32px;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  .section-heading {
+    font-size: clamp(1.5rem, 3.5vw, 1.9rem);
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+
+  .hero-section {
+    padding: 60px 0 80px;
+    margin-top: 35px;
+  }
+
+  .hero-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-heading {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  .hero-visual {
+    min-height: 300px;
+  }
+
+  .visual-placeholder {
+    min-height: 300px;
+  }
+
+  .flow-diagram {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .flow-arrow {
+    transform: rotate(90deg);
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .feature-card {
+    padding: 28px 20px;
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9rem;
+  }
+
+  .how-it-works {
+    padding: 60px 20px;
+  }
+
+  .steps-grid {
+    gap: 20px;
+  }
+
+  .step-number {
+    width: 70px;
+    height: 70px;
+    font-size: 1.6rem;
+  }
+
+  .step h3 {
+    font-size: 1.05rem;
+  }
+
+  .step p {
+    font-size: 0.9rem;
+  }
+
+  .step-connector {
+    font-size: 1.3rem;
+  }
+
+  .benefits-grid {
+    gap: 20px;
+  }
+
+  .benefit-card {
+    padding: 24px 20px;
+  }
+
+  .benefit-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .showcase-placeholder {
+    aspect-ratio: 1 / 1;
+  }
+
+  .partner-highlights {
+    gap: 20px;
+  }
+
+  .highlight-card {
+    padding: 24px 20px;
+  }
+
+  .final-ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .final-ctas a {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .content-container {
+    padding: 0 24px;
+  }
+
+  section {
+    padding: 48px 0;
+  }
+
+  .section-heading {
+    font-size: clamp(1.3rem, 3.5vw, 1.6rem);
+    margin-bottom: 16px;
+  }
+
+  .section-description {
+    font-size: 0.95rem;
+    margin-bottom: 32px;
+  }
+
+  .hero-section {
+    padding: 50px 0 60px;
+    margin-top: 35px;
+  }
+
+  .back-link {
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+  }
+
+  .hero-heading {
+    font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+    margin-bottom: 12px;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .hero-supporting {
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+  }
+
+  .hero-ctas {
+    gap: 12px;
+  }
+
+  .cta-primary,
+  .cta-secondary {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
+  .hero-visual {
+    min-height: 250px;
+  }
+
+  .visual-placeholder {
+    min-height: 250px;
+    padding: 20px;
+  }
+
+  .placeholder-icon {
+    font-size: 3rem;
+  }
+
+  .placeholder-text {
+    font-size: 1.1rem;
+  }
+
+  .placeholder-subtext {
+    font-size: 0.85rem;
+  }
+
+  .flow-step {
+    min-width: 100px;
+  }
+
+  .flow-icon {
+    font-size: 2rem;
+  }
+
+  .flow-step p {
+    font-size: 0.85rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .feature-card {
+    padding: 24px 16px;
+  }
+
+  .feature-icon {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+  }
+
+  .feature-card h3 {
+    font-size: 1rem;
+  }
+
+  .feature-card p {
+    font-size: 0.85rem;
+  }
+
+  .how-it-works {
+    padding: 48px 16px;
+    background: linear-gradient(135deg, #f8f9ff 0%, #f0e6ff 100%);
+  }
+
+  .steps-grid {
+    gap: 16px;
+    grid-template-columns: 1fr;
+  }
+
+  .step-number {
+    width: 60px;
+    height: 60px;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+
+  .step h3 {
+    font-size: 1rem;
+  }
+
+  .step p {
+    font-size: 0.85rem;
+  }
+
+  .step-connector {
+    display: none;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .benefit-card {
+    padding: 20px 16px;
+  }
+
+  .benefit-number {
+    font-size: 1.6rem;
+  }
+
+  .benefit-card h3 {
+    font-size: 1rem;
+  }
+
+  .benefit-card p {
+    font-size: 0.85rem;
+  }
+
+  .showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .showcase-placeholder {
+    aspect-ratio: 1 / 1;
+  }
+
+  .partner-highlights {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .highlight-card {
+    padding: 20px 16px;
+  }
+
+  .highlight-card h3 {
+    font-size: 1rem;
+  }
+
+  .highlight-card p {
+    font-size: 0.85rem;
+  }
+
+  .final-cta-section {
+    padding: 48px 0;
+  }
+
+  .final-cta-section .section-heading {
+    font-size: clamp(1.3rem, 3vw, 1.6rem);
+  }
+
+  .final-cta-section .section-description {
+    font-size: 0.95rem;
+  }
+
+  .final-ctas {
+    gap: 12px;
+  }
+
+  .final-ctas a {
+    width: 100%;
+    padding: 12px 20px;
+  }
+
+  .final-cta-note {
+    font-size: 0.85rem;
+  }
+}
