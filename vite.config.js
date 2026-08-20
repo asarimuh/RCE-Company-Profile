@@ -113,6 +113,7 @@ export default defineConfig({
         peraturanLiveTiktokAntiBanned: resolve(__dirname, 'src/pages/blogs/peraturan-live-tiktok-anti-banned.html'),
         jadiLiveHostSinger: resolve(__dirname, 'src/pages/blogs/jadi-live-host-singer.html'),
         jadiLiveHostDancer: resolve(__dirname, 'src/pages/blogs/jadi-live-host-dancer.html'),
+        kolVsKoc: resolve(__dirname, 'src/pages/blogs/kol-vs-koc-apa-perbedaannya.html'),
       },
     },
   },
