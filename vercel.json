@@ -8,6 +8,7 @@
     { "source": "/register/success", "destination": "/pages/register-success.html" },
     { "source": "/faq", "destination": "/pages/faq.html" },
     { "source": "/blog", "destination": "/pages/blogs.html" },
+    { "source": "/blog/", "destination": "/pages/blogs.html" },
     { "source": "/blog/:slug", "destination": "/pages/blogs/:slug.html" }
   ]
 }
