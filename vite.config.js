@@ -114,6 +114,7 @@ export default defineConfig({
         jadiLiveHostSinger: resolve(__dirname, 'src/pages/blogs/jadi-live-host-singer.html'),
         jadiLiveHostDancer: resolve(__dirname, 'src/pages/blogs/jadi-live-host-dancer.html'),
         kolVsKoc: resolve(__dirname, 'src/pages/blogs/kol-vs-koc-apa-perbedaannya.html'),
+        streamerTikTokAgency: resolve(__dirname, 'src/pages/blogs/streamer-tiktok-gabung-agensi-atau-tidak.html'),
       },
     },
   },
