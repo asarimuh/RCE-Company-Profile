@@ -42,15 +42,6 @@
   <noscript><img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1476771547091064&ev=PageView&noscript=1" /></noscript>
 
-  <!-- Loading Screen (Index Page Only) -->
-  <div id="loading-screen">
-    <div class="loading-spinner">
-      <div class="spinner-ring"></div>
-      <p class="loading-text">Loading<span class="loading-dot">.</span><span class="loading-dot">.</span><span
-          class="loading-dot">.</span></p>
-    </div>
-  </div>
-
   <!-- Main App Content -->
   <div id="app">
     <header id="header">
@@ -671,8 +662,7 @@
           </div>
 
           <div class="blog-more">
-            <a href="/blog" class="btn-see-more" style="text-decoration: none; display: inline-block;">See
-              More</a>
+            <a href="/blog" class="btn-see-more">See More</a>
           </div>
         </div>
       </section>
@@ -728,17 +718,6 @@
 
   <script type="module" src="/js/main.js"></script>
   <script type="module" src="/js/cssbootstrap.js"></script>
-
-  <!-- Loading Screen Initialization (Index Page Only) -->
-  <script type="module">
-    import { initLoadingScreen } from '/js/loading-screen.js';
-    // Initialize loading screen when DOM is ready
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initLoadingScreen);
-    } else {
-      initLoadingScreen();
-    }
-  </script>
 
 </body>
 <!-- Google tag (gtag.js) -->

@@ -81,6 +81,7 @@ export default defineConfig({
         register:               resolve(__dirname, 'src/pages/register.html'),
         talentRegister:         resolve(__dirname, 'src/pages/talent-register.html'),
         registerSuccess:        resolve(__dirname, 'src/pages/register-success.html'),
+        faq:                    resolve(__dirname, 'src/pages/faq.html'),
 
         // ── Admin dashboard ──────────────────────────
         adminIndex:           resolve(__dirname, 'src/admin/index.html'),

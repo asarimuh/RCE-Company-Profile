@@ -52,7 +52,6 @@ company-profile/
     │   ├── registration-form.js
     │   ├── supabase-client.js
     │   ├── cssbootstrap.js
-    │   ├── loading-screen.js
     │   └── skeleton-loader.js
     ├── admin/
     │   ├── index.html

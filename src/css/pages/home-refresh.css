@@ -1150,6 +1150,13 @@ h2.blog-heading {
   margin-top: 28px;
 }
 
+.blog-more .btn-see-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+}
+
 #footer {
   background: #171321;
 }
