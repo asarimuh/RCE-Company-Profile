@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" fill="none">
+  <rect width="1200" height="540" rx="28" fill="#F8FAFC"/>
+  <text x="64" y="78" fill="#0F172A" font-family="Arial, sans-serif" font-size="34" font-weight="700">Angka performa perlu konteks</text>
+  <text x="64" y="116" fill="#64748B" font-family="Arial, sans-serif" font-size="19">Contoh sederhana cara menjelaskan tingkat interaksi per jangkauan.</text>
+
+  <rect x="64" y="158" width="490" height="310" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="96" y="204" fill="#64748B" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1.5">CONTOH ILUSTRASI</text>
+  <rect x="96" y="230" width="198" height="112" rx="14" fill="#EFF6FF"/>
+  <text x="195" y="268" text-anchor="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="17" font-weight="700">INTERAKSI</text>
+  <text x="195" y="317" text-anchor="middle" fill="#0F172A" font-family="Arial, sans-serif" font-size="38" font-weight="700">600</text>
+  <text x="319" y="300" text-anchor="middle" fill="#94A3B8" font-family="Arial, sans-serif" font-size="34" font-weight="400">÷</text>
+  <rect x="344" y="230" width="178" height="112" rx="14" fill="#F0FDF4"/>
+  <text x="433" y="268" text-anchor="middle" fill="#16A34A" font-family="Arial, sans-serif" font-size="17" font-weight="700">JANGKAUAN</text>
+  <text x="433" y="317" text-anchor="middle" fill="#0F172A" font-family="Arial, sans-serif" font-size="38" font-weight="700">8.000</text>
+  <path d="M195 370h228" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="309" y="423" text-anchor="middle" fill="#0F172A" font-family="Arial, sans-serif" font-size="34" font-weight="700">7,5%</text>
+  <text x="309" y="449" text-anchor="middle" fill="#64748B" font-family="Arial, sans-serif" font-size="14">interaksi ÷ jangkauan</text>
+
+  <rect x="592" y="158" width="544" height="310" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="628" y="204" fill="#0F172A" font-family="Arial, sans-serif" font-size="21" font-weight="700">Sertakan empat keterangan</text>
+  <circle cx="645" cy="250" r="13" fill="#DBEAFE"/>
+  <text x="645" y="255" text-anchor="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="12" font-weight="700">1</text>
+  <text x="674" y="256" fill="#334155" font-family="Arial, sans-serif" font-size="17"><tspan font-weight="700">Platform:</tspan> kanal asal metrik</text>
+  <circle cx="645" cy="299" r="13" fill="#DCFCE7"/>
+  <text x="645" y="304" text-anchor="middle" fill="#16A34A" font-family="Arial, sans-serif" font-size="12" font-weight="700">2</text>
+  <text x="674" y="305" fill="#334155" font-family="Arial, sans-serif" font-size="17"><tspan font-weight="700">Periode:</tspan> kapan data dikumpulkan</text>
+  <circle cx="645" cy="348" r="13" fill="#FCE7F3"/>
+  <text x="645" y="353" text-anchor="middle" fill="#DB2777" font-family="Arial, sans-serif" font-size="12" font-weight="700">3</text>
+  <text x="674" y="354" fill="#334155" font-family="Arial, sans-serif" font-size="17"><tspan font-weight="700">Sampel:</tspan> konten yang dianalisis</text>
+  <circle cx="645" cy="397" r="13" fill="#FEF3C7"/>
+  <text x="645" y="402" text-anchor="middle" fill="#D97706" font-family="Arial, sans-serif" font-size="12" font-weight="700">4</text>
+  <text x="674" y="403" fill="#334155" font-family="Arial, sans-serif" font-size="17"><tspan font-weight="700">Definisi:</tspan> rumus dan sumber data</text>
+  <rect x="628" y="426" width="472" height="1" fill="#E2E8F0"/>
+  <text x="628" y="451" fill="#64748B" font-family="Arial, sans-serif" font-size="14">Ilustrasi saja; definisi metrik dapat berbeda antarplatform.</text>
+
+  <text x="64" y="508" fill="#475569" font-family="Arial, sans-serif" font-size="16" font-weight="600">Gunakan datamu sendiri dan jelaskan cara menghitungnya.</text>
+</svg>

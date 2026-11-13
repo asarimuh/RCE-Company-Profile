@@ -120,6 +120,7 @@ export default defineConfig({
         streamKeyTikTokLive: resolve(__dirname, 'src/pages/blogs/stream-key-tiktok-live.html'),
         keuntunganTikTokLiveAgencyBagiStreamer: resolve(__dirname, 'src/pages/blogs/keuntungan-tiktok-live-agency-bagi-streamer.html'),
         tiktokLivePekerjaanSampingan: resolve(__dirname, 'src/pages/blogs/tiktok-live-pekerjaan-sampingan.html'),
+        caraMembuatMediaKitKOL: resolve(__dirname, 'src/pages/blogs/cara-membuat-media-kit-kol.html'),
       },
     },
   },

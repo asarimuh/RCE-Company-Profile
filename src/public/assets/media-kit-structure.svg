@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" fill="none">
+  <rect width="1200" height="620" rx="28" fill="#F8FAFC"/>
+  <text x="64" y="78" fill="#0F172A" font-family="Arial, sans-serif" font-size="34" font-weight="700">Susun media kit dalam tiga bagian</text>
+  <text x="64" y="116" fill="#64748B" font-family="Arial, sans-serif" font-size="19">Urutkan informasi agar brand mudah memahami profil, audiens, dan contoh kerja kamu.</text>
+
+  <rect x="64" y="158" width="336" height="382" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <circle cx="101" cy="202" r="20" fill="#DBEAFE"/>
+  <text x="101" y="209" text-anchor="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="17" font-weight="700">01</text>
+  <text x="132" y="209" fill="#0F172A" font-family="Arial, sans-serif" font-size="20" font-weight="700">PROFIL &amp; FOKUS</text>
+  <rect x="92" y="248" width="280" height="112" rx="14" fill="#EFF6FF"/>
+  <circle cx="144" cy="304" r="25" fill="#BFDBFE"/>
+  <circle cx="144" cy="296" r="9" fill="#2563EB"/>
+  <path d="M126 322c2-12 10-18 18-18s16 6 18 18" fill="#2563EB"/>
+  <rect x="187" y="278" width="150" height="12" rx="6" fill="#93C5FD"/>
+  <rect x="187" y="301" width="125" height="9" rx="4.5" fill="#BFDBFE"/>
+  <rect x="187" y="320" width="105" height="9" rx="4.5" fill="#BFDBFE"/>
+  <text x="92" y="397" fill="#334155" font-family="Arial, sans-serif" font-size="17" font-weight="700">Perkenalkan dirimu</text>
+  <text x="92" y="428" fill="#64748B" font-family="Arial, sans-serif" font-size="15">Niche dan positioning singkat</text>
+  <text x="92" y="457" fill="#64748B" font-family="Arial, sans-serif" font-size="15">Platform serta tautan aktif</text>
+  <text x="92" y="486" fill="#64748B" font-family="Arial, sans-serif" font-size="15">Pasar utama jika relevan</text>
+
+  <rect x="432" y="158" width="336" height="382" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <circle cx="469" cy="202" r="20" fill="#DCFCE7"/>
+  <text x="469" y="209" text-anchor="middle" fill="#16A34A" font-family="Arial, sans-serif" font-size="17" font-weight="700">02</text>
+  <text x="500" y="209" fill="#0F172A" font-family="Arial, sans-serif" font-size="20" font-weight="700">AUDIENS &amp; DATA</text>
+  <rect x="460" y="248" width="280" height="112" rx="14" fill="#F0FDF4"/>
+  <rect x="490" y="324" width="28" height="20" rx="5" fill="#86EFAC"/>
+  <rect x="531" y="300" width="28" height="44" rx="5" fill="#4ADE80"/>
+  <rect x="572" y="278" width="28" height="66" rx="5" fill="#22C55E"/>
+  <rect x="613" y="290" width="28" height="54" rx="5" fill="#4ADE80"/>
+  <rect x="654" y="266" width="28" height="78" rx="5" fill="#16A34A"/>
+  <path d="M488 346h204" stroke="#BBF7D0" stroke-width="2"/>
+  <text x="460" y="397" fill="#334155" font-family="Arial, sans-serif" font-size="17" font-weight="700">Tunjukkan konteks</text>
+  <text x="460" y="428" fill="#64748B" font-family="Arial, sans-serif" font-size="15">Profil audiens dari analytics</text>
+  <text x="460" y="457" fill="#64748B" font-family="Arial, sans-serif" font-size="15">Metrik dan periode pengukuran</text>
+  <text x="460" y="486" fill="#64748B" font-family="Arial, sans-serif" font-size="15">Metode hitung dan sumber data</text>
+
+  <rect x="800" y="158" width="336" height="382" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <circle cx="837" cy="202" r="20" fill="#FCE7F3"/>
+  <text x="837" y="209" text-anchor="middle" fill="#DB2777" font-family="Arial, sans-serif" font-size="17" font-weight="700">03</text>
+  <text x="868" y="209" fill="#0F172A" font-family="Arial, sans-serif" font-size="20" font-weight="700">PORTOFOLIO</text>
+  <rect x="828" y="248" width="280" height="112" rx="14" fill="#FDF2F8"/>
+  <rect x="850" y="270" width="66" height="68" rx="9" fill="#F9A8D4"/>
+  <rect x="928" y="270" width="66" height="68" rx="9" fill="#FBCFE8"/>
+  <rect x="1006" y="270" width="80" height="12" rx="6" fill="#F472B6"/>
+  <rect x="1006" y="293" width="64" height="9" rx="4.5" fill="#F9A8D4"/>
+  <rect x="1006" y="312" width="72" height="9" rx="4.5" fill="#F9A8D4"/>
+  <text x="828" y="397" fill="#334155" font-family="Arial, sans-serif" font-size="17" font-weight="700">Tunjukkan cara bekerja</text>
+  <text x="828" y="428" fill="#64748B" font-family="Arial, sans-serif" font-size="15">2–4 contoh konten terpilih</text>
+  <text x="828" y="457" fill="#64748B" font-family="Arial, sans-serif" font-size="15">Format kolaborasi yang tersedia</text>
+  <text x="828" y="486" fill="#64748B" font-family="Arial, sans-serif" font-size="15">Kontak bisnis yang aktif</text>
+
+  <text x="64" y="584" fill="#475569" font-family="Arial, sans-serif" font-size="16" font-weight="600">Ringkas • Relevan • Mudah dibaca di ponsel</text>
+</svg>
